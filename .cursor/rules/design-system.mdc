@@ -1,0 +1,25 @@
+---
+description: Playground visual system and original brand assets
+globs: apps/web/**
+alwaysApply: false
+---
+
+# Design system
+
+Reuse `apps/web/public/brand/` — do not invent a second logo or mural.
+
+- Cream `#F7F1E3`, apricot `#FF8A4C`, ink `#2A1F18`. Pastels: sky `#7EB8E8`, blush `#F5C4D8`, butter `#F5E27A`.
+- Display: Newsreader. UI: Figtree. Sentence case. Pill CTAs, ~48px cards, full-bleed color bands.
+- Never use Roots mint `#49E885`, forest `#123F2E`, leaf mascot, or their copy.
+- No email capture, no Sign In.
+- Hero mural sits behind a cream scrim so type stays readable.
+
+```tsx
+// ❌ BAD
+<button className="bg-[#49E885] rounded-md">Get Started</button>
+
+// ✅ GOOD
+<Link className="rounded-full bg-apricot text-ink px-6 py-3" href="/labs">
+  Open a lab
+</Link>
+```

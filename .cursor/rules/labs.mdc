@@ -1,0 +1,13 @@
+---
+description: Every lab has explainer, trace, and bundled corpus only
+globs: apps/web/app/labs/**/*.tsx
+alwaysApply: false
+---
+
+# Labs
+
+Every lab page has a left explainer (what / why / what you are seeing), a right interactive panel, and a live trace (chunks, scores, or graph nodes).
+
+- Query only the bundled corpus in `data/corpus/`.
+- If Ollama is down, show how to start it — do not silently call a cloud API.
+- Keep matching `docs/labs/<lab>.md` updated in the same change.

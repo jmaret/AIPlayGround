@@ -1,0 +1,16 @@
+---
+description: Update matching docs in the same change as code
+alwaysApply: true
+---
+
+# Docs stay current
+
+Any behavior, API, UI, or privacy change updates the matching file under `docs/` in the **same change**. Add a `docs/changelog.md` entry.
+
+- New lab → new `docs/labs/<name>.md` plus a catalog line in `docs/README.md`
+- Architecture / ports / data flow → `docs/architecture.md`
+- Retention, bind address, logging → `docs/privacy-and-security.md`
+- Colors, mural, logo → `docs/design-system.md`
+- Why we chose something → `docs/decisions.md`
+
+Do not leave README claims that the running app no longer matches.
