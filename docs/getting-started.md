@@ -1,0 +1,33 @@
+# Getting started
+
+Everything runs on your machine. No API keys.
+
+## Prerequisites
+
+- Node.js 20+
+- Python 3.11+
+- [Ollama](https://ollama.com)
+
+Pull the local models once:
+
+```bash
+ollama pull llama3.2
+ollama pull nomic-embed-text
+```
+
+On a smaller machine, `llama3.2:1b` or `phi3` can replace `llama3.2`. Set `OLLAMA_CHAT_MODEL` in a local `.env` copied from `.env.example`.
+
+## Install and run
+
+```bash
+make install
+make check-ollama
+make dev
+```
+
+- Web: [http://127.0.0.1:3000](http://127.0.0.1:3000)
+- API: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+
+The first API start embeds the bundled corpus (about 10 chunks). That can take half a minute. `/ready` reports `index_ready` when it is done.
+
+The API binds to loopback only. If Ollama or a model is missing, the site still loads; labs show how to recover locally.

@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Next.js
+apps/web/.next/
+apps/web/out/
+
+# Env and secrets
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Ephemeral local junk
+.cache/
+*.log
+.chroma/
