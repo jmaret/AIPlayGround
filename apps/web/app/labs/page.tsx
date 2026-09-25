@@ -20,7 +20,7 @@ const labs = [
   {
     href: "/labs/langgraph",
     title: "LangGraph",
-    copy: "Watch route → retrieve → draft → critique → answer as it happens.",
+    copy: "Live nodes plus an AWS-scale map of how each step could run in production.",
   },
 ];
 

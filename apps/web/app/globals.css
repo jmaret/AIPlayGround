@@ -49,3 +49,14 @@ body {
 .chip {
   @apply inline-flex rounded-md border border-[var(--line)] bg-white/70 px-2.5 py-1 text-xs font-medium text-[var(--ink-muted)];
 }
+
+@keyframes graph-edge-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.graph-edge-flow {
+  stroke-dasharray: 6 8;
+  animation: graph-edge-flow 0.7s linear infinite;
+}

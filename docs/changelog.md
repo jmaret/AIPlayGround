@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-09-25 — LangGraph architecture popups
+
+- Hover or click any AWS service card, model name, or scale line for a short explainer
+- Popups render on `document.body` and flip/clamp to the viewport so the glass panel cannot clip them — including the last steps
+
+## 2026-09-25 — LangGraph AWS-scale map
+
+## 2026-09-25 — LangGraph AWS-scale map
+
+- Each LangGraph step shows a static AWS / LLM architecture beside it (API Gateway, Step Functions, Bedrock, OpenSearch, Guardrails)
+- The map is educational only — the lab still runs on localhost Ollama and does not call AWS
+
+## 2026-09-25 — LangGraph live DAG
+
+- LangGraph lab draws `START → route → retrieve → draft → critique → answer → END` beside the output
+- Nodes light as SSE events arrive; click a finished node to inspect its payload
+- `route` is shown as a label chip, not a fake branch
+
 ## 2026-09-25 — ship-to-main subagent
 
 - Added `.cursor/agents/ship-to-main.md` to check in, open a PR, try to approve, and merge to main

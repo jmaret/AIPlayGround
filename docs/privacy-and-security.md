@@ -8,7 +8,7 @@ Playground is a local learning tool. It is not a product that stores people.
 - Analytics, pixels, or third-party scripts
 - Writing prompts, answers, or uploads to disk
 - Logging request bodies or chunk text
-- Sending prompts to a cloud LLM in v1
+- Sending prompts to a cloud LLM in v1 (LangGraph’s AWS diagrams are static maps, not API calls)
 
 Chroma and LangSmith telemetry are turned off in the API process before those libraries import.
 
