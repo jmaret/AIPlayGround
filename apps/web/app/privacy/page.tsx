@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { WorkspacePanel } from "@/components/WorkspacePanel";
 
 export const metadata: Metadata = {
   title: "Privacy — Playground",
@@ -6,11 +7,13 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="bg-cream px-5 py-16 md:px-10 md:py-24">
-      <article className="mx-auto max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-apricot">Trust</p>
-        <h1 className="mt-3 font-display text-5xl font-black">Nothing you type is kept</h1>
-        <div className="mt-8 space-y-6 text-lg leading-relaxed">
+    <main>
+      <WorkspacePanel>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">Trust</p>
+        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)]">
+          Nothing you type is kept
+        </h1>
+        <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--ink-muted)] sm:text-base">
           <p>
             Playground is a local learning tool. There are no accounts, no newsletter, no analytics, and no third-party
             scripts. Servers bind to 127.0.0.1.
@@ -25,7 +28,7 @@ export default function PrivacyPage() {
           </p>
           <p>The longer write-up lives in the repo at docs/privacy-and-security.md.</p>
         </div>
-      </article>
+      </WorkspacePanel>
     </main>
   );
 }

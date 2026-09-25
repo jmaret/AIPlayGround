@@ -2,24 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: #e8eef1;
+  --foreground: #152028;
+  --ink: #152028;
+  --ink-muted: #5a6b76;
+  --accent: #0f4c5c;
+  --accent-hover: #0c3d4a;
+  --line: #c5d0d6;
+  --danger: #9b2c2c;
+  --danger-soft: #f8e8e8;
+  --success: #1f6b4a;
+  --success-soft: #e5f4ec;
+  --warn: #8a5a12;
+  --warn-soft: #f7efd9;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #f7f1e3;
-  color: #2a1f18;
+  color: var(--ink);
+  background-color: var(--background);
+  background-image: linear-gradient(
+    180deg,
+    rgba(238, 243, 245, 0.92) 0%,
+    rgba(232, 238, 241, 0.88) 45%,
+    rgba(227, 235, 231, 0.94) 100%
+  );
+  min-height: 100vh;
 }
 
-.marquee-track {
-  animation: marquee 28s linear infinite;
+.btn-accent {
+  @apply rounded-md bg-[var(--accent)] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--accent-hover)] disabled:cursor-not-allowed disabled:opacity-60;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.btn-ghost {
+  @apply rounded-md border border-[var(--line)] bg-white/70 px-4 py-2.5 text-sm font-semibold text-[var(--ink)] hover:bg-white;
+}
+
+.field {
+  @apply w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2.5 text-sm leading-relaxed text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2;
+}
+
+.chip {
+  @apply inline-flex rounded-md border border-[var(--line)] bg-white/70 px-2.5 py-1 text-xs font-medium text-[var(--ink-muted)];
 }

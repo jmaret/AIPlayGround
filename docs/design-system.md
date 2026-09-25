@@ -1,46 +1,48 @@
 # Design system
 
-Inspired by the *grammar* of investwithroots.com (cream paper, full-bleed bands, soft serif + humanist sans, pill CTAs). Original identity — not a clone.
+UX chrome is based on **CareerGenie** (JobFitAndApplicationAssistant): teal-ink tokens, Source Serif 4 + Source Sans 3, a sticky frosted header, segmented tabs, and glass `WorkspacePanel`s at `max-w-3xl`.
+
+Playground keeps its own name, mark, mural, and copy. Do not copy CareerGenie’s office photo, wordmark, or sign-in.
 
 ## Palette
 
 | Token | Hex | Role |
 | --- | --- | --- |
-| cream | `#F7F1E3` | Page, nav, FAQ |
-| apricot | `#FF8A4C` | Primary, hero warmth |
-| ink | `#2A1F18` | Type, dark band, footer |
-| sky | `#7EB8E8` | Accent band / Vector card |
-| blush | `#F5C4D8` | RAG card |
-| butter | `#F5E27A` | LangGraph card |
+| background | `#E8EEF1` | Page wash |
+| ink | `#152028` | Type |
+| ink-muted | `#5A6B76` | Secondary type |
+| accent | `#0F4C5C` | Primary buttons, eyebrows |
+| accent-hover | `#0C3D4A` | Button hover |
+| line | `#C5D0D6` | Borders |
+| danger | `#9B2C2C` | Errors |
+| success | `#1F6B4A` | Grounded answers |
 
-Do not use Roots mint `#49E885` or forest `#123F2E`.
+Backdrop is a soft teal-gray CSS gradient only — no stock photo.
 
 ## Type
 
-- Display: [Newsreader](https://fonts.google.com/specimen/Newsreader) via `next/font` (build-time)
-- UI: [Figtree](https://fonts.google.com/specimen/Figtree) via `next/font`
-- Sentence case. Display 800–900, body 500–600.
+- Display: [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) via `next/font` (`--font-display`)
+- UI: [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) (`--font-sans`)
+- Mono: [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono) for distances and node dumps
+- Sentence case. Display 500–700. Buttons `rounded-md`, not pills.
+
+## Shell
+
+- Sticky header: `bg-[rgba(238,243,245,0.86)] backdrop-blur-md`, `border-[var(--line)]`
+- Brand row: mark + serif “Playground” + muted tagline
+- Segmented nav: Home / Labs / Privacy
+- Action: teal “Open a lab”
+- Quiet footer line under `max-w-3xl` main
+- No Sign In, no email capture
+
+## Surfaces
+
+`WorkspacePanel`: `rounded-xl border border-[var(--line)] bg-white/85 shadow-[0_18px_50px_-36px_rgba(15,40,50,0.55)] backdrop-blur-sm`.
+
+The humanist mural sits inside the hero panel (crop + fade), not as a full-bleed Roots band.
 
 ## Brand files (`apps/web/public/brand/`)
 
-- `logo.svg` — source of truth for the nav badge
-- `logo-flat.png` — simple pictogram
-- `icon-512.png` — painterly app tile
-- `apple-touch-icon.png` — 180px
-- `favicon-32.png` / `favicon.ico`
-- `impact-mural.png` — humanist “AI in human life” hero
-- `impact-mural-og.png` — open-graph / local preview crop
-
-### Mural story
-
-Everyday people (student, parent and child, maker, caregiver, musician) stay in the foreground. A light constellation overlay is the *impact*. Hopeful, not dystopian. Hero uses a cream/apricot scrim so headlines stay readable. Other bands stay flat color.
-
-### Logo story
-
-A cream circular badge. Human profile first; an off-center 3-node apricot constellation in the mind. People first, graph second. Never recolor onto mint. Never add a SaaS glow.
-
-## Shape
-
-- CTAs: fully round pills
-- Cards: ~48px radius
-- Quote / trace slabs may be flatter
+- `logo.svg` — cream-teal circular badge, human profile + 3-node constellation in `#0F4C5C`
+- `icon-512.png` / `apple-touch-icon.png` / favicons
+- `impact-mural.png` — AI-in-human-life illustration, used inside the hero panel

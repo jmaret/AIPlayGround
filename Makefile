@@ -1,7 +1,7 @@
 .PHONY: dev web api check-ollama install install-web install-api
 
 WEB_HOST ?= 127.0.0.1
-WEB_PORT ?= 3000
+WEB_PORT ?= 3010
 API_HOST ?= 127.0.0.1
 API_PORT ?= 8000
 

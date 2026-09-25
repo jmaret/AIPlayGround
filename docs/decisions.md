@@ -8,6 +8,14 @@ Chosen because it is $0 after install, needs no API key, and keeps prompts on lo
 
 The vector store is a teaching prop, not a product database. Persistence would invite leftover user text. Restart = empty + rebuild from `data/corpus/`.
 
+## Hashed n-grams for the Vector DB lab
+
+The Vector DB lesson is geometry, not Llama. A deterministic 64-d character 3-gram hash lets the lab run with only `make api`. RAG and LangGraph still need Ollama when you want generated text.
+
+## CareerGenie UX chrome
+
+The product shell matches CareerGenie (JobFitAndApplicationAssistant): teal-ink tokens, frosted header, segmented tabs, glass workspace panels. We do not copy their office photograph, wordmark, or accounts. The mural and Playground mark stay original.
+
 ## No accounts
 
 A learning playground does not need identity. Accounts would create PII we promised not to keep.

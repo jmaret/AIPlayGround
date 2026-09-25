@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 from app.config import settings
 from app.labs import langgraph_lab, rag, vector_db
 from app.logutil import AccessLogMiddleware, configure_logging
+from app.local_index import local_index
 from app.providers.ollama import OllamaProvider
 from app.store import store
 
@@ -59,6 +60,7 @@ def _allow(host: str) -> bool:
 
 @app.on_event("startup")
 def startup() -> None:
+    local_index.bootstrap()
     ping = provider.ping()
     if not ping.get("ok"):
         store.last_error = "ollama_unavailable"
@@ -86,6 +88,8 @@ def ready() -> dict[str, object]:
     ping = provider.ping()
     payload = {
         "ollama": ping,
+        "local_vector_ready": local_index.ready,
+        "local_vector_chunks": len(local_index.chunks),
         "index_ready": store.ready,
         "chunk_count": store.chunk_count,
         "index_error": store.last_error or None,

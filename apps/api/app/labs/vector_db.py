@@ -1,11 +1,9 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from app.providers.ollama import OllamaError, OllamaProvider
-from app.store import store
+from app.local_index import local_index
 
 router = APIRouter(prefix="/labs/vector-db", tags=["vector-db"])
-provider = OllamaProvider()
 
 
 class QueryBody(BaseModel):
@@ -15,19 +13,23 @@ class QueryBody(BaseModel):
 
 @router.get("/preview")
 def preview() -> dict[str, object]:
+    if not local_index.ready:
+        local_index.bootstrap()
     return {
-        "ready": store.ready,
-        "chunk_count": store.chunk_count,
-        "chunks": store.preview(),
+        "ready": local_index.ready,
+        "chunk_count": len(local_index.chunks),
+        "embedder": local_index.name,
+        "dim": local_index.dim,
+        "chunks": local_index.preview(),
+        "needs_ollama": False,
     }
 
 
 @router.post("/query")
 def query(body: QueryBody) -> dict[str, object]:
+    if not local_index.ready:
+        local_index.bootstrap()
     try:
-        neighbors = store.query(provider, body.query, body.k)
-    except OllamaError as exc:
-        raise HTTPException(status_code=503, detail="ollama_unavailable") from exc
+        return local_index.query(body.query, body.k)
     except RuntimeError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
-    return {"query": body.query, "neighbors": neighbors}

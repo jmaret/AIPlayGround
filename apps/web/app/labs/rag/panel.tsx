@@ -41,31 +41,27 @@ export function RagPanel() {
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
           rows={3}
-          className="w-full rounded-2xl border border-ink/15 bg-cream px-4 py-3"
+          className="field"
         />
-        <button
-          type="submit"
-          disabled={busy}
-          className="rounded-full bg-ink px-5 py-2.5 font-semibold text-cream disabled:opacity-60"
-        >
+        <button type="submit" disabled={busy} className="btn-accent">
           {busy ? "Retrieving…" : "Ask with citations"}
         </button>
       </form>
-      {error ? <p className="rounded-2xl bg-blush/70 px-4 py-3">{error}</p> : null}
+      {error ? <p className="rounded-lg bg-[var(--danger-soft)] px-3 py-2.5 text-sm text-[var(--danger)]">{error}</p> : null}
       {answer ? (
-        <div className="rounded-2xl bg-blush/50 p-5">
-          <p className="text-sm font-semibold">Answer</p>
-          <p className="mt-2 whitespace-pre-wrap leading-relaxed">{answer}</p>
+        <div className="rounded-lg border border-[var(--line)] bg-[var(--success-soft)] p-4">
+          <p className="text-sm font-semibold text-[var(--ink)]">Answer</p>
+          <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">{answer}</p>
         </div>
       ) : null}
       {citations.length > 0 ? (
-        <ol className="space-y-4">
+        <ol className="space-y-3">
           {citations.map((item) => (
-            <li key={item.id} className="rounded-2xl bg-cream p-4">
-              <p className="text-sm font-semibold">
+            <li key={item.id} className="rounded-lg border border-[var(--line)] bg-white/70 p-3">
+              <p className="font-mono text-xs text-[var(--ink-muted)]">
                 {item.source} · distance {item.distance?.toFixed(3) ?? "—"}
               </p>
-              <p className="mt-2 leading-relaxed">{item.text}</p>
+              <p className="mt-2 text-sm leading-relaxed">{item.text}</p>
             </li>
           ))}
         </ol>

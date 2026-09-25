@@ -14,7 +14,7 @@ class Settings(BaseSettings):
 
     api_host: str = "127.0.0.1"
     api_port: int = 8000
-    cors_origins: str = "http://127.0.0.1:3000,http://localhost:3000"
+    cors_origins: str = "http://127.0.0.1:3010,http://localhost:3010"
     ollama_base_url: str = "http://127.0.0.1:11434"
     ollama_chat_model: str = "llama3.2"
     ollama_embed_model: str = "nomic-embed-text"
