@@ -1,11 +1,15 @@
 # Changelog
 
+## 2026-09-25 — Vector DB and RAG pipelines
+
+- Vector DB and RAG labs use the same live step path + AWS-scale map + viewport popups as LangGraph
+- Shared chrome lives in `apps/web/components/lab/`
+- Maps are educational only — Vector DB still hashes in-process; RAG still uses localhost Ollama
+
 ## 2026-09-25 — LangGraph architecture popups
 
 - Hover or click any AWS service card, model name, or scale line for a short explainer
 - Popups render on `document.body` and flip/clamp to the viewport so the glass panel cannot clip them — including the last steps
-
-## 2026-09-25 — LangGraph AWS-scale map
 
 ## 2026-09-25 — LangGraph AWS-scale map
 

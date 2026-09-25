@@ -10,12 +10,12 @@ const labs = [
   {
     href: "/labs/vector-db",
     title: "Vector DB",
-    copy: "Chunk, embed, query. See nearest neighbors and distances.",
+    copy: "Live ingest→rank path plus an AWS-scale map of S3, Titan, and OpenSearch.",
   },
   {
     href: "/labs/rag",
     title: "RAG",
-    copy: "Retrieve passages, then generate an answer that has to cite them.",
+    copy: "Live retrieve-then-generate path plus an AWS-scale map of Knowledge Bases and Bedrock.",
   },
   {
     href: "/labs/langgraph",

@@ -1,7 +1,10 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { PipelineTrace } from "@/components/lab/PipelineTrace";
 import { api, friendlyError } from "@/lib/api";
+import { VectorInspector } from "./inspector";
+import { VECTOR_JOBS, VECTOR_STEPS, VECTOR_TWINS, isVectorStep, type VectorStep } from "./pipeline";
 
 type Chunk = { id: string; source: string; text: string };
 type Neighbor = Chunk & { distance: number | null };
@@ -23,6 +26,16 @@ export function VectorPanel() {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [picked, setPicked] = useState<VectorStep | null>(null);
+  const [follow, setFollow] = useState(true);
+
+  const warm = ready ? (["ingest", "hash", "index"] satisfies VectorStep[]) : [];
+  const searched = queryVector.length > 0 || neighbors.length > 0;
+  const completed: string[] = searched ? [...warm, "query", "rank"] : [...warm];
+  const running = busy ? "query" : null;
+  const failed = error && !busy ? "query" : null;
+  const lastDone = completed.at(-1);
+  const selected = follow ? (lastDone && isVectorStep(lastDone) ? lastDone : null) : picked;
 
   useEffect(() => {
     api<{ ready: boolean; chunks: Chunk[]; embedder: string; dim: number }>("/labs/vector-db/preview")
@@ -38,6 +51,8 @@ export function VectorPanel() {
   async function runQuery(next: string) {
     setBusy(true);
     setError("");
+    setPicked(null);
+    setFollow(true);
     try {
       const data = await api<{
         neighbors: Neighbor[];
@@ -49,7 +64,7 @@ export function VectorPanel() {
         body: JSON.stringify({ query: next, k: 4 }),
       });
       setNeighbors(data.neighbors);
-      setQueryVector(data.query_vector);
+      setQueryVector(data.query_vector.slice(0, 12));
       setEmbedder(data.embedder);
       setDim(data.dim);
       setReady(true);
@@ -96,53 +111,40 @@ export function VectorPanel() {
         <label className="block text-sm font-semibold" htmlFor="vector-query">
           Query the local index
         </label>
-        <input
-          id="vector-query"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          className="field"
-        />
+        <input id="vector-query" value={query} onChange={(event) => setQuery(event.target.value)} className="field" />
         <button type="submit" disabled={busy} className="btn-accent">
           {busy ? "Searching…" : "Find neighbors"}
         </button>
       </form>
-      {error ? (
-        <p className="rounded-lg bg-[var(--danger-soft)] px-3 py-2.5 text-sm text-[var(--danger)]">{error}</p>
-      ) : null}
-      <p className="text-sm font-medium text-[var(--ink)]">
-        {ready ? "Hashed n-gram index is in memory. No Ollama required." : "Waiting for the local API on 127.0.0.1:8000."}
-      </p>
-      {queryVector.length > 0 ? (
-        <p className="font-mono text-xs leading-relaxed text-[var(--ink-muted)]">
-          query vector (first 12): [{queryVector.join(", ")}…]
-        </p>
-      ) : null}
-      {neighbors.length > 0 ? (
-        <ol className="space-y-3">
-          {neighbors.map((item) => {
-            const closeness = item.distance == null ? 0 : Math.max(0, Math.min(1, 1 - item.distance));
-            return (
-              <li key={item.id} className="rounded-lg border border-[var(--line)] bg-white/70 p-3">
-                <div className="mb-2 h-1.5 overflow-hidden rounded-full bg-[var(--line)]/50">
-                  <div className="h-full bg-[var(--accent)]" style={{ width: `${Math.round(closeness * 100)}%` }} />
-                </div>
-                <p className="font-mono text-xs text-[var(--ink-muted)]">
-                  {item.source} · distance {item.distance?.toFixed(3) ?? "—"}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed">{item.text}</p>
-              </li>
-            );
-          })}
-        </ol>
-      ) : (
-        <ol className="space-y-3 text-sm leading-relaxed text-[var(--ink-muted)]">
-          {chunks.map((item) => (
-            <li key={item.id}>
-              <strong className="text-[var(--ink)]">{item.source}:</strong> {item.text}
-            </li>
-          ))}
-        </ol>
-      )}
+      {error ? <p className="rounded-lg bg-[var(--danger-soft)] px-3 py-2.5 text-sm text-[var(--danger)]">{error}</p> : null}
+      <PipelineTrace
+        steps={VECTOR_STEPS.map((id) => ({ id, label: id, job: VECTOR_JOBS[id] }))}
+        twins={VECTOR_TWINS}
+        completed={completed}
+        running={running}
+        failed={failed}
+        selected={selected}
+        chips={{ hash: dim ? `${dim}-d` : null, query: dim ? `${dim}-d` : null }}
+        onSelect={(id) => {
+          if (!isVectorStep(id)) return;
+          setPicked(id);
+          setFollow(false);
+        }}
+        startDetail="accept the query"
+        endDetail="return neighbors"
+        mapHint="Adjacent map: how this step could run at AWS scale. This lab still hashes in-process — no Bedrock, no Ollama."
+        mapAbout="Each strip is a static picture of a production vector path: S3 corpus, Titan embeddings, OpenSearch Serverless, k-NN. This playground uses hashed word tokens in RAM. Hover or click any dotted label or card. No AWS keys, no prompts leave the machine."
+      />
+      <VectorInspector
+        step={selected}
+        running={running}
+        chunks={chunks}
+        neighbors={neighbors}
+        queryVector={queryVector}
+        embedder={embedder}
+        dim={dim}
+        ready={ready}
+      />
     </div>
   );
 }

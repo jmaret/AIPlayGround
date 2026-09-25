@@ -1,3 +1,7 @@
+import type { AwsTwinMap } from "@/components/lab/aws";
+
+export type { AwsBox, AwsGlyph, AwsModel, AwsTwinMap } from "@/components/lab/aws";
+
 export const GRAPH_NODES = ["route", "retrieve", "draft", "critique", "answer"] as const;
 
 export type GraphNodeName = (typeof GRAPH_NODES)[number];
@@ -19,29 +23,6 @@ export const NODE_JOBS: Record<GraphNodeName, string> = {
 export function isGraphNode(value: string): value is GraphNodeName {
   return (GRAPH_NODES as readonly string[]).includes(value);
 }
-
-export type AwsGlyph = "edge" | "shield" | "workflow" | "compute" | "model" | "bucket" | "search" | "cache" | "metrics";
-
-export type AwsBox = {
-  name: string;
-  role: string;
-  glyph: AwsGlyph;
-  about: string;
-};
-
-export type AwsModel = {
-  name: string;
-  about: string;
-};
-
-export type AwsTwinMap = {
-  title: string;
-  about: string;
-  models?: AwsModel[];
-  scale: string;
-  scaleAbout: string;
-  boxes: AwsBox[];
-};
 
 export const AWS_TWINS: Record<GraphNodeName | "start" | "end", AwsTwinMap> = {
   start: {
