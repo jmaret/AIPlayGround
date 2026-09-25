@@ -1,8 +1,13 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { SampleChips, StaticDemoNote } from "@/components/lab/SampleChips";
 import { PipelineTrace } from "@/components/lab/PipelineTrace";
 import { api, friendlyError } from "@/lib/api";
+import { replaySequence } from "@/lib/replay";
+import { STATIC_DEMO } from "@/lib/static-mode";
+import { buildVectorIndex, queryVectorIndex } from "@/lib/vector-browser";
+import { VECTOR_CARDS } from "@/lib/vector-cards";
 import { VectorInspector } from "./inspector";
 import { VECTOR_JOBS, VECTOR_STEPS, VECTOR_TWINS, isVectorStep, type VectorStep } from "./pipeline";
 
@@ -17,27 +22,30 @@ const SAMPLES = [
 ];
 
 export function VectorPanel() {
+  const browserIndex = useMemo(() => (STATIC_DEMO ? buildVectorIndex(VECTOR_CARDS) : null), []);
   const [query, setQuery] = useState(SAMPLES[0]);
-  const [chunks, setChunks] = useState<Chunk[]>([]);
+  const [chunks, setChunks] = useState<Chunk[]>(browserIndex?.chunks ?? []);
   const [neighbors, setNeighbors] = useState<Neighbor[]>([]);
   const [queryVector, setQueryVector] = useState<number[]>([]);
-  const [embedder, setEmbedder] = useState("");
-  const [dim, setDim] = useState(0);
-  const [ready, setReady] = useState(false);
+  const [embedder, setEmbedder] = useState(browserIndex?.embedder ?? "");
+  const [dim, setDim] = useState(browserIndex?.dim ?? 0);
+  const [ready, setReady] = useState(Boolean(browserIndex));
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [picked, setPicked] = useState<VectorStep | null>(null);
   const [follow, setFollow] = useState(true);
+  const [searchSteps, setSearchSteps] = useState<VectorStep[]>([]);
+  const runId = useRef(0);
 
   const warm = ready ? (["ingest", "hash", "index"] satisfies VectorStep[]) : [];
-  const searched = queryVector.length > 0 || neighbors.length > 0;
-  const completed: string[] = searched ? [...warm, "query", "rank"] : [...warm];
-  const running = busy ? "query" : null;
+  const completed: string[] = [...warm, ...searchSteps];
+  const running = busy ? (searchSteps.includes("query") ? "rank" : "query") : null;
   const failed = error && !busy ? "query" : null;
   const lastDone = completed.at(-1);
   const selected = follow ? (lastDone && isVectorStep(lastDone) ? lastDone : null) : picked;
 
   useEffect(() => {
+    if (STATIC_DEMO) return;
     api<{ ready: boolean; chunks: Chunk[]; embedder: string; dim: number }>("/labs/vector-db/preview")
       .then((data) => {
         setReady(data.ready);
@@ -48,12 +56,48 @@ export function VectorPanel() {
       .catch((err) => setError(friendlyError(err)));
   }, []);
 
+  async function applyResult(data: { neighbors: Neighbor[]; query_vector: number[]; embedder: string; dim: number }, my: number) {
+    if (STATIC_DEMO) {
+      await replaySequence(
+        ["query", "rank"] as const,
+        (step) => {
+          if (step === "query") {
+            setQueryVector(data.query_vector);
+            setEmbedder(data.embedder);
+            setDim(data.dim);
+          } else {
+            setNeighbors(data.neighbors);
+          }
+          setSearchSteps((current) => (current.includes(step) ? current : [...current, step]));
+        },
+        (step) => step,
+        () => runId.current === my,
+      );
+      return;
+    }
+    setNeighbors(data.neighbors);
+    setQueryVector(data.query_vector.slice(0, 12));
+    setEmbedder(data.embedder);
+    setDim(data.dim);
+    setReady(true);
+    setSearchSteps(["query", "rank"]);
+  }
+
   async function runQuery(next: string) {
+    const my = ++runId.current;
     setBusy(true);
     setError("");
     setPicked(null);
     setFollow(true);
+    setNeighbors([]);
+    setQueryVector([]);
+    setSearchSteps([]);
     try {
+      if (browserIndex) {
+        const data = queryVectorIndex(browserIndex, next, 4);
+        await applyResult(data, my);
+        return;
+      }
       const data = await api<{
         neighbors: Neighbor[];
         query_vector: number[];
@@ -63,15 +107,13 @@ export function VectorPanel() {
         method: "POST",
         body: JSON.stringify({ query: next, k: 4 }),
       });
-      setNeighbors(data.neighbors);
-      setQueryVector(data.query_vector.slice(0, 12));
-      setEmbedder(data.embedder);
-      setDim(data.dim);
-      setReady(true);
+      if (runId.current !== my) return;
+      await applyResult(data, my);
     } catch (err) {
+      if (runId.current !== my) return;
       setError(friendlyError(err));
     } finally {
-      setBusy(false);
+      if (runId.current === my) setBusy(false);
     }
   }
 
@@ -82,8 +124,11 @@ export function VectorPanel() {
 
   return (
     <div className="space-y-6">
+      {STATIC_DEMO ? <StaticDemoNote /> : null}
       <p className="text-sm text-[var(--ink-muted)]">
-        This example runs entirely in the API process. It does not call Llama or any other model.
+        {STATIC_DEMO
+          ? "This example hashes in your browser. It does not call the local API or Llama."
+          : "This example runs entirely in the API process. It does not call Llama or any other model."}
         {embedder ? (
           <>
             {" "}
@@ -92,24 +137,17 @@ export function VectorPanel() {
           </>
         ) : null}
       </p>
-      <div className="flex flex-wrap gap-2">
-        {SAMPLES.map((sample) => (
-          <button
-            key={sample}
-            type="button"
-            className="chip hover:bg-white hover:text-[var(--ink)]"
-            onClick={() => {
-              setQuery(sample);
-              void runQuery(sample);
-            }}
-          >
-            {sample}
-          </button>
-        ))}
-      </div>
+      <SampleChips
+        samples={SAMPLES}
+        disabled={busy}
+        onPick={(sample) => {
+          setQuery(sample);
+          void runQuery(sample);
+        }}
+      />
       <form onSubmit={onSubmit} className="space-y-3">
         <label className="block text-sm font-semibold" htmlFor="vector-query">
-          Query the local index
+          Query the {STATIC_DEMO ? "in-browser" : "local"} index
         </label>
         <input id="vector-query" value={query} onChange={(event) => setQuery(event.target.value)} className="field" />
         <button type="submit" disabled={busy} className="btn-accent">

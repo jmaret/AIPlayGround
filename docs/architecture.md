@@ -23,7 +23,7 @@ The Vector DB lab uses `hashed_ngram_embed` and `LocalVectorIndex` (no model). R
 
 ## Data flow
 
-1. On API startup, short cards in `data/examples/vector-cards.md` are hashed into an in-memory vector index (Vector DB lab is ready immediately, no Ollama).
+1. On API startup, short cards in `data/examples/vector-cards.md` are hashed into an in-memory vector index (Vector DB lab is ready immediately, no Ollama). The GitHub Pages build uses the same hash in the browser (`apps/web/lib/hashed.ts`) and does not call localhost.
 2. If Ollama is up, the same corpus is also embedded into ephemeral Chroma for RAG / LangChain / LangGraph.
 3. Request bodies are not logged. Session-shaped state, if any, lives in process memory with a 15-minute TTL.
 

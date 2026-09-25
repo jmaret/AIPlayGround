@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { publicUrl } from "@/lib/static-mode";
 
 export function Logo() {
   return (
     <Link href="/" className="min-w-0 shrink-0">
       <span className="flex items-center gap-2.5">
-        <img src="/brand/logo.svg" alt="" width={36} height={36} className="size-8 shrink-0 sm:size-9" />
+        <img src={publicUrl("/brand/logo.svg")} alt="" width={36} height={36} className="size-8 shrink-0 sm:size-9" />
         <span className="min-w-0">
           <span className="block font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
             Playground

@@ -1,7 +1,7 @@
 {
   "id": "rag-embed",
   "question": "What is a vector embedding?",
-  "answer": "I don't know.",
+  "answer": "I don't know what a vector embedding is based on the provided passages.",
   "citations": [
     {
       "id": "embeddings.md-0",

@@ -29,8 +29,9 @@ export function SampleChips({
 export function StaticDemoNote() {
   return (
     <p className="rounded-lg border border-[var(--line)] bg-white/70 px-3 py-2 text-sm text-[var(--ink-muted)]">
-      Static GitHub Pages demo — sample questions replay recorded runs with paced animations. Clone the repo and{" "}
-      <span className="font-mono text-xs text-[var(--ink)]">make dev</span> for live Ollama.
+      Static GitHub Pages demo — sample questions replay recorded runs with paced animations. Vector DB hashes in
+      this tab and does not call localhost. Clone the repo and{" "}
+      <span className="font-mono text-xs text-[var(--ink)]">make dev</span> for live labs.
     </p>
   );
 }

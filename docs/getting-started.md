@@ -41,4 +41,4 @@ make fixtures
 make pages
 ```
 
-`apps/web/out/` is the Pages artifact. Sample chips replay those fixtures with artificial step delays. Enable GitHub Pages (Actions source) to publish on push to `main`. Live typed questions still require `make dev` on your machine.
+`apps/web/out/` is the Pages artifact. Brand files and fixtures are served under the repo `basePath` (for example `/AIPlayGround/brand/…`). Sample chips replay recorded RAG / LangChain / LangGraph runs with artificial step delays. Vector DB hashes in the browser. Enable GitHub Pages (Actions source) to publish on push to `main`. Live typed RAG / chain / graph questions still require `make dev` on your machine.

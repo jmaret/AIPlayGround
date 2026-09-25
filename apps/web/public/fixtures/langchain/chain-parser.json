@@ -41,18 +41,18 @@
     {
       "node": "invoke",
       "update": {
-        "raw": "{\"answer\": \"to ensure compatibility with the parser, which may fail if the model output is not in JSON format\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langchain.md\"]}"
+        "raw": "{\"answer\": \"To parse the model output as JSON, because a chain is a straight pipe and the parser can fail closed if the model does not return JSON.\", \"grounded\": true, \"sources\": [\"langchain.md\", \"privacy.md\"]}"
       }
     },
     {
       "node": "parse",
       "update": {
         "parsed": {
-          "answer": "to ensure compatibility with the parser, which may fail if the model output is not in JSON format",
+          "answer": "To parse the model output as JSON, because a chain is a straight pipe and the parser can fail closed if the model does not return JSON.",
           "grounded": true,
           "sources": [
             "langchain.md",
-            "langchain.md"
+            "privacy.md"
           ]
         }
       }

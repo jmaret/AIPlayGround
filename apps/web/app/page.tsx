@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { WorkspacePanel } from "@/components/WorkspacePanel";
+import { publicUrl } from "@/lib/static-mode";
 
 const labs = [
   {
@@ -45,12 +45,10 @@ export default function HomePage() {
     <main className="flex flex-col gap-5">
       <WorkspacePanel padded={false}>
         <div className="relative min-h-[220px] overflow-hidden sm:min-h-[280px]">
-          <Image
-            src="/brand/impact-mural.png"
+          <img
+            src={publicUrl("/brand/impact-mural.png")}
             alt="Line illustration of people learning, making, and caring, loosely linked by a constellation"
-            fill
-            priority
-            className="object-cover object-center"
+            className="absolute inset-0 size-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(21,32,40,0.55)] via-[rgba(21,32,40,0.15)] to-transparent" />
         </div>
