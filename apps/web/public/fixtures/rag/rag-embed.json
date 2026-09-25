@@ -1,7 +1,7 @@
 {
   "id": "rag-embed",
   "question": "What is a vector embedding?",
-  "answer": "I don't know what a vector embedding is based on the provided passages.",
+  "answer": "According to passage [2] (embeddings.md), a vector embedding is a list of numbers that stands in for meaning, where distance in that space represents \"how related\".",
   "citations": [
     {
       "id": "embeddings.md-0",

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import time
 from threading import Lock
 from typing import Any
@@ -23,6 +25,12 @@ class EphemeralStore:
         with self._lock:
             self._purge_locked()
             item = self._items.get(key)
+            return None if item is None else item[1]
+
+    def pop(self, key: str) -> Any | None:
+        with self._lock:
+            self._purge_locked()
+            item = self._items.pop(key, None)
             return None if item is None else item[1]
 
     def _purge_locked(self) -> None:

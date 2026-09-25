@@ -1,12 +1,14 @@
 import queries from "./lab-queries.json";
 import { fixtureUrl, normalizeQuestion } from "./static-mode";
 
-export type LabName = "rag" | "langchain" | "langgraph";
+export type LabName = "rag" | "langchain" | "langgraph" | "refill";
 
 export type QueryItem = {
   id: string;
   question: string;
   route?: string;
+  path?: string;
+  decision?: string;
 };
 
 export const LAB_QUERIES = queries as Record<LabName, QueryItem[]>;

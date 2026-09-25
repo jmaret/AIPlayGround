@@ -27,6 +27,11 @@ const labs = [
     title: "LangChain",
     copy: "A live LCEL pipe — retrieve | prompt | llm | parser — plus an AWS-scale map.",
   },
+  {
+    href: "/labs/refill",
+    title: "Agentic AI",
+    copy: "A live refill graph with local tools, six teaching paths, and a pharmacist Approve or Deny gate.",
+  },
 ];
 
 export default function LabsPage() {
@@ -35,7 +40,7 @@ export default function LabsPage() {
       <WorkspacePanel>
         <h1 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)]">Labs</h1>
         <p className="mt-2 text-sm text-[var(--ink-muted)] sm:text-base">
-          Four doors into the same local corpus. No sign-in. No leftover chat.
+          Five doors into the same local corpus. No sign-in. No leftover chat.
         </p>
         <div className="mt-5 grid gap-3">
           {labs.map((lab) => (

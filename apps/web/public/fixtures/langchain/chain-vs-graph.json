@@ -41,14 +41,14 @@
     {
       "node": "invoke",
       "update": {
-        "raw": "{\"answer\": \"A LangChain pipe is a straight sequence of named runnables for composing language-model work, whereas a LangGraph is a library for writing a sequence as a graph of named nodes and edges for tasks that need a sequence\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langgraph.md\"]}"
+        "raw": "{\"answer\": \"A LangChain pipe is a straight sequence of runnables (e.g., retrieve, fill a prompt template, invoke a model, then parse the text into a structure) whereas a LangGraph represents a sequence of steps as a graph of named nodes and edges, enabling tasks like decision-making, context fetching, drafting, checking, and answering in a sequence, as well as adding critique nodes for revising.\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langgraph.md\"]}"
       }
     },
     {
       "node": "parse",
       "update": {
         "parsed": {
-          "answer": "A LangChain pipe is a straight sequence of named runnables for composing language-model work, whereas a LangGraph is a library for writing a sequence as a graph of named nodes and edges for tasks that need a sequence",
+          "answer": "A LangChain pipe is a straight sequence of runnables (e.g., retrieve, fill a prompt template, invoke a model, then parse the text into a structure) whereas a LangGraph represents a sequence of steps as a graph of named nodes and edges, enabling tasks like decision-making, context fetching, drafting, checking, and answering in a sequence, as well as adding critique nodes for revising.",
           "grounded": true,
           "sources": [
             "langchain.md",

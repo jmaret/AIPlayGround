@@ -5,7 +5,7 @@ Not in v1. Add only with matching `docs/labs/` (or a decisions update) in the sa
 ## Labs
 
 - Embeddings explorer (dimensions, similarity as a picture)
-- Tool-using agent (local tools only)
+- Tool-using agent (shipped as the Agentic AI lab — local tools only)
 - Prompt chaining (covered by the LangChain lab)
 - Lightweight evals (faithfulness / citation checks)
 
@@ -17,4 +17,4 @@ Not in v1. Add only with matching `docs/labs/` (or a decisions update) in the sa
 ## Ops
 
 - Optional Docker Compose for people who want it (not required)
-- GitHub Pages static demo of canned RAG / LangChain / LangGraph runs (fixtures + paced replay). Live labs stay on localhost.
+- GitHub Pages static demo of canned RAG / LangChain / LangGraph / refill runs (fixtures + paced replay). Live labs stay on localhost.

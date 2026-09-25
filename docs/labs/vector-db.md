@@ -27,4 +27,4 @@ Beside every step is a static map of how that job could run at AWS scale (S3, Ti
 2. Vectors live in process memory (`LocalVectorIndex`) or in the page. Nothing is written to disk.
 3. Your query is hashed the same way and compared with cosine distance.
 
-RAG, LangChain, and LangGraph still use Ollama when you want generated text.
+RAG, LangChain, LangGraph, and refill still use Ollama when you want generated text.

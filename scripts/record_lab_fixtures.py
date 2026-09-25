@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Record canned RAG / LangChain / LangGraph runs for the GitHub Pages demo."""
+"""Record canned RAG / LangChain / LangGraph / refill runs for the GitHub Pages demo."""
 
 from __future__ import annotations
 
@@ -119,6 +119,32 @@ def main() -> None:
                 "events": events,
             },
         )
+
+    for item in catalog["refill"]:
+        body = {"question": item["question"]}
+        if item.get("decision"):
+            body["decision"] = item["decision"]
+        status, raw = _request("POST", "/labs/refill/run", body)
+        if status != 200:
+            raise SystemExit(f"Refill failed for {item['id']}: {status} {raw[:400]!r}")
+        events = _parse_sse(raw)
+        path = next(
+            (
+                ev.get("update", {}).get("path")
+                for ev in events
+                if ev.get("node") == "decide" and isinstance(ev.get("update"), dict)
+            ),
+            item.get("path"),
+        )
+        payload = {
+            "id": item["id"],
+            "question": item["question"],
+            "path": path,
+            "events": events,
+        }
+        if item.get("decision"):
+            payload["decision"] = item["decision"]
+        _write("refill", item["id"], payload)
 
     print("fixtures recorded")
 

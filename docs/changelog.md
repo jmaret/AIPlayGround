@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-25 — Agentic AI lab
+
+- New Lab 05, shown as Agentic AI: a LangGraph refill workflow with local teaching-pharmacy tools
+- Six sample paths (patient auto, pharmacy auto, controlled, expired, labs/early, identity)
+- Live escalate cases pause for Approve or Deny; state stays in process memory for 15 minutes
+- GitHub Pages records controlled as approve-after-review and expired as deny-after-review
+- Fictional chart and policy only — no real EHR, PBM, or pharmacy APIs
+- Sample chips use Patient A–F labels and teaching zips 10000, 20000, … instead of personal names
+- Clicking a sample prompt opens a layman writeup for that path
+
 ## 2026-09-25 — Pages assets and Vector DB
 
 - Prefix brand URLs with `NEXT_PUBLIC_BASE_PATH` so the logo, favicon, and mural load on GitHub Pages

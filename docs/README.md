@@ -15,3 +15,4 @@ Living docs for the local AI Playground. Update the matching file in the same ch
 | [labs/rag.md](labs/rag.md) | RAG lab |
 | [labs/langgraph.md](labs/langgraph.md) | LangGraph lab |
 | [labs/langchain.md](labs/langchain.md) | LangChain lab |
+| [labs/refill.md](labs/refill.md) | Agentic AI lab |

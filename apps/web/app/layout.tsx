@@ -23,8 +23,8 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Playground — local labs for RAG, chains, graphs, and vectors",
-  description: "A local, zero-cost playground for vector search, RAG, LangChain, and LangGraph. Nothing you type is kept.",
+  title: "Playground — local labs for RAG, chains, graphs, and agentic AI",
+  description: "A local, zero-cost playground for vector search, RAG, LangChain, LangGraph, and agentic AI. Nothing you type is kept.",
   icons: {
     icon: publicUrl("/brand/favicon-32.png"),
     apple: publicUrl("/brand/apple-touch-icon.png"),

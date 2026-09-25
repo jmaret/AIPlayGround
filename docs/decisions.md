@@ -10,7 +10,7 @@ The vector store is a teaching prop, not a product database. Persistence would i
 
 ## Hashed n-grams for the Vector DB lab
 
-The Vector DB lesson is geometry, not Llama. A deterministic 64-d hashed word-token embed lets the lab run with only `make api`, and the same hash runs in the browser on GitHub Pages so that lab does not need localhost. RAG, LangChain, and LangGraph still need Ollama when you want generated text.
+The Vector DB lesson is geometry, not Llama. A deterministic 64-d hashed word-token embed lets the lab run with only `make api`, and the same hash runs in the browser on GitHub Pages so that lab does not need localhost. RAG, LangChain, LangGraph, and refill still need Ollama when you want generated text.
 
 ## Teal-ink UX chrome
 
@@ -26,11 +26,15 @@ Labs call `embed` / `generate`, not Ollama URLs directly. v1 implements Ollama o
 
 ## AWS maps on the labs
 
-Vector DB, RAG, LangChain, and LangGraph each draw how a step *could* run on AWS (S3, Titan, OpenSearch, Bedrock, Guardrails). That is a teaching overlay, not a provider. v1 still does not add cloud keys or hosted inference.
+Vector DB, RAG, LangChain, LangGraph, and refill each draw how a step *could* run on AWS (S3, Titan, OpenSearch, Bedrock, Guardrails). That is a teaching overlay, not a provider. v1 still does not add cloud keys or hosted inference.
+
+## Fictional refill chart, not a clinic
+
+The Agentic AI lab teaches an agentic graph with local tools. Real FHIR, PBM, and pharmacy APIs would leave the machine and create retention we do not want. A bundled policy file plus an in-memory teaching chart keeps the lesson on localhost. Path choice is a pure function over tool flags so the model cannot invent an approval. Human-in-the-loop is a click that resumes process memory — not a durable work queue.
 
 ## GitHub Pages is a recorded demo
 
-Pages cannot run FastAPI or Ollama. The static site replays canned RAG / LangChain / LangGraph runs recorded by `make fixtures`. Vector DB is the exception: the teaching hash runs in the tab. That is a tour, not hosted inference. Live generated answers stay on localhost.
+Pages cannot run FastAPI or Ollama. The static site replays canned RAG / LangChain / LangGraph / refill runs recorded by `make fixtures`. Vector DB is the exception: the teaching hash runs in the tab. That is a tour, not hosted inference. Live generated answers stay on localhost.
 
 ## Later: Hugging Face and similar (gated)
 

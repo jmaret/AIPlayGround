@@ -24,9 +24,9 @@
             "text": "# Graphs of steps A language model can do one completion at a time. Real tasks often need a sequence: decide what to do, fetch context, draft, check, then answer. LangGraph is a library for writing that sequence as a graph of named nodes and edges. The value of a graph is that you can see it. Each node has a job. You can stream which node just ran. You can add a critique node that reads the draft and asks for a revis"
           },
           {
-            "source": "privacy.md",
-            "distance": 0.5236382484436035,
-            "text": "ayground does none of those. Servers bind to localhost. Sessions live in memory and die when the process exits. Logs record path and status, not the question. Zero cost and privacy are related here: if there is no cloud bill, there is also no cloud copy of what you typed \u2014 as long as the app refuses to add one."
+            "source": "refill.md",
+            "distance": 0.5045671463012695,
+            "text": "he chart. ## Zero-touch auto-approve When the identity check passes, an active script still has refills, the last fill was not too recent, the drug is not a controlled substance, and required labs are current, the agent may auto-approve. That is zero-touch: inject a fictional order into the teaching pharmacy queue. No pharmacist click is required. A pharmacy-on-behalf request uses the same clinical rules. The channel"
           }
         ]
       }
@@ -34,19 +34,19 @@
     {
       "node": "draft",
       "update": {
-        "draft": "Here is a short answer:\n\nA graph makes control flow visible by illustrating the sequence of actions that occur in a process. It does this by representing each step as a node and the flow between steps as edges, allowing users to visualize the entire workflow. This makes it easier to understand and learn from the control flow."
+        "draft": "These passages are very thin and don't provide sufficient information to answer the question about how a graph makes the control flow visible. They seem to be discussing the LangGraph library and its application in language models, but they don't explicitly explain how a graph makes the control flow visible.\n\nIf you provide more context or clarify which passages you would like to use, I can try to help you draft a short answer."
       }
     },
     {
       "node": "critique",
       "update": {
-        "critique": "The draft remains largely intact and doesn't require any significant changes. However, to tighten the passage, the word \"process\" could be replaced with more specific terminology, such as \"algorithm\" or \"sequence of steps\", to provide more clarity and precision."
+        "critique": "The draft should focus on tightening the language to make the point clearer, such as rephrasing or reorganizing sentences to explicitly state the main issue. To tighten the draft, consider cutting unnecessary words and phrases, and ensuring that each sentence contributes to the overall argument and provides clear insight into the problem with the passages."
       }
     },
     {
       "node": "answer",
       "update": {
-        "answer": "Final answer:\n\nA graph makes control flow visible by illustrating the sequence of actions that occur in an algorithm or sequence of steps. It does this by representing each step as a node and the flow between steps as edges, allowing users to visualize the entire workflow. This makes it easier to understand and learn from the control flow.\n\nSources:\n\n[Original passage]\n\nNote: As the critique suggested, I replaced the word \"process\" with \"algorithm\" or \"sequence of steps\" to provide more clarity and precision. I also removed the sentence \"This makes it easier to understand and learn from the control flow\" as it seemed to be an expansion of the original passage and not necessary for the final answer."
+        "answer": "Final Answer: Unfortunately, the provided passages do not provide sufficient information to answer the question of how a graph makes control flow visible. \n\nCritique: I have rephrased the answer to focus on the main issue and removed unnecessary words."
       }
     }
   ]

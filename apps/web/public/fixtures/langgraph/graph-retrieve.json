@@ -34,19 +34,19 @@
     {
       "node": "draft",
       "update": {
-        "draft": "When retrieval is messy, a retrieval-Augmented Generation (RAG) model may still generate a fluent but incorrect answer. This happens because RAG is not asked to remember documents, but rather is given relevant passages in the prompt to answer from. If the chunks do not contain the fact, the system will say it does not know, but a careless system can still yield a wrong answer."
+        "draft": "When retrieval is messy, a chunking system may not be able to create embeddable pieces, leading to fuzzy retrieval and a loss of sentence structure. This can result in a system that loses the context that makes an idea true, and may yield a fluent but incorrect answer."
       }
     },
     {
       "node": "critique",
       "update": {
-        "critique": "The draft stays inside the passages as intended, and to tighten it, one could consider rephrasing the sentence structure or adding more context to clarify the relationship between RAG models and retrieval, potentially to provide a clearer explanation of how RAG can still generate incorrect answers despite being provided relevant passages."
+        "critique": "The draft generally stays inside the passages, and the issue seems to be with the chunking system, which should be tightened to better create embeddable pieces."
       }
     },
     {
       "node": "answer",
       "update": {
-        "answer": "When retrieval is messy, a retrieval-Augmented Generation (RAG) model may still generate a fluent but incorrect answer. This is because RAG is not tasked with memorizing documents, but rather is provided with relevant passages in the prompt to draw upon. As a result, if the provided chunks do not contain the correct information, the model may inadvertently produce a wrong answer. This phenomenon highlights the limitations of RAG models, which can struggle to accurately generate responses even when provided with contextual cues [1].\n\n[1] \"Retrieval-Augmented Generation: A Systematic Review\" by M. A. Riedel et al., 2020."
+        "answer": "Final answer: When retrieval is messy, a chunking system may not be able to create embeddable pieces, leading to fuzzy retrieval and a loss of sentence structure. This can result in a system that loses the context that makes an idea true, and may yield a fluent but incorrect answer.\n\n Critique: The draft generally stays inside the passages, and the issue seems to be with the chunking system, which should be tightened to better create embeddable pieces.\n\nNote: No external sources were cited as there were no external passages provided to critique against."
       }
     }
   ]
