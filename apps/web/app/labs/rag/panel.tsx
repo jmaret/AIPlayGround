@@ -130,8 +130,7 @@ export function RagPanel() {
         }}
         startDetail="accept the question"
         endDetail="return answer + cites"
-        mapHint="Adjacent map: how this step could run at AWS scale. This lab still uses Ollama on localhost — no cloud keys, no prompts leave the machine."
-        mapAbout="Each strip is a static picture of production RAG: Titan embed, Bedrock Knowledge Bases, OpenSearch, Claude or Llama generate, Guardrails. This playground uses Ollama + in-memory Chroma. Hover or click any dotted label or card."
+        architectureHref="/labs/rag/architecture"
       />
       <RagInspector step={selected} running={running} question={question} answer={answer} citations={citations} />
     </div>

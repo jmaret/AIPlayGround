@@ -170,8 +170,7 @@ export function VectorPanel() {
         }}
         startDetail="accept the query"
         endDetail="return neighbors"
-        mapHint="Adjacent map: how this step could run at AWS scale. This lab still hashes in-process — no Bedrock, no Ollama."
-        mapAbout="Each strip is a static picture of a production vector path: S3 corpus, Titan embeddings, OpenSearch Serverless, k-NN. This playground uses hashed word tokens in RAM. Hover or click any dotted label or card. No AWS keys, no prompts leave the machine."
+        architectureHref="/labs/vector-db/architecture"
       />
       <VectorInspector
         step={selected}

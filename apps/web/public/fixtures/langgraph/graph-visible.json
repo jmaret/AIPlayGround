@@ -34,19 +34,19 @@
     {
       "node": "draft",
       "update": {
-        "draft": "These passages are very thin and don't provide sufficient information to answer the question about how a graph makes the control flow visible. They seem to be discussing the LangGraph library and its application in language models, but they don't explicitly explain how a graph makes the control flow visible.\n\nIf you provide more context or clarify which passages you would like to use, I can try to help you draft a short answer."
+        "draft": "Based on the provided passages, a graph makes the control flow visible by breaking down a process into named nodes and edges, allowing the user to see each step's job and the sequence of events. This visual representation enables the streaming of which node just ran, adding a critique node for revisions, and other features that promote learning from the control flow."
       }
     },
     {
       "node": "critique",
       "update": {
-        "critique": "The draft should focus on tightening the language to make the point clearer, such as rephrasing or reorganizing sentences to explicitly state the main issue. To tighten the draft, consider cutting unnecessary words and phrases, and ensuring that each sentence contributes to the overall argument and provides clear insight into the problem with the passages."
+        "critique": "The draft stays inside the passages and does not introduce new ideas or information that is not supported by the original text. To tighten the draft, you could refine the language to make the writing more precise and concise, while avoiding unnecessary words or phrases."
       }
     },
     {
       "node": "answer",
       "update": {
-        "answer": "Final Answer: Unfortunately, the provided passages do not provide sufficient information to answer the question of how a graph makes control flow visible. \n\nCritique: I have rephrased the answer to focus on the main issue and removed unnecessary words."
+        "answer": "Final Answer: A graph makes the control flow visible by breaking down a process into named nodes and edges, allowing the user to see each step's job and the sequence of events, which enables the streaming of the current node and other features that promote learning.\n\nCritique: The revised final answer refines the language to make the writing more precise and concise, while avoiding unnecessary words or phrases. It stays inside the passages and does not introduce new ideas or information that is not supported by the original text.\n\nNote: The critique is based on the provided information and does not introduce any new ideas or information."
       }
     }
   ]

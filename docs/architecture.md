@@ -28,6 +28,10 @@ The Vector DB lab uses `hashed_ngram_embed` and `LocalVectorIndex` (no model). R
 2. If Ollama is up, the same corpus is also embedded into ephemeral Chroma for RAG / LangChain / LangGraph / refill.
 3. Request bodies are not logged. Session-shaped state, if any, lives in process memory with a 15-minute TTL. The Agentic AI lab uses that store only for a pending pharmacist review.
 
+## Teaching maps
+
+Each lab has a boxed AWS physical architecture at `/labs/<slug>/architecture`, titled after the lab (Vector DB on AWS, RAG on AWS, LangGraph on AWS, LangChain on AWS, Agentic AI on AWS). The live run shows Flow on the left and AWS Architecture on the right; the AWS Architecture title links to the stacked twin. Maps are teaching chrome. Runtime stays on localhost.
+
 ## Ports
 
 | Service | Bind | Port |

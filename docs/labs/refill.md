@@ -1,6 +1,7 @@
 # Agentic AI lab
 
 **Route:** `/labs/refill`  
+**Architecture:** `/labs/refill/architecture`  
 **API:** `POST /labs/refill/run` (SSE), `POST /labs/refill/resume` (SSE)
 
 ## What you are learning
@@ -11,12 +12,13 @@ The model writes the patient-facing note. Local tools pick the path from a ficti
 
 This is a teaching workflow on fake policy text. It is not a clinic, does not call a real EHR or pharmacy, and does not keep what you type.
 
-Beside every step is a static map of how that job could run at AWS scale (API Gateway, Step Functions, Bedrock, Guardrails, a human task). The map is teaching chrome. Inference stays on Ollama at `localhost`.
+Beside each live node is its AWS box (Ingress, Intake, Knowledge, Script, Safety, Choice, Human task, Final, Egress). The **AWS Architecture** title links to **Agentic AI on AWS** (`/labs/refill/architecture`), the stacked physical twin. The map is teaching chrome. Inference stays on Ollama at `localhost`.
 
 ## What you see
 
 - Six sample requests (Patient A–F). Click a prompt to read a plain-language story and run that path (patient auto, pharmacy auto, controlled, expired, labs/early, identity)
-- A clickable DAG with an AWS-scale twin next to each node
+- A clickable DAG labeled Flow, with an AWS Architecture box beside each node
+- The AWS Architecture title links to Agentic AI on AWS
 - Nodes lighting as each step finishes
 - On escalate (live only): Approve and Deny. Pending state lives in process memory for 15 minutes
 - On GitHub Pages: canned runs — controlled is recorded as approve-after-review, expired as deny-after-review

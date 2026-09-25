@@ -41,14 +41,14 @@
     {
       "node": "invoke",
       "update": {
-        "raw": "{\"answer\": \"to handle the output of the model in a way that the parser can correctly process it\", \"grounded\": true, \"sources\": [\"langchain.md\", \"privacy.md\"]}"
+        "raw": "{\"answer\": \"to ensure parsing of the model output as JSON and maintain a composed path with a template, model, and parser in sequence.\", \"grounded\": true, \"sources\": [\"langchain.md\", \"privacy.md\"]}"
       }
     },
     {
       "node": "parse",
       "update": {
         "parsed": {
-          "answer": "to handle the output of the model in a way that the parser can correctly process it",
+          "answer": "to ensure parsing of the model output as JSON and maintain a composed path with a template, model, and parser in sequence.",
           "grounded": true,
           "sources": [
             "langchain.md",

@@ -33,15 +33,19 @@ const labs = [
 const faqs = [
   {
     q: "Is it really free?",
-    a: "Yes. It runs on your machine with Ollama. There is no paid API and no account.",
+    a: "Yes. There is no paid API and no account. On your machine the labs use local Ollama. The GitHub Pages demo only replays canned teaching runs in the browser.",
+  },
+  {
+    q: "Does this call AWS?",
+    a: "No. Flow is the live lab on your machine. AWS Architecture is a static picture of how that same step could run in production. Click the title for the stacked twin. No AWS keys, no hosted models.",
   },
   {
     q: "Does anything leave my machine?",
-    a: "Not in this version. The site, API, embeddings, and generation all stay on localhost.",
+    a: "Not in this version. Live labs talk to localhost only. The Pages demo never sends your words anywhere — it only replays recorded sample questions.",
   },
   {
     q: "What happens to what I type?",
-    a: "It lives for the request, maybe a few minutes in memory, then it is gone. Restart the API and the slate is clean.",
+    a: "It lives for the request, maybe a few minutes in memory — fifteen minutes if a refill is waiting for Approve or Deny — then it is gone. Restart the API and the slate is clean.",
   },
 ];
 
@@ -121,7 +125,10 @@ export default function HomePage() {
             </li>
             <li>
               <span className="chip text-[var(--ink)]">See</span>
-              <p className="mt-2">Neighbors, citations, chain hops, and graph nodes show up beside the answer. The work is visible.</p>
+              <p className="mt-2">
+                Flow lights as each step finishes. AWS Architecture sits beside it as the production twin. Neighbors,
+                citations, and node output stay next to the answer.
+              </p>
             </li>
           </ol>
         </div>

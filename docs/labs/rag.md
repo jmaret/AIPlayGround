@@ -1,19 +1,20 @@
 # RAG lab
 
 **Route:** `/labs/rag`  
+**Architecture:** `/labs/rag/architecture`  
 **API:** `POST /labs/rag/ask`
 
 ## What you are learning
 
 Retrieval-Augmented Generation answers from retrieved chunks instead of from the model’s memory alone. If the corpus cannot support the answer, the model is told to say so.
 
-Beside every step is a static map of how that job could run at AWS scale (Bedrock Titan, Knowledge Bases, OpenSearch, Claude or Llama, Guardrails). The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
+Beside each live step is its AWS box (Ingress, Question vector, Knowledge, Prompt bind, Answer, Ground check, Egress). The **AWS Architecture** title links to **RAG on AWS** (`/labs/rag/architecture`), the stacked physical twin. The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
 
 ## What you see
 
 - Sample questions (all recorded for the GitHub Pages demo)
-- A live path: `embed → retrieve → ground → generate → cite` (paced delays when replaying a fixture)
-- An AWS-scale twin next to each step (hover or click for explainers)
+- A live path labeled Flow: `embed → retrieve → ground → generate → cite`, with an AWS Architecture box beside each step (paced delays when replaying a fixture)
+- The AWS Architecture title links to RAG on AWS (hover or click a service for explainers)
 - The grounded answer
 - The exact chunks the model was given, with sources
 
