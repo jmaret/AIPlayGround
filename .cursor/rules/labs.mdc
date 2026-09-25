@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Labs
 
-Every lab page stacks a CareerGenie `WorkspacePanel` explainer (what / why / what you are seeing) above an interactive panel with a live trace (chunks, scores, or graph nodes).
+Every lab page stacks a `WorkspacePanel` explainer (what / why / what you are seeing) above an interactive panel with a live trace (chunks, scores, or graph nodes).
 
 - Query only the bundled corpus in `data/corpus/`.
 - If Ollama is down, show how to start it — do not silently call a cloud API.

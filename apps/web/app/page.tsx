@@ -18,6 +18,11 @@ const labs = [
     title: "LangGraph",
     copy: "A graph you can see: route, retrieve, draft, critique, answer.",
   },
+  {
+    href: "/labs/langchain",
+    title: "LangChain",
+    copy: "A pipe you can see: retrieve, fill a template, invoke, parse.",
+  },
 ];
 
 const faqs = [
@@ -55,8 +60,8 @@ export default function HomePage() {
             See how AI meets a life
           </h1>
           <p className="mt-3 max-w-xl text-base leading-relaxed text-[var(--ink-muted)] sm:text-lg">
-            A playground for retrieval, graphs, and vector search. People stay in the foreground. Nothing you type is
-            kept.
+            A playground for retrieval, chains, graphs, and vector search. People stay in the foreground. Nothing you
+            type is kept.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <Link href="/labs" className="btn-accent">
@@ -74,13 +79,13 @@ export default function HomePage() {
           AI has felt like a black box for too long.
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)] sm:text-base">
-          It is not about collecting more tools. It is about seeing the steps: a chunk, a neighbor, a citation, a node
-          on a graph. This site is built so you can watch that happen on your own machine.
+          It is not about collecting more tools. It is about seeing the steps: a chunk, a neighbor, a citation, a hop
+          on a chain, a node on a graph. This site is built so you can watch that happen on your own machine.
         </p>
       </WorkspacePanel>
 
       <WorkspacePanel>
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">Three doors in</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">Four doors in</p>
         <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">Start with a lab</h2>
         <div className="mt-5 grid gap-3">
           {labs.map((lab) => (
@@ -113,7 +118,7 @@ export default function HomePage() {
             </li>
             <li>
               <span className="chip text-[var(--ink)]">See</span>
-              <p className="mt-2">Neighbors, citations, and graph nodes show up beside the answer. The work is visible.</p>
+              <p className="mt-2">Neighbors, citations, chain hops, and graph nodes show up beside the answer. The work is visible.</p>
             </li>
           </ol>
         </div>

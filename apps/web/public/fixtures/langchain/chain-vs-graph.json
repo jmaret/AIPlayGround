@@ -1,0 +1,61 @@
+{
+  "id": "chain-vs-graph",
+  "question": "How is a LangChain pipe different from a LangGraph?",
+  "events": [
+    {
+      "node": "bind",
+      "update": {
+        "pipe": "retriever | prompt | llm | parser",
+        "question": "How is a LangChain pipe different from a LangGraph?",
+        "composed": "RunnableSequence"
+      }
+    },
+    {
+      "node": "retrieve",
+      "update": {
+        "chunks": [
+          {
+            "source": "langchain.md",
+            "distance": 0.30959099531173706,
+            "text": "# Chains of runnables LangChain is a library for composing language-model work as a chain of named runnables. The usual pipe is retrieve, fill a prompt template, invoke a model, then parse the text into a structure. The value of a chain is that each hop is a small object you can swap. A retriever can change without rewriting the prompt. A parser can fail closed if the model does not return JSON. You see the formatted"
+          },
+          {
+            "source": "langchain.md",
+            "distance": 0.3214948773384094,
+            "text": "parser can fail closed if the model does not return JSON. You see the formatted prompt and the raw completion, not only the final answer. A chain is not a graph. It is a straight pipe: output of one runnable is input to the next. When you need branches, retries, or a critique loop, that is LangGraph. When you need one composed path \u2014 template | model | parser \u2014 that is LangChain."
+          },
+          {
+            "source": "langgraph.md",
+            "distance": 0.3304362893104553,
+            "text": "# Graphs of steps A language model can do one completion at a time. Real tasks often need a sequence: decide what to do, fetch context, draft, check, then answer. LangGraph is a library for writing that sequence as a graph of named nodes and edges. The value of a graph is that you can see it. Each node has a job. You can stream which node just ran. You can add a critique node that reads the draft and asks for a revis"
+          }
+        ]
+      }
+    },
+    {
+      "node": "template",
+      "update": {
+        "prompt": "System: Answer only from the context. If the context is not enough, say you do not know. Reply with JSON only, no markdown, matching this schema:\n{\"answer\": string, \"grounded\": boolean, \"sources\": [filename strings from the context]}\nHuman: Question: How is a LangChain pipe different from a LangGraph?\n\nContext:\n- (langchain.md) # Chains of runnables LangChain is a library for composing language-model work as a chain of named runnables. The usual pipe is retrieve, fill a prompt template, invoke a model, then parse the text into a structure. The value of a chain is that each hop is a small object you can swap. A retriever can change without rewriting the prompt. A parser can fail closed if the model does not return JSON. You see the formatted\n- (langchain.md) parser can fail closed if the model does not return JSON. You see the formatted prompt and the raw completion, not only the final answer. A chain is not a graph. It is a straight pipe: output of one runnable is input to the next. When you need branches, retries, or a critique loop, that is LangGraph. When you need one composed path \u2014 template | model | parser \u2014 that is LangChain.\n- (langgraph.md) # Graphs of steps A language model can do one completion at a time. Real tasks often need a sequence: decide what to do, fetch context, draft, check, then answer. LangGraph is a library for writing that sequence as a graph of named nodes and edges. The value of a graph is that you can see it. Each node has a job. You can stream which node just ran. You can add a critique node that reads the draft and asks for a revis"
+      }
+    },
+    {
+      "node": "invoke",
+      "update": {
+        "raw": "{\"answer\": \"A LangChain pipe is a straight sequence of runnables, whereas a LangGraph is a graph of named nodes and edges, representing a sequence of tasks.\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langgraph.md\"]}"
+      }
+    },
+    {
+      "node": "parse",
+      "update": {
+        "parsed": {
+          "answer": "A LangChain pipe is a straight sequence of runnables, whereas a LangGraph is a graph of named nodes and edges, representing a sequence of tasks.",
+          "grounded": true,
+          "sources": [
+            "langchain.md",
+            "langgraph.md"
+          ]
+        }
+      }
+    }
+  ]
+}

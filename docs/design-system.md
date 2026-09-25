@@ -1,8 +1,8 @@
 # Design system
 
-UX chrome is based on **CareerGenie** (JobFitAndApplicationAssistant): teal-ink tokens, Source Serif 4 + Source Sans 3, a sticky frosted header, segmented tabs, and glass `WorkspacePanel`s at `max-w-3xl`.
+UX chrome is teal-ink: Source Serif 4 + Source Sans 3, a sticky frosted header, segmented tabs, and glass `WorkspacePanel`s at `max-w-3xl`.
 
-Playground keeps its own name, mark, mural, and copy. Do not copy CareerGenie’s office photo, wordmark, or sign-in.
+Playground keeps its own name, mark, mural, and copy. No stock office photography, third-party wordmark, or sign-in.
 
 ## Palette
 

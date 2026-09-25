@@ -1,0 +1,47 @@
+{
+  "rag": [
+    {
+      "id": "rag-refuse",
+      "question": "What does RAG do when the corpus does not have the fact?"
+    },
+    {
+      "id": "rag-privacy",
+      "question": "Why keep prompts off disk?"
+    },
+    {
+      "id": "rag-embed",
+      "question": "What is a vector embedding?"
+    }
+  ],
+  "langchain": [
+    {
+      "id": "chain-vs-graph",
+      "question": "How is a LangChain pipe different from a LangGraph?"
+    },
+    {
+      "id": "chain-template",
+      "question": "What does a prompt template do in a chain?"
+    },
+    {
+      "id": "chain-parser",
+      "question": "Why parse the model output as JSON?"
+    }
+  ],
+  "langgraph": [
+    {
+      "id": "graph-visible",
+      "question": "How does a graph make the control flow visible?",
+      "route": "explain_graph"
+    },
+    {
+      "id": "graph-retrieve",
+      "question": "What happens when retrieval is messy?",
+      "route": "retrieve"
+    },
+    {
+      "id": "graph-privacy",
+      "question": "Why keep prompts off disk?",
+      "route": "retrieve"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "rag-privacy",
+  "question": "Why keep prompts off disk?",
+  "answer": "Keeping prompts off disk is done to maintain privacy and avoid logging user input. This is because servers binding to localhost and sessions living in memory and dying when the process exits means that even if logs record path and status, they do not contain the user's input [1]. This is related to the concept of zero-cost and privacy, where not having a cloud bill also means there is no cloud copy of the user's input [1].",
+  "citations": [
+    {
+      "id": "privacy.md-0",
+      "text": "# Local models and privacy A local model such as one served by Ollama runs on the same machine as the app. The prompt does not need to leave the computer. That is different from a hosted API, where the text travels to a vendor. Privacy is still a design choice. A local app can log prompts, write uploads to disk, or send analytics. This playground does none of those. Servers bind to localhost. Sessions live in memory",
+      "source": "privacy.md",
+      "distance": 0.4110930562019348
+    },
+    {
+      "id": "privacy.md-1",
+      "text": "ayground does none of those. Servers bind to localhost. Sessions live in memory and die when the process exits. Logs record path and status, not the question. Zero cost and privacy are related here: if there is no cloud bill, there is also no cloud copy of what you typed \u2014 as long as the app refuses to add one.",
+      "source": "privacy.md",
+      "distance": 0.4321502447128296
+    },
+    {
+      "id": "embeddings.md-1",
+      "text": "That is why a question about privacy can find a paragraph about not logging prompts, even if the wording differs. Embeddings are not magic and they are not understanding. They are a useful geometric trick. Bad chunks (too long, too mixed) make the geometry messy. Good chunks keep one idea per vector.",
+      "source": "embeddings.md",
+      "distance": 0.4354962706565857
+    },
+    {
+      "id": "rag.md-0",
+      "text": "# Retrieval-Augmented Generation RAG is a pattern: retrieve first, then generate. The model is not asked to remember your documents. It is given the relevant passages in the prompt and told to answer only from those passages. A typical loop is: embed the question, fetch the nearest chunks from a vector store, pack them into a prompt with citations, generate an answer. If the chunks do not contain the fact, a careful",
+      "source": "rag.md",
+      "distance": 0.5346976518630981
+    }
+  ]
+}

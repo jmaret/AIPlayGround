@@ -1,10 +1,22 @@
 import path from "path";
 import type { NextConfig } from "next";
 
+const staticExport = process.env.STATIC_EXPORT === "1";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   allowedDevOrigins: ["localhost"],
+  ...(staticExport
+    ? {
+        output: "export" as const,
+        images: { unoptimized: true },
+        trailingSlash: true,
+        ...(basePath ? { basePath } : {}),
+      }
+    : {}),
   async headers() {
+    if (staticExport) return [];
     return [
       {
         source: "/:path*",

@@ -22,8 +22,11 @@ export function friendlyError(error: unknown): string {
   if (code === "Failed to fetch") {
     return "The local API is not reachable. From AIPlayGround run make api, then retry. The Vector DB lab does not need Ollama.";
   }
+  if (code === "fixture_missing") {
+    return "That recorded demo is missing. From AIPlayGround run make fixtures, then rebuild the static site.";
+  }
   if (code === "ollama_unavailable") {
-    return "Ollama is not reachable on this machine. RAG and LangGraph need: ollama pull llama3.2 && ollama pull nomic-embed-text. The Vector DB lab works without it.";
+    return "Ollama is not reachable on this machine. RAG, LangChain, and LangGraph need: ollama pull llama3.2 && ollama pull nomic-embed-text. The Vector DB lab works without it.";
   }
   if (code === "index_unavailable" || code === "index_failed" || code === "missing_models") {
     return "The local index is not ready. Pull the models with ollama pull llama3.2 and ollama pull nomic-embed-text, then restart make api.";

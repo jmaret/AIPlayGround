@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.config import settings
-from app.labs import langgraph_lab, rag, vector_db
+from app.labs import langchain_lab, langgraph_lab, rag, vector_db
 from app.logutil import AccessLogMiddleware, configure_logging
 from app.local_index import local_index
 from app.providers.ollama import OllamaProvider
@@ -104,3 +104,4 @@ def ready() -> dict[str, object]:
 app.include_router(vector_db.router)
 app.include_router(rag.router)
 app.include_router(langgraph_lab.router)
+app.include_router(langchain_lab.router)

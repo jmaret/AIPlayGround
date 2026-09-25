@@ -1,0 +1,53 @@
+{
+  "id": "graph-privacy",
+  "question": "Why keep prompts off disk?",
+  "route": "retrieve",
+  "events": [
+    {
+      "node": "route",
+      "update": {
+        "route": "retrieve"
+      }
+    },
+    {
+      "node": "retrieve",
+      "update": {
+        "chunks": [
+          {
+            "source": "privacy.md",
+            "distance": 0.4110930562019348,
+            "text": "# Local models and privacy A local model such as one served by Ollama runs on the same machine as the app. The prompt does not need to leave the computer. That is different from a hosted API, where the text travels to a vendor. Privacy is still a design choice. A local app can log prompts, write uploads to disk, or send analytics. This playground does none of those. Servers bind to localhost. Sessions live in memory"
+          },
+          {
+            "source": "privacy.md",
+            "distance": 0.4321502447128296,
+            "text": "ayground does none of those. Servers bind to localhost. Sessions live in memory and die when the process exits. Logs record path and status, not the question. Zero cost and privacy are related here: if there is no cloud bill, there is also no cloud copy of what you typed \u2014 as long as the app refuses to add one."
+          },
+          {
+            "source": "embeddings.md",
+            "distance": 0.4354962706565857,
+            "text": "That is why a question about privacy can find a paragraph about not logging prompts, even if the wording differs. Embeddings are not magic and they are not understanding. They are a useful geometric trick. Bad chunks (too long, too mixed) make the geometry messy. Good chunks keep one idea per vector."
+          }
+        ]
+      }
+    },
+    {
+      "node": "draft",
+      "update": {
+        "draft": "Here is a short answer using only the provided passages:\n\nKeeping prompts off disk is related to privacy and zero cost. Since servers bind to localhost and sessions live in memory, there is no cloud copy of typed information as long as the app doesn't add one. This approach keeps user data private and reduces the risk of unwanted analytics."
+      }
+    },
+    {
+      "node": "critique",
+      "update": {
+        "critique": "The draft stays mostly inside the passage, and to tighten it, you could rephrase it to be more concise and focused on the main idea, such as \"Keeping prompts off disk preserves user privacy and reduces analytics risk.\""
+      }
+    },
+    {
+      "node": "answer",
+      "update": {
+        "answer": "Final answer: Keeping prompts off disk preserves user privacy and reduces analytics risk.\n\n[Critique applied, staying inside the passage and rephrasing for concision]\n\nNote: The critique did not provide additional information on the passages, but rather suggested a rephrased final answer. Therefore, no further adjustments were made."
+      }
+    }
+  ]
+}

@@ -11,7 +11,8 @@ Beside every step is a static map of how that job could run at AWS scale (Bedroc
 
 ## What you see
 
-- A live path: `embed → retrieve → ground → generate → cite`
+- Sample questions (all recorded for the GitHub Pages demo)
+- A live path: `embed → retrieve → ground → generate → cite` (paced delays when replaying a fixture)
 - An AWS-scale twin next to each step (hover or click for explainers)
 - The grounded answer
 - The exact chunks the model was given, with sources
