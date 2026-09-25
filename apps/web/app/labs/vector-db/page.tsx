@@ -11,9 +11,9 @@ export default function VectorDbPage() {
     <LabShell
       eyebrow="Lab 01"
       title="Vector DB"
-      what="Each corpus chunk becomes a 64-number vector from hashed character 3-grams. A query is embedded the same way. Cosine distance picks the nearest neighbors. No Ollama."
+      what="Each example card becomes a 64-number vector from hashed content words. A query is embedded the same way. Cosine distance picks the nearest neighbors. No Ollama."
       why="This is the floor under RAG. If retrieval is messy, generation will sound sure and still be wrong. A local embedder lets you see the geometry even when Llama is not running."
-      seeing="Sample queries, the first dimensions of your query vector, then ranked chunks with distances (lower is closer)."
+      seeing="A live ingest→hash→index→query→rank path with an AWS-scale map beside each step. Click a finished step for cards, dimensions, or neighbors."
     >
       <VectorPanel />
     </LabShell>

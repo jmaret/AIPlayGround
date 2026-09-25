@@ -24,9 +24,9 @@ A learning playground does not need identity. Accounts would create PII we promi
 
 Labs call `embed` / `generate`, not Ollama URLs directly. v1 implements Ollama only so a later local backend can plug in.
 
-## AWS maps in the LangGraph lab
+## AWS maps on the labs
 
-The lab draws how each node *could* run on AWS (Bedrock, Step Functions, OpenSearch Serverless). That is a teaching overlay, not a provider. v1 still does not add cloud keys or hosted inference.
+Vector DB, RAG, and LangGraph each draw how a step *could* run on AWS (S3, Titan, OpenSearch, Bedrock, Guardrails). That is a teaching overlay, not a provider. v1 still does not add cloud keys or hosted inference.
 
 ## Later: Hugging Face and similar (gated)
 
