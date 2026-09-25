@@ -1,7 +1,7 @@
 {
   "id": "rag-privacy",
   "question": "Why keep prompts off disk?",
-  "answer": "Keeping prompts off disk is done to maintain privacy and avoid logging user input. This is because servers binding to localhost and sessions living in memory and dying when the process exits means that even if logs record path and status, they do not contain the user's input [1]. This is related to the concept of zero-cost and privacy, where not having a cloud bill also means there is no cloud copy of the user's input [1].",
+  "answer": "It's done to preserve privacy and maintain control over user data. A local model, such as one served by Ollama, does not need to send prompts to the cloud, reducing the risk of data exposure. This is related to zero-cost and privacy, as stated in [2] (privacy.md).",
   "citations": [
     {
       "id": "privacy.md-0",
