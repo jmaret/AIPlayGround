@@ -18,3 +18,4 @@ This is a local-only learning playground. Read `docs/` before changing behavior.
 ## Subagents
 
 - `.cursor/agents/ship-to-main.md` — check in, open a PR, try to approve, merge to `main`
+- `.cursor/agents/record-lab-fixtures.md` — record canned RAG / LangChain / LangGraph answers for GitHub Pages (ship-to-main runs this)

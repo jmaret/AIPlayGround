@@ -22,6 +22,9 @@ LangGraph is a graph of steps: named nodes route, retrieve, draft, critique, and
 ## graph-visible
 A hidden agent is hard to learn from. An explicit graph makes the control flow the lesson.
 
+## chain-pipe
+LangChain is a pipe of runnables: retrieve, fill a prompt template, invoke a model, then parse. A chain is not a graph.
+
 ## chunk-size
 Chunking splits a long document into embeddable pieces. Too large averages several ideas. Too small loses the sentence that made an idea true.
 

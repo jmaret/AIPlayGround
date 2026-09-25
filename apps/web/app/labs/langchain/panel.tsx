@@ -2,43 +2,46 @@
 
 import { FormEvent, useMemo, useRef, useState } from "react";
 import { SampleChips, StaticDemoNote } from "@/components/lab/SampleChips";
+import { PipelineTrace } from "@/components/lab/PipelineTrace";
 import { API_URL, friendlyError } from "@/lib/api";
 import { loadFixture, matchQuery, questionsFor } from "@/lib/fixtures";
 import { replaySequence } from "@/lib/replay";
 import { STATIC_DEMO } from "@/lib/static-mode";
-import { GraphTrace } from "./GraphTrace";
-import { GRAPH_NODES, isGraphNode, type GraphEvent, type GraphNodeName } from "./graph";
-import { NodeInspector } from "./NodeInspector";
+import { ChainInspector } from "./inspector";
+import { CHAIN_JOBS, CHAIN_STEPS, CHAIN_TWINS, isChainStep, type ChainStep } from "./pipeline";
 
-type GraphFixture = { events: GraphEvent[] };
+type ChainEvent = { node: string; update?: Record<string, unknown>; detail?: string };
+type ChainFixture = { events: ChainEvent[] };
 
-const SAMPLES = questionsFor("langgraph");
+const SAMPLES = questionsFor("langchain");
 
-export function GraphPanel() {
+export function ChainPanel() {
   const [question, setQuestion] = useState(SAMPLES[0]);
-  const [events, setEvents] = useState<GraphEvent[]>([]);
+  const [events, setEvents] = useState<ChainEvent[]>([]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
-  const [picked, setPicked] = useState<GraphNodeName | null>(null);
+  const [picked, setPicked] = useState<ChainStep | null>(null);
   const [follow, setFollow] = useState(true);
   const runId = useRef(0);
 
   const completed = events.map((item) => item.node);
-  const running = busy ? (GRAPH_NODES.find((name) => !completed.includes(name)) ?? null) : null;
-  const failed = error && !busy ? (GRAPH_NODES.find((name) => !completed.includes(name)) ?? null) : null;
+  const running = busy ? (CHAIN_STEPS.find((name) => !completed.includes(name)) ?? null) : null;
+  const failed = error && !busy ? (CHAIN_STEPS.find((name) => !completed.includes(name)) ?? null) : null;
   const lastNode = events.at(-1)?.node;
-  const selected = follow ? (lastNode && isGraphNode(lastNode) ? lastNode : null) : picked;
+  const selected = follow ? (lastNode && isChainStep(lastNode) ? lastNode : null) : picked;
   const selectedEvent = useMemo(
     () => (selected ? (events.find((item) => item.node === selected) ?? null) : null),
     [events, selected],
   );
-  const routeEvent = events.find((item) => item.node === "route");
-  const routeLabel = typeof routeEvent?.update?.route === "string" ? routeEvent.update.route : null;
+  const pipe = events.find((item) => item.node === "bind")?.update?.pipe;
+  const pipeChip = typeof pipe === "string" ? pipe : null;
 
-  async function playEvents(items: GraphEvent[], my: number) {
+  async function playEvents(items: ChainEvent[], my: number) {
     await replaySequence(
       items,
-      (item) => setEvents((current) => [...current, item]),
+      (item) => {
+        setEvents((current) => [...current, item]);
+      },
       (item) => item.node,
       () => runId.current === my,
     );
@@ -53,13 +56,13 @@ export function GraphPanel() {
     setFollow(true);
     try {
       if (STATIC_DEMO) {
-        const match = matchQuery("langgraph", next);
+        const match = matchQuery("langchain", next);
         if (!match) throw new Error("static_sample_only");
-        const data = await loadFixture<GraphFixture>("langgraph", match.id);
+        const data = await loadFixture<ChainFixture>("langchain", match.id);
         await playEvents(data.events, my);
         return;
       }
-      const response = await fetch(`${API_URL}/labs/langgraph/run`, {
+      const response = await fetch(`${API_URL}/labs/langchain/run`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: next }),
@@ -80,7 +83,7 @@ export function GraphPanel() {
         for (const part of parts) {
           const line = part.replace(/^data: /, "");
           if (!line) continue;
-          const parsed = JSON.parse(line) as GraphEvent;
+          const parsed = JSON.parse(line) as ChainEvent;
           if (parsed.node === "error") {
             setError(friendlyError(new Error(parsed.detail ?? "ollama_unavailable")));
           } else if (parsed.node !== "done" && runId.current === my) {
@@ -118,11 +121,11 @@ export function GraphPanel() {
         }}
       />
       <form onSubmit={onSubmit} className="space-y-3">
-        <label className="block text-sm font-semibold" htmlFor="graph-question">
-          Run the graph
+        <label className="block text-sm font-semibold" htmlFor="chain-question">
+          Run the chain
         </label>
         <textarea
-          id="graph-question"
+          id="chain-question"
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
           rows={3}
@@ -130,22 +133,29 @@ export function GraphPanel() {
           disabled={STATIC_DEMO}
         />
         <button type="submit" disabled={busy} className="btn-accent">
-          {busy ? "Streaming nodes…" : "Stream the nodes"}
+          {busy ? "Streaming runnables…" : "Stream the pipe"}
         </button>
       </form>
       {error ? <p className="rounded-lg bg-[var(--danger-soft)] px-3 py-2.5 text-sm text-[var(--danger)]">{error}</p> : null}
-      <GraphTrace
+      <PipelineTrace
+        steps={CHAIN_STEPS.map((id) => ({ id, label: id, job: CHAIN_JOBS[id] }))}
+        twins={CHAIN_TWINS}
         completed={completed}
         running={running}
         failed={failed}
         selected={selected}
-        routeLabel={routeLabel}
-        onSelect={(node) => {
-          setPicked(node);
+        chips={{ bind: pipeChip }}
+        onSelect={(id) => {
+          if (!isChainStep(id)) return;
+          setPicked(id);
           setFollow(false);
         }}
+        startDetail="accept the question"
+        endDetail="return parsed JSON"
+        mapHint="Adjacent map: how this hop could run at AWS scale. This lab still uses Ollama on localhost — no cloud keys, no prompts leave the machine."
+        mapAbout="Each strip is a static picture of a production LangChain pipe: Knowledge Bases, Bedrock prompts, Converse, a JSON parser. This playground uses langchain-core + Ollama. Hover or click any dotted label or card."
       />
-      <NodeInspector event={selectedEvent} running={running} />
+      <ChainInspector step={selected} running={running} event={selectedEvent} />
     </div>
   );
 }

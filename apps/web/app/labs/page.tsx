@@ -22,6 +22,11 @@ const labs = [
     title: "LangGraph",
     copy: "Live nodes plus an AWS-scale map of how each step could run in production.",
   },
+  {
+    href: "/labs/langchain",
+    title: "LangChain",
+    copy: "A live LCEL pipe — retrieve | prompt | llm | parser — plus an AWS-scale map.",
+  },
 ];
 
 export default function LabsPage() {
@@ -30,7 +35,7 @@ export default function LabsPage() {
       <WorkspacePanel>
         <h1 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)]">Labs</h1>
         <p className="mt-2 text-sm text-[var(--ink-muted)] sm:text-base">
-          Three doors into the same local corpus. No sign-in. No leftover chat.
+          Four doors into the same local corpus. No sign-in. No leftover chat.
         </p>
         <div className="mt-5 grid gap-3">
           {labs.map((lab) => (

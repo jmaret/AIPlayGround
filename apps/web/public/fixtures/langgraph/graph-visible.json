@@ -1,0 +1,53 @@
+{
+  "id": "graph-visible",
+  "question": "How does a graph make the control flow visible?",
+  "route": "explain_graph",
+  "events": [
+    {
+      "node": "route",
+      "update": {
+        "route": "explain_graph"
+      }
+    },
+    {
+      "node": "retrieve",
+      "update": {
+        "chunks": [
+          {
+            "source": "langgraph.md",
+            "distance": 0.3364443778991699,
+            "text": "just ran. You can add a critique node that reads the draft and asks for a revision. You can route around retrieval when the question is only about the graph itself. A hidden agent that \u201cjust uses tools\u201d is harder to learn from. An explicit graph \u2014 route, retrieve, draft, critique, answer \u2014 makes the control flow the lesson."
+          },
+          {
+            "source": "langgraph.md",
+            "distance": 0.38786083459854126,
+            "text": "# Graphs of steps A language model can do one completion at a time. Real tasks often need a sequence: decide what to do, fetch context, draft, check, then answer. LangGraph is a library for writing that sequence as a graph of named nodes and edges. The value of a graph is that you can see it. Each node has a job. You can stream which node just ran. You can add a critique node that reads the draft and asks for a revis"
+          },
+          {
+            "source": "privacy.md",
+            "distance": 0.5236382484436035,
+            "text": "ayground does none of those. Servers bind to localhost. Sessions live in memory and die when the process exits. Logs record path and status, not the question. Zero cost and privacy are related here: if there is no cloud bill, there is also no cloud copy of what you typed \u2014 as long as the app refuses to add one."
+          }
+        ]
+      }
+    },
+    {
+      "node": "draft",
+      "update": {
+        "draft": "Here is a short answer using the provided passages:\n\nA graph makes the control flow visible by explicitly representing a sequence of steps as a graph of named nodes and edges. This visual representation shows each node's job and allows the user to stream which node just ran, making the control flow more apparent and easier to learn from."
+      }
+    },
+    {
+      "node": "critique",
+      "update": {
+        "critique": "A good draft typically stays within the passage and avoids introducing new information. To tighten the draft, consider removing the phrase \"in two sentences\" to make the response more concise and directly address the request."
+      }
+    },
+    {
+      "node": "answer",
+      "update": {
+        "answer": "The final answer is: A graph makes the control flow visible by explicitly representing a sequence of steps as a graph of named nodes and edges, allowing the user to trace the flow more easily.\n\nNote: I have rewritten the answer to directly address the request without introducing new information."
+      }
+    }
+  ]
+}

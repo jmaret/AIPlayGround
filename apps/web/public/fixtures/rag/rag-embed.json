@@ -1,0 +1,31 @@
+{
+  "id": "rag-embed",
+  "question": "What is a vector embedding?",
+  "answer": "I do not know what a vector embedding is from the provided passages.",
+  "citations": [
+    {
+      "id": "embeddings.md-0",
+      "text": "# Embeddings An embedding is a list of numbers that stands in for meaning. Two sentences about the same idea sit closer together than two sentences about different ideas, even if they share few words. Local models such as nomic-embed-text turn a chunk of text into one of these lists. Distance in that space is a stand-in for \u201chow related.\u201d That is why a question about privacy can find a paragraph about not logging pro",
+      "source": "embeddings.md",
+      "distance": 0.31808894872665405
+    },
+    {
+      "id": "embeddings.md-1",
+      "text": "That is why a question about privacy can find a paragraph about not logging prompts, even if the wording differs. Embeddings are not magic and they are not understanding. They are a useful geometric trick. Bad chunks (too long, too mixed) make the geometry messy. Good chunks keep one idea per vector.",
+      "source": "embeddings.md",
+      "distance": 0.3234560489654541
+    },
+    {
+      "id": "chunking.md-0",
+      "text": "# Chunking Chunking is how a long document becomes many embeddable pieces. If a chunk is too large, the vector averages several ideas and retrieval gets fuzzy. If a chunk is too small, it loses the sentence that made the idea true. A simple starting point is a few hundred characters with a little overlap so a sentence split across a boundary still appears whole in one of the two chunks. Overlap is not free \u2014 it dupli",
+      "source": "chunking.md",
+      "distance": 0.4623200297355652
+    },
+    {
+      "id": "rag.md-0",
+      "text": "# Retrieval-Augmented Generation RAG is a pattern: retrieve first, then generate. The model is not asked to remember your documents. It is given the relevant passages in the prompt and told to answer only from those passages. A typical loop is: embed the question, fetch the nearest chunks from a vector store, pack them into a prompt with citations, generate an answer. If the chunks do not contain the fact, a careful",
+      "source": "rag.md",
+      "distance": 0.46668869256973267
+    }
+  ]
+}

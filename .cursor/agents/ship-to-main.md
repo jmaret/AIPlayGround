@@ -11,7 +11,8 @@ When invoked:
 2. Do not commit secrets (`.env`, credentials, `.venv`, `node_modules`, `.next`).
 3. If the working tree is clean and already on `main` with nothing to ship, stop and say so.
 4. Create a feature branch if you are on `main` (for example `feature/ship-<short-topic>`).
-5. Stage the intended files. Commit with a 1–2 sentence message that says why, via HEREDOC:
+5. Invoke the **record-lab-fixtures** subagent (`.cursor/agents/record-lab-fixtures.md`) so canned RAG / LangChain / LangGraph answers stay current for GitHub Pages. If the API or Ollama is down, keep existing fixtures and say so in the PR.
+6. Stage the intended files. Commit with a 1–2 sentence message that says why, via HEREDOC:
 
 ```bash
 git commit -m "$(cat <<'EOF'
@@ -22,11 +23,11 @@ EOF
 )"
 ```
 
-6. Push with `git push -u origin HEAD`.
-7. Create a PR with `gh pr create` and a Summary + Test plan body.
-8. Try `gh pr review <n> --approve`. If GitHub rejects self-approval, report that and continue.
-9. Merge with `gh pr merge <n> --merge --delete-branch`.
-10. Check out `main`, pull, and confirm a clean tree. Return the PR URL and merge commit.
+7. Push with `git push -u origin HEAD`.
+8. Create a PR with `gh pr create` and a Summary + Test plan body.
+9. Try `gh pr review <n> --approve`. If GitHub rejects self-approval, report that and continue.
+10. Merge with `gh pr merge <n> --merge --delete-branch`.
+11. Check out `main`, pull, and confirm a clean tree. Return the PR URL and merge commit.
 
 Constraints for this repo:
 

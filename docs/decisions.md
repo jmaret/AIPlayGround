@@ -10,11 +10,11 @@ The vector store is a teaching prop, not a product database. Persistence would i
 
 ## Hashed n-grams for the Vector DB lab
 
-The Vector DB lesson is geometry, not Llama. A deterministic 64-d character 3-gram hash lets the lab run with only `make api`. RAG and LangGraph still need Ollama when you want generated text.
+The Vector DB lesson is geometry, not Llama. A deterministic 64-d character 3-gram hash lets the lab run with only `make api`. RAG, LangChain, and LangGraph still need Ollama when you want generated text.
 
-## CareerGenie UX chrome
+## Teal-ink UX chrome
 
-The product shell matches CareerGenie (JobFitAndApplicationAssistant): teal-ink tokens, frosted header, segmented tabs, glass workspace panels. We do not copy their office photograph, wordmark, or accounts. The mural and Playground mark stay original.
+The product shell is teal-ink tokens, a frosted header, segmented tabs, and glass workspace panels. No stock office photograph, third-party wordmark, or accounts. The mural and Playground mark stay original.
 
 ## No accounts
 
@@ -26,7 +26,11 @@ Labs call `embed` / `generate`, not Ollama URLs directly. v1 implements Ollama o
 
 ## AWS maps on the labs
 
-Vector DB, RAG, and LangGraph each draw how a step *could* run on AWS (S3, Titan, OpenSearch, Bedrock, Guardrails). That is a teaching overlay, not a provider. v1 still does not add cloud keys or hosted inference.
+Vector DB, RAG, LangChain, and LangGraph each draw how a step *could* run on AWS (S3, Titan, OpenSearch, Bedrock, Guardrails). That is a teaching overlay, not a provider. v1 still does not add cloud keys or hosted inference.
+
+## GitHub Pages is a recorded demo
+
+Pages cannot run FastAPI or Ollama. The static site replays canned RAG / LangChain / LangGraph runs recorded by `make fixtures`. That is a tour, not hosted inference. Live questions stay on localhost.
 
 ## Later: Hugging Face and similar (gated)
 

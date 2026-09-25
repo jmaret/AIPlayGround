@@ -1,0 +1,31 @@
+{
+  "id": "rag-refuse",
+  "question": "What does RAG do when the corpus does not have the fact?",
+  "answer": "RAG does not know when the corpus does not have the fact.",
+  "citations": [
+    {
+      "id": "rag.md-1",
+      "text": "citations, generate an answer. If the chunks do not contain the fact, a careful system says it does not know. RAG does not make a model truthful by itself. It only narrows what the model is looking at. Garbage retrieval still yields a fluent wrong answer. Showing the chunks next to the answer is how you check the work.",
+      "source": "rag.md",
+      "distance": 0.2580043077468872
+    },
+    {
+      "id": "rag.md-0",
+      "text": "# Retrieval-Augmented Generation RAG is a pattern: retrieve first, then generate. The model is not asked to remember your documents. It is given the relevant passages in the prompt and told to answer only from those passages. A typical loop is: embed the question, fetch the nearest chunks from a vector store, pack them into a prompt with citations, generate an answer. If the chunks do not contain the fact, a careful",
+      "source": "rag.md",
+      "distance": 0.30000871419906616
+    },
+    {
+      "id": "chunking.md-0",
+      "text": "# Chunking Chunking is how a long document becomes many embeddable pieces. If a chunk is too large, the vector averages several ideas and retrieval gets fuzzy. If a chunk is too small, it loses the sentence that made the idea true. A simple starting point is a few hundred characters with a little overlap so a sentence split across a boundary still appears whole in one of the two chunks. Overlap is not free \u2014 it dupli",
+      "source": "chunking.md",
+      "distance": 0.4283847212791443
+    },
+    {
+      "id": "chunking.md-1",
+      "text": "ary still appears whole in one of the two chunks. Overlap is not free \u2014 it duplicates tokens \u2014 but it prevents the \u201ccut in half\u201d miss. Metadata matters as much as size. Keeping the source filename on each chunk is what lets a RAG answer cite \u201cprivacy.md\u201d instead of an anonymous paragraph.",
+      "source": "chunking.md",
+      "distance": 0.4494389295578003
+    }
+  ]
+}

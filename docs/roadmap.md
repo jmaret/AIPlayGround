@@ -6,7 +6,7 @@ Not in v1. Add only with matching `docs/labs/` (or a decisions update) in the sa
 
 - Embeddings explorer (dimensions, similarity as a picture)
 - Tool-using agent (local tools only)
-- Prompt chaining
+- Prompt chaining (covered by the LangChain lab)
 - Lightweight evals (faithfulness / citation checks)
 
 ## Providers
@@ -17,4 +17,4 @@ Not in v1. Add only with matching `docs/labs/` (or a decisions update) in the sa
 ## Ops
 
 - Optional Docker Compose for people who want it (not required)
-- Cloudflare/GitHub Pages for the **static marketing page only** — labs stay local
+- GitHub Pages static demo of canned RAG / LangChain / LangGraph runs (fixtures + paced replay). Live labs stay on localhost.

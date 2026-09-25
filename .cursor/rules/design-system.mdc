@@ -1,12 +1,12 @@
 ---
-description: Playground visual system (CareerGenie chrome, original mark)
+description: Playground visual system (teal-ink chrome, original mark)
 globs: apps/web/**
 alwaysApply: false
 ---
 
 # Design system
 
-Reuse `apps/web/public/brand/` and CareerGenie chrome. Do not invent a second logo or copy CareerGenie’s office photo or sign-in.
+Reuse `apps/web/public/brand/` and the teal-ink chrome. Do not invent a second logo or add a stock office photo or sign-in.
 
 - Tokens: ink `#152028`, accent `#0F4C5C`, line `#C5D0D6`, wash `#E8EEF1`.
 - Display: Source Serif 4. UI: Source Sans 3. Mono: IBM Plex Mono.

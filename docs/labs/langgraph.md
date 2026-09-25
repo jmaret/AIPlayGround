@@ -13,7 +13,8 @@ Beside every step is a static map of how that job could run at AWS scale (API Ga
 
 ## What you see
 
-- A clickable DAG with an AWS-scale twin next to each node
+- Sample questions covering both `explain_graph` and `retrieve` route labels (recorded for GitHub Pages)
+- A clickable DAG with an AWS-scale twin next to each node (paced delays when replaying a fixture)
 - Hover or click any service card, model name, or scale line for a short explainer (including what Nova Micro is). The popup is portaled to the page so the last rows are not clipped.
 - Nodes lighting as each step finishes (pulse + edge flow while the next node runs)
 - Intermediate draft and critique, then a grounded answer
