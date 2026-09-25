@@ -41,14 +41,14 @@
     {
       "node": "invoke",
       "update": {
-        "raw": "{\"answer\": \"It fills in the template of a prompt to provide input to the next runnable in the chain\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langgraph.md\"]}"
+        "raw": "{\"answer\": \"fill a prompt template\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langgraph.md\"]}"
       }
     },
     {
       "node": "parse",
       "update": {
         "parsed": {
-          "answer": "It fills in the template of a prompt to provide input to the next runnable in the chain",
+          "answer": "fill a prompt template",
           "grounded": true,
           "sources": [
             "langchain.md",

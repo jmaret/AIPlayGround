@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-25 — Pages typecheck
+
+- `StepInspector` treats `empty` as optional so filled RAG / LangChain / Vector DB inspectors type-check under `next build`
+
 ## 2026-09-25 — Design docs without a source-product name
 
 - Describe the teal-ink chrome on its own terms (tokens, type, panels). No named third-party product.

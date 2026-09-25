@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 type StepInspectorProps = {
   eyebrow: string;
   title: string;
-  empty: string;
+  empty?: string;
   raw?: unknown;
   children?: ReactNode;
 };
@@ -15,7 +15,7 @@ export function StepInspector({ eyebrow, title, empty, raw, children }: StepInsp
     return (
       <div className="flex min-h-[12rem] flex-col justify-center rounded-lg border border-dashed border-[var(--line)] bg-white/50 px-4 py-6">
         <p className="font-[family-name:var(--font-display)] text-lg text-[var(--ink)]">Step output</p>
-        <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">{empty}</p>
+        <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">{empty ?? "Run a step to inspect it."}</p>
       </div>
     );
   }

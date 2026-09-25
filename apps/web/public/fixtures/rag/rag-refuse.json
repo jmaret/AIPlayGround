@@ -1,7 +1,7 @@
 {
   "id": "rag-refuse",
   "question": "What does RAG do when the corpus does not have the fact?",
-  "answer": "RAG does not know when the corpus does not have the fact.",
+  "answer": "When the corpus does not have the fact, RAG carefully says it does not know.\n\n[1]",
   "citations": [
     {
       "id": "rag.md-1",
