@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Privacy and no retention
 
-- Bind servers to `127.0.0.1`. Do not expose 0.0.0.0 in v1.
+- Bind servers to `localhost`. Do not expose 0.0.0.0 in v1.
 - No accounts, cookies that identify a person, analytics, newsletters, or email fields.
 - Never persist prompts, answers, uploads, or filenames to disk, SQLite, or `localStorage`.
 - Sessions live in process memory with a short TTL and die on restart.

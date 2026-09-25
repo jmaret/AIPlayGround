@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--ink-muted)] sm:text-base">
           <p>
             Playground is a local learning tool. There are no accounts, no newsletter, no analytics, and no third-party
-            scripts. Servers bind to 127.0.0.1.
+            scripts. Servers bind to localhost.
           </p>
           <p>
             Questions exist for the current request and, at most, a few minutes in process memory. Restart the API and

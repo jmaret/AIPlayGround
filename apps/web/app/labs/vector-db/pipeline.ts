@@ -22,7 +22,7 @@ export const VECTOR_TWINS: Record<VectorStep | "start" | "end", AwsTwinMap> = {
     scale: "Auto-scaled HTTP, read-heavy",
     scaleAbout: "API Gateway and Lambda (or Fargate) scale on query QPS. The index tier scales separately from the door.",
     boxes: [
-      { name: "API Gateway", role: "query HTTP", glyph: "edge", about: "Managed HTTP API for /preview and /query. Throttles search storms. The twin of 127.0.0.1:8000." },
+      { name: "API Gateway", role: "query HTTP", glyph: "edge", about: "Managed HTTP API for /preview and /query. Throttles search storms. The twin of localhost:8000." },
       { name: "WAF", role: "rate limits", glyph: "shield", about: "Stops scrape-and-dump of the index. Not an embedder." },
       { name: "Lambda", role: "query worker", glyph: "compute", about: "A short function that embeds the question and calls the vector engine. No GPU of its own." },
     ],

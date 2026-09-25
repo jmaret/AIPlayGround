@@ -34,6 +34,7 @@ app.add_middleware(
 
 @app.middleware("http")
 async def security_headers(request: Request, call_next):
+    # Peer address is still 127.0.0.1 / ::1 even when the URL is localhost.
     if request.client and request.client.host not in {"127.0.0.1", "localhost", "::1"}:
         return JSONResponse({"detail": "localhost_only"}, status_code=403)
     if not _allow(request.client.host if request.client else "unknown"):

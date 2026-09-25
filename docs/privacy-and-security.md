@@ -18,7 +18,7 @@ Questions exist only in the current HTTP request and in short-lived process memo
 
 ## Bind and CORS
 
-Servers bind to `127.0.0.1`. CORS allows only `http://127.0.0.1:3010` and `http://localhost:3010`. The web app uses 3010 so it does not collide with other local apps on 3000.
+Servers bind to `localhost`. CORS allows only `http://localhost:3010`. The web app uses 3010 so it does not collide with other local apps on 3000.
 
 ## Headers (web)
 

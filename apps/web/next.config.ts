@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
-  allowedDevOrigins: ["127.0.0.1", "localhost"],
+  allowedDevOrigins: ["localhost"],
   async headers() {
     return [
       {
@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: blob:",
               "style-src 'self' 'unsafe-inline'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-              "connect-src 'self' http://127.0.0.1:8000 http://localhost:8000",
+              "connect-src 'self' http://localhost:8000",
               "font-src 'self'",
               "frame-ancestors 'none'",
             ].join("; "),

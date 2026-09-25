@@ -48,7 +48,7 @@ export const AWS_TWINS: Record<GraphNodeName | "start" | "end", AwsTwinMap> = {
         name: "API Gateway",
         role: "HTTP API",
         glyph: "edge",
-        about: "Managed HTTP front. Throttles, validates the body, and can stream or return JSON. This is the scalable stand-in for FastAPI on 127.0.0.1:8000.",
+        about: "Managed HTTP front. Throttles, validates the body, and can stream or return JSON. This is the scalable stand-in for FastAPI on localhost:8000.",
       },
       {
         name: "Step Functions",
