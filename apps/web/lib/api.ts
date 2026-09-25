@@ -1,4 +1,4 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
+export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export async function api<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_URL}${path}`, {
@@ -28,5 +28,5 @@ export function friendlyError(error: unknown): string {
   if (code === "index_unavailable" || code === "index_failed" || code === "missing_models") {
     return "The local index is not ready. Pull the models with ollama pull llama3.2 and ollama pull nomic-embed-text, then restart make api.";
   }
-  return "The local API could not finish that request. Check that make api is running on 127.0.0.1:8000.";
+  return "The local API could not finish that request. Check that make api is running on localhost:8000.";
 }

@@ -25,8 +25,8 @@ make check-ollama
 make dev
 ```
 
-- Web: [http://127.0.0.1:3010](http://127.0.0.1:3010)
-- API: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+- Web: [http://localhost:3010](http://localhost:3010)
+- API: [http://localhost:8000/health](http://localhost:8000/health)
 
 The first API start embeds the bundled corpus (about 10 chunks). That can take half a minute. `/ready` reports `index_ready` when it is done.
 

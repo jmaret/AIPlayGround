@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Python API
 
-- FastAPI + Pydantic models. Bind `127.0.0.1`.
+- FastAPI + Pydantic models. Bind `localhost`.
 - User input is never written under `data/` or anywhere on disk.
 - Talk to chat/embed models only through `app/providers` (`embed` / `generate`). RAG and LangGraph use Ollama. The Vector DB lab uses `hashed_ngram_embed` so it works without Llama.
 - CORS allowlist is localhost web origins. Do not log request bodies.
@@ -17,6 +17,6 @@ settings.host = "0.0.0.0"
 open("data/corpus/user.txt", "w").write(question)
 
 # ✅ GOOD
-settings.host = "127.0.0.1"
+settings.host = "localhost"
 chunks = retrieve(question)  # in-memory Chroma
 ```

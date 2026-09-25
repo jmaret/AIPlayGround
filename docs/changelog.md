@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-25 — Localhost URLs
+
+- Bind addresses, CORS, CSP, docs, and UI copy use `localhost` instead of `127.0.0.1`
+- The API still accepts loopback peer IPs (`127.0.0.1` / `::1`) because that is what TCP reports
+
 ## 2026-09-25 — Vector DB and RAG pipelines
 
 - Vector DB and RAG labs use the same live step path + AWS-scale map + viewport popups as LangGraph
@@ -33,7 +38,7 @@
 
 ## 2026-09-24 — Web port 3010
 
-- Bind the Next.js app to `127.0.0.1:3010` so it does not collide with other local apps on 3000
+- Bind the Next.js app to `localhost:3010` so it does not collide with other local apps on 3000
 - CORS allowlist updated to the 3010 origins only
 
 ## 2026-09-24 — CareerGenie UX chrome

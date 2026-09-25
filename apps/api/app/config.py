@@ -12,10 +12,10 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    api_host: str = "127.0.0.1"
+    api_host: str = "localhost"
     api_port: int = 8000
-    cors_origins: str = "http://127.0.0.1:3010,http://localhost:3010"
-    ollama_base_url: str = "http://127.0.0.1:11434"
+    cors_origins: str = "http://localhost:3010"
+    ollama_base_url: str = "http://localhost:11434"
     ollama_chat_model: str = "llama3.2"
     ollama_embed_model: str = "nomic-embed-text"
     session_ttl_seconds: int = 900

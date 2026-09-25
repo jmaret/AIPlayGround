@@ -1,10 +1,10 @@
 # Architecture
 
 ```
-Browser (Next.js, 127.0.0.1:3010)
-  → FastAPI (127.0.0.1:8000)
+Browser (Next.js, localhost:3010)
+  → FastAPI (localhost:8000)
     → Local hashed n-gram index   Vector DB lab (no Ollama)
-    → Ollama (127.0.0.1:11434)    RAG / LangGraph embed + generate
+    → Ollama (localhost:11434)    RAG / LangGraph embed + generate
     → Chroma (in-process, ephemeral)
     → LangGraph (in-process)
 ```
@@ -29,6 +29,6 @@ The Vector DB lab uses `hashed_ngram_embed` and `LocalVectorIndex` (no model). R
 
 | Service | Bind | Port |
 | --- | --- | --- |
-| Web | 127.0.0.1 | 3010 |
-| API | 127.0.0.1 | 8000 |
-| Ollama | 127.0.0.1 | 11434 |
+| Web | localhost | 3010 |
+| API | localhost | 8000 |
+| Ollama | localhost | 11434 |

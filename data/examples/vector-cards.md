@@ -2,7 +2,7 @@
 Prompts must never be written to disk. Questions live in memory and vanish when the process exits.
 
 ## privacy-localhost
-Servers bind to 127.0.0.1. Nothing you type is sent to a cloud model in the Vector DB lab.
+Servers bind to localhost. Nothing you type is sent to a cloud model in the Vector DB lab.
 
 ## embedding-meaning
 A vector embedding is a list of numbers that stands in for meaning. Nearby vectors are similar ideas.

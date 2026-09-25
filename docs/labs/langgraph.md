@@ -9,7 +9,7 @@ A graph is an explicit sequence of nodes. This lab is `START → route → retri
 
 `route` writes a label (`explain_graph` or `retrieve`). It is not a fork: retrieve still runs on every question.
 
-Beside every step is a static map of how that job could run at AWS scale (API Gateway, Step Functions, Bedrock, OpenSearch Serverless, Guardrails). The map is teaching chrome. Inference stays on Ollama at `127.0.0.1`. No AWS account, keys, or hosted models are used.
+Beside every step is a static map of how that job could run at AWS scale (API Gateway, Step Functions, Bedrock, OpenSearch Serverless, Guardrails). The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
 
 ## What you see
 

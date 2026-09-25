@@ -7,7 +7,7 @@
 
 Retrieval-Augmented Generation answers from retrieved chunks instead of from the model’s memory alone. If the corpus cannot support the answer, the model is told to say so.
 
-Beside every step is a static map of how that job could run at AWS scale (Bedrock Titan, Knowledge Bases, OpenSearch, Claude or Llama, Guardrails). The map is teaching chrome. Inference stays on Ollama at `127.0.0.1`. No AWS account, keys, or hosted models are used.
+Beside every step is a static map of how that job could run at AWS scale (Bedrock Titan, Knowledge Bases, OpenSearch, Claude or Llama, Guardrails). The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
 
 ## What you see
 
