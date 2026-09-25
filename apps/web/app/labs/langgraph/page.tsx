@@ -12,8 +12,8 @@ export default function LangGraphPage() {
       eyebrow="Lab 03"
       title="LangGraph"
       what="An explicit graph: route, retrieve, draft, critique, answer. Each node has one job."
-      why="Hidden agents are hard to learn from. A visible timeline is the lesson."
-      seeing="Server-sent events as each node finishes, including intermediate draft and critique."
+      why="Hidden agents are hard to learn from. A visible graph is the lesson."
+      seeing="Each step lights as it finishes, with an AWS-scale map beside it. Hover or click a service, model, or scale line for more. Click a finished node for that step’s output."
     >
       <GraphPanel />
     </LabShell>
