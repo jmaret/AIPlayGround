@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "denied",
-        "note": "When Patient A requests a renewal of atorvastatin, the pharmacy denies the refill due to expired script status, as stated in the policy, which explicitly states that the teaching script is expired. \n\nThe pharmacy denies the renewal request as it falls under the \"Expired script or zero refills\" condition, according to the refill policy."
+        "note": "Here is a 2-sentence explanation of the pharmacist's deny on a renewal path for Atorvastatin, staying inside the policy passages:\n\nUpon reviewing the patient's chart, the pharmacist denies the renewal request for Atorvastatin because the script is expired, which triggers the policy to not fill the script. According to the policy, a script that is expired or has zero refills remaining is not eligible for refills."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "denied",
-        "answer": "Here's a sample patient-facing note for Patient D:\n\nDear [Prescriber's Name],\n\nWe have received a request for a refill of atorvastatin for Patient D, who was born on 1966-01-19 and has a zip code of 40000. Unfortunately, our system has detected that the script for this patient is expired, and we are unable to fill the prescription due to our policy.\n\nAs per our refill policy, [refill.md] states that the teaching script is expired, and we cannot proceed with the renewal. We have checked the clinical rules, and the patient's last fill was not recent enough to qualify for an auto-approve.\n\nWe have drafted a renewal request, but we need your approval to proceed. Please review the request and let us know if you would like to approve or deny the renewal.\n\nPatient D's current status is as follows:\n\n* Date of Birth: 1966-01-19\n* Zip Code: 40000\n* Medication: Atorvastatin\n* Script Status: Expired\n\nPlease reply to this email or contact us to confirm your decision.\n\nBest regards,\n[Your Name]"
+        "answer": "Subject: Refill Request for Atorvastatin - Denied\n\nDear Prescriber,\n\nPlease review the following information regarding the refill request for Patient D:\n\nPatient D, with a date of birth of 1966-01-19 and zip code 40000, requested a refill for their Atorvastatin script. However, upon reviewing the patient's chart, the pharmacist denies the renewal request due to the script being expired, which triggers the policy to not fill the script.\n\nAs stated in the Acme Teaching Pharmacy refill rules, a script that is expired or has zero refills remaining is not eligible for refills.\n\nOutcome: Denied\n\nPlease review the patient's chart and consider approving or denying the renewal path for Patient D.\n\nSincerely,\n[Your Name]\nRefill Lab Team"
       }
     }
   ],

@@ -152,8 +152,7 @@ export function ChainPanel() {
         }}
         startDetail="accept the question"
         endDetail="return parsed JSON"
-        mapHint="Adjacent map: how this hop could run at AWS scale. This lab still uses Ollama on localhost — no cloud keys, no prompts leave the machine."
-        mapAbout="Each strip is a static picture of a production LangChain pipe: Knowledge Bases, Bedrock prompts, Converse, a JSON parser. This playground uses langchain-core + Ollama. Hover or click any dotted label or card."
+        architectureHref="/labs/langchain/architecture"
       />
       <ChainInspector step={selected} running={running} event={selectedEvent} />
     </div>

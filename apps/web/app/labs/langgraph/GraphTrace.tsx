@@ -22,8 +22,8 @@ export function GraphTrace({ onSelect, routeLabel, ...rest }: GraphTraceProps) {
       onSelect={(id) => onSelect(id as GraphNodeName)}
       startDetail="accept the request"
       endDetail="return the answer"
-      mapHint="Adjacent map: how this step could run at AWS scale. This lab still calls Ollama on localhost — no cloud keys, no prompts leave the machine."
-      mapAbout="Each strip is a static picture of how that LangGraph node could run in a production AWS account: edge, orchestration, Bedrock models, search, and metrics. Hover or click any dotted label or service card. This playground still calls Ollama on localhost — no AWS keys, no prompts leave the machine."
+      architectureHref="/labs/langgraph/architecture"
+      architectureLabel="LangGraph on AWS"
     />
   );
 }

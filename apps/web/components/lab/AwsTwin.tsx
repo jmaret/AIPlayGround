@@ -6,19 +6,24 @@ import { InfoTip } from "./InfoTip";
 type AwsTwinProps = {
   map: AwsTwinMap;
   active?: boolean;
+  compact?: boolean;
 };
 
-export function AwsTwin({ map, active = false }: AwsTwinProps) {
+export function AwsTwin({ map, active = false, compact = false }: AwsTwinProps) {
   return (
     <div
-      className={`min-w-0 rounded-lg border px-3 py-2.5 ${
-        active ? "border-[var(--accent)] bg-white" : "border-[var(--line)] bg-white/60"
-      }`}
+      className={`min-w-0 rounded-xl border ${
+        compact ? "px-3 py-2.5" : "px-4 py-3.5"
+      } ${active ? "border-[var(--accent)] bg-white" : "border-[var(--line)] bg-white"}`}
     >
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <InfoTip label={`On AWS · ${map.title}`} body={map.about}>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--accent)] underline decoration-dotted decoration-[var(--line)] underline-offset-2">
-            On AWS · {map.title}
+        <InfoTip label={map.title} body={map.about}>
+          <span
+            className={`font-[family-name:var(--font-display)] text-[var(--ink)] underline decoration-dotted decoration-[var(--line)] underline-offset-2 ${
+              compact ? "text-base" : "text-lg"
+            }`}
+          >
+            {map.title}
           </span>
         </InfoTip>
         {map.models?.length ? (
@@ -36,15 +41,18 @@ export function AwsTwin({ map, active = false }: AwsTwinProps) {
           </p>
         ) : null}
       </div>
-      <div className="mt-2 flex items-stretch gap-1 overflow-x-auto pb-0.5">
+      {compact ? null : <p className="mt-1 text-xs leading-relaxed text-[var(--ink-muted)]">{map.about}</p>}
+      <div
+        className={`${compact ? "mt-2 flex-wrap" : "mt-3 overflow-x-auto pb-0.5"} flex items-stretch gap-1.5`}
+      >
         {map.boxes.map((box, index) => (
-          <div key={`${box.name}-${box.role}`} className="flex shrink-0 items-center gap-1">
+          <div key={`${box.name}-${box.role}`} className="flex shrink-0 items-center gap-1.5">
             {index > 0 ? <FlowArrow /> : null}
-            <ServiceCard box={box} />
+            <ServiceCard box={box} compact={compact} />
           </div>
         ))}
       </div>
-      <InfoTip label={map.scale} body={map.scaleAbout} className="mt-2 block">
+      <InfoTip label={map.scale} body={map.scaleAbout} className={`${compact ? "mt-2" : "mt-3"} block`}>
         <span className="text-[11px] leading-snug text-[var(--ink-muted)] underline decoration-dotted decoration-[var(--line)] underline-offset-2">
           {map.scale}
         </span>
@@ -53,10 +61,14 @@ export function AwsTwin({ map, active = false }: AwsTwinProps) {
   );
 }
 
-function ServiceCard({ box }: { box: AwsBox }) {
+function ServiceCard({ box, compact = false }: { box: AwsBox; compact?: boolean }) {
   return (
     <InfoTip label={`${box.name} — ${box.role}`} body={box.about} className="block">
-      <span className="block w-[5.6rem] rounded-md border border-[var(--line)] bg-[var(--background)] px-1.5 py-1.5 hover:border-[var(--accent)]">
+      <span
+        className={`block rounded-md border border-[var(--line)] bg-[var(--background)] hover:border-[var(--accent)] ${
+          compact ? "w-[5.5rem] px-1.5 py-1.5" : "w-[6.4rem] px-2 py-2"
+        }`}
+      >
         <Glyph kind={box.glyph} />
         <span className="mt-1 block truncate font-mono text-[10px] leading-tight text-[var(--ink)]">{box.name}</span>
         <span className="block truncate text-[9px] leading-tight text-[var(--ink-muted)]">{box.role}</span>
@@ -71,8 +83,15 @@ function FlowArrow() {
       label="Next hop"
       body="The arrow is control and data flow: the left service finishes, then the right one runs. On AWS that is usually a Step Functions edge, a Lambda invoke, or a Bedrock API call — not a copied prompt log."
     >
-      <svg width="12" height="10" viewBox="0 0 12 10" className="text-[var(--accent)]">
-        <path d="M0 5h8M6 1.5 10.5 5 6 8.5" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <svg width="18" height="12" viewBox="0 0 18 12" className="text-[var(--accent)]">
+        <path
+          d="M1 6h13M10.5 2 16 6 10.5 10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </InfoTip>
   );

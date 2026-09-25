@@ -66,7 +66,7 @@
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Patient B, DOB 1971-08-02, zip 20000:\n\nRefill of metformin initiated. The refill request was processed automatically due to an active script, clear teaching record, and zero refills remaining. The script was not expired, and required labs were current.\n\nNo further action is required from Patient B or the prescriber at this time. If any changes are made to Patient B's script or records, this refill authorization will expire."
+        "answer": "Here is a short patient-facing note for this teaching refill lab:\n\n\"Hello Patient B, \n\nThis message is to confirm that we have processed your refill request for metformin. \n\nPlease note that we have automatically approved your refill request as we have verified that your script is up to date and you have sufficient refills. \n\nIf you have any questions or concerns about your medication, we recommend discussing them with your prescriber. \n\nThank you for choosing our pharmacy.\n\nSincerely,\n[Your Pharmacy Name]\"\n\nPlease note that this is not a medical advice and this note is within the policy passages."
       }
     }
   ]

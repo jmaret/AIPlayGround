@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "approved",
-        "note": "Here are two short sentences explaining the pharmacist's approval on a early refill of warfarin:\n\nAccording to (refill.md), a refill of warfarin may be auto-approved for a patient with current required labs if the script is not too recent and the patient has sufficient refills. However, if the script is expired or has zero refills, the agent will not auto-approve, and a renewal request will be drafted and sent to a prescriber for approval."
+        "note": "When a refill request for warfarin is made by Patient A, the pharmacy follows the zero-touch auto-approve rule if the patient's chart is matched, the script is not expired, and required labs are current. [refill.md] If any of these conditions are not met, a human pharmacist will review the request and choose whether to approve or deny it."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here are two short sentences explaining the pharmacist's approval on an early refill of warfarin for Patient E:\n\nAccording to the teaching pharmacy's refill rules, a refill of warfarin may be auto-approved for Patient E, whose script is not expired and has sufficient refills, as specified in (refill.md). This early refill has been approved as per the policy guidelines."
+        "answer": "Here are the patient-facing notes for the refill warfarin for Patient E:\n\nFor Patient E, DOB 1958-06-22, zip 50000:\n\n- Refill warfarin: Approved\n- Reason: Zero-touch auto-approve rule applied due to matching chart, current labs, and active script with refills remaining. [refill.md]\n\nFor any patient requesting a refill of warfarin, please note that the following conditions must be met for a zero-touch auto-approve:\n- Chart must be matched\n- Script is not expired\n- Required labs are current\n\nIf these conditions are not met, a human pharmacist will review the request and choose whether to approve or deny it."
       }
     }
   ],

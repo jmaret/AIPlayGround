@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-09-25 — Home top questions
+
+- FAQ now covers the AWS maps (teaching only), Flow versus AWS Architecture, the Pages demo, and the 15-minute refill review
+
+## 2026-09-25 — AWS Architecture on every lab
+
+- Vector DB, RAG, LangChain, and Agentic AI use the same Flow / AWS Architecture layout as LangGraph
+- Each AWS Architecture title links to that lab’s stacked twin (`<lab> on AWS`)
+
+## 2026-09-25 — LangGraph on AWS
+
+- Architecture page title is LangGraph on AWS — physical twin of the lab graph
+- The live graph shows each AWS box beside the matching animated node
+- Adjacent strips wrap and scroll so the last service card is not clipped by the glass panel
+- Live columns are labeled Flow and AWS Architecture; the AWS Architecture title links to the stacked twin
+- Other labs still link to their own stacked architecture pages
+
+## 2026-09-25 — Boxed physical architecture
+
+- Each lab links to `/labs/<slug>/architecture` with stacked AWS boxes and flow arrows
+- Maps stay teaching chrome — no AWS keys, no hosted inference
+
 ## 2026-09-25 — Agentic AI lab
 
 - New Lab 05, shown as Agentic AI: a LangGraph refill workflow with local teaching-pharmacy tools

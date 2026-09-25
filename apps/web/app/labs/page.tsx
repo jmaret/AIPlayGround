@@ -10,27 +10,27 @@ const labs = [
   {
     href: "/labs/vector-db",
     title: "Vector DB",
-    copy: "Live ingest→rank path plus an AWS-scale map of S3, Titan, and OpenSearch.",
+    copy: "Live ingest→rank path. Each Flow step sits beside its AWS Architecture box.",
   },
   {
     href: "/labs/rag",
     title: "RAG",
-    copy: "Live retrieve-then-generate path plus an AWS-scale map of Knowledge Bases and Bedrock.",
+    copy: "Live retrieve-then-generate path. Each Flow step sits beside its AWS Architecture box.",
   },
   {
     href: "/labs/langgraph",
     title: "LangGraph",
-    copy: "Live nodes plus an AWS-scale map of how each step could run in production.",
+    copy: "Live nodes. Each Flow step sits beside its AWS Architecture box.",
   },
   {
     href: "/labs/langchain",
     title: "LangChain",
-    copy: "A live LCEL pipe — retrieve | prompt | llm | parser — plus an AWS-scale map.",
+    copy: "A live LCEL pipe. Each Flow hop sits beside its AWS Architecture box.",
   },
   {
     href: "/labs/refill",
     title: "Agentic AI",
-    copy: "A live refill graph with local tools, six teaching paths, and a pharmacist Approve or Deny gate.",
+    copy: "A live refill graph. Each Flow step sits beside its AWS Architecture box.",
   },
 ];
 
