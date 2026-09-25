@@ -14,3 +14,7 @@ This is a local-only learning playground. Read `docs/` before changing behavior.
 - [docs/README.md](docs/README.md)
 - [docs/getting-started.md](docs/getting-started.md)
 - [docs/privacy-and-security.md](docs/privacy-and-security.md)
+
+## Subagents
+
+- `.cursor/agents/ship-to-main.md` — check in, open a PR, try to approve, merge to `main`

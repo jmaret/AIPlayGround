@@ -1,25 +1,25 @@
 ---
-description: Playground visual system and original brand assets
+description: Playground visual system (CareerGenie chrome, original mark)
 globs: apps/web/**
 alwaysApply: false
 ---
 
 # Design system
 
-Reuse `apps/web/public/brand/` — do not invent a second logo or mural.
+Reuse `apps/web/public/brand/` and CareerGenie chrome. Do not invent a second logo or copy CareerGenie’s office photo or sign-in.
 
-- Cream `#F7F1E3`, apricot `#FF8A4C`, ink `#2A1F18`. Pastels: sky `#7EB8E8`, blush `#F5C4D8`, butter `#F5E27A`.
-- Display: Newsreader. UI: Figtree. Sentence case. Pill CTAs, ~48px cards, full-bleed color bands.
-- Never use Roots mint `#49E885`, forest `#123F2E`, leaf mascot, or their copy.
+- Tokens: ink `#152028`, accent `#0F4C5C`, line `#C5D0D6`, wash `#E8EEF1`.
+- Display: Source Serif 4. UI: Source Sans 3. Mono: IBM Plex Mono.
+- Sticky frosted header, segmented Home/Labs/Privacy, `WorkspacePanel` glass, `max-w-3xl`.
+- Buttons are `rounded-md` teal (`btn-accent`), not apricot pills.
 - No email capture, no Sign In.
-- Hero mural sits behind a cream scrim so type stays readable.
 
 ```tsx
 // ❌ BAD
-<button className="bg-[#49E885] rounded-md">Get Started</button>
+<button className="rounded-full bg-apricot text-ink">Get Started</button>
 
 // ✅ GOOD
-<Link className="rounded-full bg-apricot text-ink px-6 py-3" href="/labs">
+<Link className="btn-accent" href="/labs">
   Open a lab
 </Link>
 ```

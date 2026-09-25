@@ -19,8 +19,11 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
 
 export function friendlyError(error: unknown): string {
   const code = error instanceof Error ? error.message : "request_failed";
-  if (code === "ollama_unavailable" || code === "Failed to fetch") {
-    return "Ollama is not reachable on this machine. Install it, then run ollama pull llama3.2 and ollama pull nomic-embed-text.";
+  if (code === "Failed to fetch") {
+    return "The local API is not reachable. From AIPlayGround run make api, then retry. The Vector DB lab does not need Ollama.";
+  }
+  if (code === "ollama_unavailable") {
+    return "Ollama is not reachable on this machine. RAG and LangGraph need: ollama pull llama3.2 && ollama pull nomic-embed-text. The Vector DB lab works without it.";
   }
   if (code === "index_unavailable" || code === "index_failed" || code === "missing_models") {
     return "The local index is not ready. Pull the models with ollama pull llama3.2 and ollama pull nomic-embed-text, then restart make api.";

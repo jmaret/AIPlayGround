@@ -64,22 +64,18 @@ export function GraphPanel() {
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
           rows={3}
-          className="w-full rounded-2xl border border-ink/15 bg-cream px-4 py-3"
+          className="field"
         />
-        <button
-          type="submit"
-          disabled={busy}
-          className="rounded-full bg-ink px-5 py-2.5 font-semibold text-cream disabled:opacity-60"
-        >
+        <button type="submit" disabled={busy} className="btn-accent">
           {busy ? "Streaming nodes…" : "Stream the nodes"}
         </button>
       </form>
-      {error ? <p className="rounded-2xl bg-blush/70 px-4 py-3">{error}</p> : null}
-      <ol className="space-y-4">
+      {error ? <p className="rounded-lg bg-[var(--danger-soft)] px-3 py-2.5 text-sm text-[var(--danger)]">{error}</p> : null}
+      <ol className="space-y-3">
         {events.map((item, index) => (
-          <li key={`${item.node}-${index}`} className="rounded-2xl bg-butter/70 p-4">
-            <p className="font-display text-2xl font-bold">{item.node}</p>
-            <pre className="mt-2 overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed">
+          <li key={`${item.node}-${index}`} className="rounded-lg border border-[var(--line)] bg-white/70 p-3">
+            <p className="font-[family-name:var(--font-display)] text-lg text-[var(--ink)]">{item.node}</p>
+            <pre className="mt-2 overflow-x-auto whitespace-pre-wrap font-mono text-xs leading-relaxed text-[var(--ink-muted)]">
               {JSON.stringify(item.update ?? {}, null, 2)}
             </pre>
           </li>

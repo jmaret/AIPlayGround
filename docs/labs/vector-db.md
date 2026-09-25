@@ -3,20 +3,24 @@
 **Route:** `/labs/vector-db`  
 **API:** `GET /labs/vector-db/preview`, `POST /labs/vector-db/query`
 
+This lab does **not** call Ollama. It is a working nearest-neighbor example even when Llama is not installed.
+
 ## What you are learning
 
-Text is split into chunks, each chunk becomes a vector (via Ollama `nomic-embed-text`), and similar meaning sits nearby in that space. Chroma holds the vectors in memory only.
+Short example cards (one idea each) become 64-dimension vectors from hashed content words (common words dropped, signed bins, L2-normalized). A query is embedded the same way. Cosine distance (`1 − dot`) ranks neighbors. Lower is closer.
+
+This is a teaching stand-in for a model embedder such as `nomic-embed-text`. The geometry is the lesson; the hash is transparent.
 
 ## What you see
 
-- Corpus chunks already indexed at API startup
-- A query box
-- Nearest neighbors with distances (lower is closer)
+- Sample queries and a free-text box
+- The first 12 dimensions of the query vector
+- Ranked chunks with a closeness bar and distance
 
 ## Flow
 
-1. Bundled files in `data/corpus/` are chunked (~400 characters, 80 overlap).
-2. Each chunk is embedded and upserted into ephemeral Chroma.
-3. Your query is embedded the same way and compared.
+1. On API startup, short cards in `data/examples/vector-cards.md` are embedded with hashed word tokens.
+2. Vectors live in process memory (`LocalVectorIndex`). Nothing is written to disk.
+3. Your query is hashed the same way and compared with cosine distance.
 
-Nothing you type is written to disk.
+RAG and LangGraph still use Ollama when you want generated text.

@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-09-25 — ship-to-main subagent
+
+- Added `.cursor/agents/ship-to-main.md` to check in, open a PR, try to approve, and merge to main
+
+## 2026-09-24 — Vector DB without Ollama
+
+- Vector DB lab uses an in-memory hashed 3-gram index so the example works when Llama is not running
+- UI shows sample queries, query-vector dimensions, and ranked neighbors with closeness bars
+
+## 2026-09-24 — Web port 3010
+
+- Bind the Next.js app to `127.0.0.1:3010` so it does not collide with other local apps on 3000
+- CORS allowlist updated to the 3010 origins only
+
+## 2026-09-24 — CareerGenie UX chrome
+
+- Restyle the site to CareerGenie’s teal-ink frosted shell (Source Serif 4 / Source Sans 3, segmented nav, `WorkspacePanel`)
+- Keep the original Playground mark and mural; no CareerGenie photo or sign-in
+- Buttons and lab traces use `rounded-md` accent / line tokens instead of apricot pills
+
 ## 2026-09-23 — v1 local playground
 
 - Roots-inspired marketing site with original apricot/ink identity
