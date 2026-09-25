@@ -1,8 +1,13 @@
 export const STATIC_DEMO = process.env.NEXT_PUBLIC_STATIC === "1";
 
-export function fixtureUrl(path: string): string {
+export function publicUrl(path: string): string {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-  return `${base}/fixtures/${path}`;
+  const clean = path.startsWith("/") ? path : `/${path}`;
+  return `${base}${clean}`;
+}
+
+export function fixtureUrl(path: string): string {
+  return publicUrl(`/fixtures/${path}`);
 }
 
 export function normalizeQuestion(value: string): string {

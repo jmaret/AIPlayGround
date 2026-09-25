@@ -34,19 +34,19 @@
     {
       "node": "draft",
       "update": {
-        "draft": "Keeping prompts off disk is done for privacy reasons. A local model, like one served by Ollama, runs on the same machine as the app, so the prompt doesn't need to leave the computer. This reduces the risk of logging or storing prompts on disk, which can compromise user privacy."
+        "draft": "Here's a short answer:\n\nKeeping prompts off disk helps maintain user privacy. A local model, such as Ollama, runs on the same machine as the app, reducing the need for prompts to be stored on disk. This approach ensures that the app does not log or write prompts to disk, eliminating the potential for cloud storage and analytics collection."
       }
     },
     {
       "node": "critique",
       "update": {
-        "critique": "The draft appears to follow its own passage, staying within the boundaries of the passage to discuss the reasons for keeping prompts off disk. To tighten, the author could consider providing more specific details or examples to support the claims made about the benefits of keeping prompts on disk, such as logging or storage, to make the passage more credible."
+        "critique": "The draft generally stays within the passage and does not require any significant tightening. However, some sentences could be tightened for better clarity and concision, such as rephrasing the second sentence to eliminate unnecessary phrases like \"such as Ollama\" and focusing on the main idea."
       }
     },
     {
       "node": "answer",
       "update": {
-        "answer": "Final Answer: Keeping prompts off disk is done for privacy reasons. A local model, like one served by Ollama, runs on the same machine as the app, so the prompt doesn't need to leave the computer. This reduces the risk of logging or storing prompts on disk, which can compromise user privacy.\n\nCritique:\n\n* The passage is clear and concise, directly addressing the question and providing a specific reason for keeping prompts off disk.\n* The author stays within the boundaries of the passage, providing a relevant and accurate explanation for the practice.\n* However, as mentioned in the critique, it would be beneficial to provide more specific details or examples to support the claims made about the benefits of keeping prompts on disk. This could include citing sources from [filename] to provide further evidence and credibility to the argument.\n\nTo improve the passage, the author could consider adding more detail or examples to support the benefits of keeping prompts off disk, such as:\n\n* \"For instance, if a prompt is stored on disk, it could potentially be accessed by unauthorized parties, such as hackers or third-party apps, which could compromise user privacy and security.\"\n* \"Additionally, keeping prompts off disk can also help reduce the risk of data breaches, as sensitive information is not stored in a centralized location that could be accessed by malicious actors.\"\n\nBy adding more specific details and examples, the author can make the passage more credible and persuasive, while still staying within the boundaries of the original passage."
+        "answer": "Final Answer:\n\nKeeping prompts off disk helps maintain user privacy. Running a local model on the same machine as the app reduces the need for prompts to be stored on disk. This approach ensures that the app does not log or write prompts to disk, eliminating potential cloud storage and analytics collection.\n\n[Critique notes: The final answer follows the critique, with no changes to the original draft. The suggested rephrase in the critique is incorporated in the final answer, providing a concise and clear explanation of why keeping prompts off disk is beneficial for user privacy.]"
       }
     }
   ]

@@ -1,3 +1,5 @@
+<!-- Keep apps/web/lib/vector-cards.ts in sync with these cards. -->
+
 ## privacy-disk
 Prompts must never be written to disk. Questions live in memory and vanish when the process exits.
 

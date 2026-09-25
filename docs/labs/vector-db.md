@@ -17,14 +17,14 @@ Beside every step is a static map of how that job could run at AWS scale (S3, Ti
 
 - A live path: `ingest → hash → index → query → rank`
 - An AWS-scale twin next to each step (hover or click for explainers)
-- Sample queries and a free-text box
+- Sample queries and a free-text box (Pages hashes in the browser — no localhost API)
 - The first 12 dimensions of the query vector
 - Ranked chunks with a closeness bar and distance
 
 ## Flow
 
-1. On API startup, short cards in `data/examples/vector-cards.md` are embedded with hashed word tokens.
-2. Vectors live in process memory (`LocalVectorIndex`). Nothing is written to disk.
+1. On API startup, short cards in `data/examples/vector-cards.md` are embedded with hashed word tokens. The static Pages demo uses the same cards and hash in the browser (`apps/web/lib/vector-cards.ts`, `hashed.ts`).
+2. Vectors live in process memory (`LocalVectorIndex`) or in the page. Nothing is written to disk.
 3. Your query is hashed the same way and compared with cosine distance.
 
 RAG, LangChain, and LangGraph still use Ollama when you want generated text.

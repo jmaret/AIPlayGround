@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-25 — Pages assets and Vector DB
+
+- Prefix brand URLs with `NEXT_PUBLIC_BASE_PATH` so the logo, favicon, and mural load on GitHub Pages
+- Vector DB on the static demo hashes in the browser (same algorithm as the API) and does not call localhost
+
 ## 2026-09-25 — Pages typecheck
 
 - `StepInspector` treats `empty` as optional so filled RAG / LangChain / Vector DB inspectors type-check under `next build`

@@ -16,7 +16,7 @@ Chroma and LangSmith telemetry are turned off in the API process before those li
 
 Questions exist only in the current HTTP request and in short-lived process memory. Restarting the API wipes everything. There is no `localStorage` of prompts.
 
-Committed GitHub Pages fixtures are answers to the canned teaching questions in `apps/web/lib/lab-queries.json` only — never live visitor text.
+Committed GitHub Pages fixtures are answers to the canned teaching questions in `apps/web/lib/lab-queries.json` only — never live visitor text. The Vector DB lab on Pages hashes in the browser and does not call localhost.
 
 ## Bind and CORS
 

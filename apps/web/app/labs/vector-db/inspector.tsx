@@ -37,7 +37,7 @@ export function VectorInspector({
             ? `${running} is running.`
             : ready
               ? "Index is warm. Run a query — or click ingest, hash, or index."
-              : "Waiting for the local API on localhost:8000."
+              : "Waiting for the hashed index (local API or in-browser)."
         }
       />
     );

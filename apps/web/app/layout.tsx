@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
+import { publicUrl } from "@/lib/static-mode";
 import "./globals.css";
 
 const display = Source_Serif_4({
@@ -25,8 +26,8 @@ export const metadata: Metadata = {
   title: "Playground — local labs for RAG, chains, graphs, and vectors",
   description: "A local, zero-cost playground for vector search, RAG, LangChain, and LangGraph. Nothing you type is kept.",
   icons: {
-    icon: "/brand/favicon-32.png",
-    apple: "/brand/apple-touch-icon.png",
+    icon: publicUrl("/brand/favicon-32.png"),
+    apple: publicUrl("/brand/apple-touch-icon.png"),
   },
 };
 
