@@ -1,7 +1,7 @@
 {
   "id": "rag-refuse",
   "question": "What does RAG do when the corpus does not have the fact?",
-  "answer": "RAG does not know the answer if the chunks do not contain the fact. [1]",
+  "answer": "I don't know.",
   "citations": [
     {
       "id": "rag.md-1",

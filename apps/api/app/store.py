@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging
 from threading import Lock
 
@@ -58,15 +60,23 @@ class VectorStore:
         chunks = load_chunks()
         return chunks[:limit]
 
-    def query(self, provider: Provider, text: str, k: int = 4) -> list[dict[str, object]]:
+    def query(
+        self, provider: Provider, text: str, k: int = 4, source: str | None = None
+    ) -> list[dict[str, object]]:
         if not self.ready:
             raise RuntimeError("index_unavailable")
         vector = provider.embed(text)
-        result = self._collection.query(
-            query_embeddings=[vector],
-            n_results=min(k, max(self.chunk_count, 1)),
-            include=["documents", "metadatas", "distances"],
-        )
+        kwargs: dict[str, object] = {
+            "query_embeddings": [vector],
+            "n_results": min(k, max(self.chunk_count, 1)),
+            "include": ["documents", "metadatas", "distances"],
+        }
+        if source:
+            kwargs["where"] = {"source": source}
+        try:
+            result = self._collection.query(**kwargs)
+        except Exception:
+            return []
         neighbors: list[dict[str, object]] = []
         documents = result.get("documents") or [[]]
         metadatas = result.get("metadatas") or [[]]

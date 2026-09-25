@@ -1,7 +1,7 @@
 {
   "id": "rag-privacy",
   "question": "Why keep prompts off disk?",
-  "answer": "Keeping prompts off disk is done to maintain privacy. A local model does not need to send prompts to a cloud server, which reduces the risk of data breaches [1]. This approach ensures that the model does not create a cloud copy of user input, such as questions, as long as the app does not add one to the logs [2].",
+  "answer": "Keeping prompts off disk is done to preserve user privacy, as logging or storing prompts on disk could lead to unauthorized access to sensitive information. [2]",
   "citations": [
     {
       "id": "privacy.md-0",
@@ -22,10 +22,10 @@
       "distance": 0.4354962706565857
     },
     {
-      "id": "rag.md-0",
-      "text": "# Retrieval-Augmented Generation RAG is a pattern: retrieve first, then generate. The model is not asked to remember your documents. It is given the relevant passages in the prompt and told to answer only from those passages. A typical loop is: embed the question, fetch the nearest chunks from a vector store, pack them into a prompt with citations, generate an answer. If the chunks do not contain the fact, a careful",
-      "source": "rag.md",
-      "distance": 0.5346976518630981
+      "id": "refill.md-6",
+      "text": "unding and logs Stay inside this policy and the structured tool results. Do not invent dosages, NDC codes, or clinical advice. Cite this file as [refill.md]. Prompts and answers are not written to disk. Logs may include method, path, status, and duration only.",
+      "source": "refill.md",
+      "distance": 0.44808435440063477
     }
   ]
 }

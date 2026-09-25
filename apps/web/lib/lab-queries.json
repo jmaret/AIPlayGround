@@ -43,5 +43,40 @@
       "question": "Why keep prompts off disk?",
       "route": "retrieve"
     }
+  ],
+  "refill": [
+    {
+      "id": "refill-patient-auto",
+      "question": "Refill lisinopril for Patient A, DOB 1984-03-12, zip 10000.",
+      "path": "auto_approve"
+    },
+    {
+      "id": "refill-pharmacy-auto",
+      "question": "Harbor Pharmacy calling: refill metformin for Patient B, DOB 1971-08-02, zip 20000.",
+      "path": "auto_approve"
+    },
+    {
+      "id": "refill-controlled",
+      "question": "Refill oxycodone for Patient C, DOB 1990-11-04, zip 30000.",
+      "path": "controlled",
+      "decision": "approve"
+    },
+    {
+      "id": "refill-expired",
+      "question": "Refill atorvastatin for Patient D, DOB 1966-01-19, zip 40000.",
+      "path": "renewal",
+      "decision": "deny"
+    },
+    {
+      "id": "refill-labs",
+      "question": "Refill warfarin for Patient E, DOB 1958-06-22, zip 50000.",
+      "path": "early_or_labs",
+      "decision": "approve"
+    },
+    {
+      "id": "refill-identity",
+      "question": "Refill lisinopril for Patient F, DOB 2001-01-01, zip 90000.",
+      "path": "identity"
+    }
   ]
 }

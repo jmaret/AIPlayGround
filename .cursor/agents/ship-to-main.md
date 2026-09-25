@@ -11,7 +11,7 @@ When invoked:
 2. Do not commit secrets (`.env`, credentials, `.venv`, `node_modules`, `.next`).
 3. If the working tree is clean and already on `main` with nothing to ship, stop and say so.
 4. Create a feature branch if you are on `main` (for example `feature/ship-<short-topic>`).
-5. Invoke the **record-lab-fixtures** subagent (`.cursor/agents/record-lab-fixtures.md`) so canned RAG / LangChain / LangGraph answers stay current for GitHub Pages. If the API or Ollama is down, keep existing fixtures and say so in the PR.
+5. Invoke the **record-lab-fixtures** subagent (`.cursor/agents/record-lab-fixtures.md`) so canned RAG / LangChain / LangGraph / refill answers stay current for GitHub Pages. If the API or Ollama is down, keep existing fixtures and say so in the PR.
 6. Stage the intended files. Commit with a 1–2 sentence message that says why, via HEREDOC:
 
 ```bash

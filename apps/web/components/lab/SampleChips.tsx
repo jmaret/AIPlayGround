@@ -3,10 +3,12 @@
 export function SampleChips({
   samples,
   disabled,
+  active,
   onPick,
 }: {
   samples: string[];
   disabled?: boolean;
+  active?: string;
   onPick: (sample: string) => void;
 }) {
   return (
@@ -16,7 +18,10 @@ export function SampleChips({
           key={sample}
           type="button"
           disabled={disabled}
-          className="chip hover:bg-white hover:text-[var(--ink)] disabled:cursor-not-allowed disabled:opacity-60"
+          aria-pressed={active === sample}
+          className={`chip hover:bg-white hover:text-[var(--ink)] disabled:cursor-not-allowed disabled:opacity-60 ${
+            active === sample ? "border-[var(--accent)] bg-white text-[var(--ink)]" : ""
+          }`}
           onClick={() => onPick(sample)}
         >
           {sample}

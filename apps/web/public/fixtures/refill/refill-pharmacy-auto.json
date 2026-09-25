@@ -1,0 +1,73 @@
+{
+  "id": "refill-pharmacy-auto",
+  "question": "Harbor Pharmacy calling: refill metformin for Patient B, DOB 1971-08-02, zip 20000.",
+  "path": "auto_approve",
+  "events": [
+    {
+      "node": "intake",
+      "update": {
+        "channel": "pharmacy",
+        "identifiers_matched": true,
+        "medication": "metformin"
+      }
+    },
+    {
+      "node": "retrieve_policy",
+      "update": {
+        "chunks": [
+          {
+            "source": "refill.md",
+            "distance": 0.1978999376296997,
+            "text": "# Acme Teaching Pharmacy refill rules This file is a teaching policy for a local playground. It is not a real pharmacy handbook and it does not describe real patients. The refill lab reads these rules and runs local tools against a fictional in-memory chart. Nothing here is PHI. ## Identity first A refill request may arrive from a patient or from a pharmacy calling on a patient's behalf. Before any fill, match at lea"
+          },
+          {
+            "source": "refill.md",
+            "distance": 0.219249427318573,
+            "text": "he chart. ## Zero-touch auto-approve When the identity check passes, an active script still has refills, the last fill was not too recent, the drug is not a controlled substance, and required labs are current, the agent may auto-approve. That is zero-touch: inject a fictional order into the teaching pharmacy queue. No pharmacist click is required. A pharmacy-on-behalf request uses the same clinical rules. The channel"
+          },
+          {
+            "source": "refill.md",
+            "distance": 0.2255796194076538,
+            "text": "st or prescriber. A human must choose approve or deny. Electronic prescribing rules in a real clinic are out of scope; this lab only teaches the gate. ## Expired script or zero refills If the teaching script is expired or zero refills remain, do not fill. Draft a short renewal request that stays inside this policy and send it to a fictional prescriber inbox. The human may approve the renewal path or deny it. ## Early"
+          }
+        ]
+      }
+    },
+    {
+      "node": "check_script",
+      "update": {
+        "refills_remaining": 2,
+        "last_fill_days": 25,
+        "expired": false
+      }
+    },
+    {
+      "node": "safety",
+      "update": {
+        "controlled": false,
+        "labs_overdue": false,
+        "early_refill": false
+      }
+    },
+    {
+      "node": "decide",
+      "update": {
+        "path": "auto_approve"
+      }
+    },
+    {
+      "node": "review",
+      "update": {
+        "status": "skipped",
+        "note": "Zero-touch. Active script and a clear teaching record."
+      }
+    },
+    {
+      "node": "act",
+      "update": {
+        "outcome": "approved",
+        "answer": "Patient B, DOB 1971-08-02, zip 20000:\n\nRefill of metformin initiated. The refill request was processed automatically due to an active script, clear teaching record, and zero refills remaining. The script was not expired, and required labs were current.\n\nNo further action is required from Patient B or the prescriber at this time. If any changes are made to Patient B's script or records, this refill authorization will expire."
+      }
+    }
+  ]
+}

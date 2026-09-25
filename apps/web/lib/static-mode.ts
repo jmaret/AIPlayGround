@@ -32,6 +32,14 @@ const DELAYS: Record<string, number> = {
   index: 400,
   query: 700,
   rank: 650,
+  intake: 550,
+  retrieve_policy: 850,
+  check_script: 700,
+  safety: 700,
+  decide: 550,
+  await_human: 500,
+  review: 1400,
+  act: 1100,
 };
 
 export function delayFor(step: string): number {

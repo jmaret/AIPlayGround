@@ -23,6 +23,11 @@ const labs = [
     title: "LangChain",
     copy: "A pipe you can see: retrieve, fill a template, invoke, parse.",
   },
+  {
+    href: "/labs/refill",
+    title: "Agentic AI",
+    copy: "A refill graph you can see: tools pick the path, a pharmacist click finishes escalate.",
+  },
 ];
 
 const faqs = [
@@ -83,7 +88,7 @@ export default function HomePage() {
       </WorkspacePanel>
 
       <WorkspacePanel>
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">Four doors in</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">Five doors in</p>
         <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">Start with a lab</h2>
         <div className="mt-5 grid gap-3">
           {labs.map((lab) => (
