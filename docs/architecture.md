@@ -30,7 +30,7 @@ The Vector DB lab uses `hashed_ngram_embed` and `LocalVectorIndex` (no model). R
 
 ## Teaching maps
 
-Each lab has a boxed AWS physical architecture at `/labs/<slug>/architecture`, titled after the lab (Vector DB on AWS, RAG on AWS, LangGraph on AWS, LangChain on AWS, Agentic AI on AWS). The live run shows Flow on the left and AWS Architecture on the right; the AWS Architecture title links to the stacked twin. Maps are teaching chrome. Runtime stays on localhost.
+Each lab has a boxed AWS physical architecture at `/labs/<slug>/architecture`, titled after the lab (Vector DB on AWS, RAG on AWS, LangGraph on AWS, LangChain on AWS, Agentic AI on AWS). That page shows two pictures of the same twin: a region diagram (Browser → Edge → named lab steps → egress) and stacked stage boxes. The live run shows Flow on the left and AWS Architecture on the right; the AWS Architecture title links to those pictures. Maps are teaching chrome. Runtime stays on localhost.
 
 ## Ports
 

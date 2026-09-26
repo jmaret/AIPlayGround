@@ -10,7 +10,7 @@ LangChain composes work as a chain of runnables. This lab is `retriever | prompt
 
 A chain is not a graph. It is a straight path. Branches, critique loops, and retries belong in the LangGraph lab.
 
-Beside each live hop is its AWS box (Ingress, Compose, Retriever, Prompt, Model, Parser, Egress). The **AWS Architecture** title links to **LangChain on AWS** (`/labs/langchain/architecture`), the stacked physical twin. The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
+Beside each live hop is its AWS box (Ingress, Compose, Retriever, Prompt, Model, Parser, Egress). The **AWS Architecture** title links to **LangChain on AWS** (`/labs/langchain/architecture`): a region picture plus stacked stage boxes. The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
 
 ## What you see
 

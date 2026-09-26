@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "denied",
-        "note": "Here is a 2-sentence explanation of the pharmacist's deny on a renewal path for Atorvastatin, staying inside the policy passages:\n\nUpon reviewing the patient's chart, the pharmacist denies the renewal request for Atorvastatin because the script is expired, which triggers the policy to not fill the script. According to the policy, a script that is expired or has zero refills remaining is not eligible for refills."
+        "note": "Here is a two-sentence explanation of the pharmacist's deny on a renewal path for atorvastatin:\n\nPatient A's renewal request for atorvastastatin was denied because the script is expired, as indicated by the policy stating \"Expired script or zero refills If the teaching script is expired or zero refills remain, do not fill\" ([refill.md]). This decision was made under the \"zero-touch auto-approve\" rule, which would have automatically approved the renewal if the script were not expired or if there were sufficient refills remaining."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "denied",
-        "answer": "Subject: Refill Request for Atorvastatin - Denied\n\nDear Prescriber,\n\nPlease review the following information regarding the refill request for Patient D:\n\nPatient D, with a date of birth of 1966-01-19 and zip code 40000, requested a refill for their Atorvastatin script. However, upon reviewing the patient's chart, the pharmacist denies the renewal request due to the script being expired, which triggers the policy to not fill the script.\n\nAs stated in the Acme Teaching Pharmacy refill rules, a script that is expired or has zero refills remaining is not eligible for refills.\n\nOutcome: Denied\n\nPlease review the patient's chart and consider approving or denying the renewal path for Patient D.\n\nSincerely,\n[Your Name]\nRefill Lab Team"
+        "answer": "Here is a short patient-facing note:\n\nDear Prescriber,\n\nWe have received a renewal request for Patient D, DOB 1966-01-19, zip 40000, for atorvastatin. However, the script has expired and there are no refills remaining.\n\nPlease note that according to our policy, \"Expired script or zero refills If the teaching script is expired or zero refills remain, do not fill\" ([refill.md]). We kindly request your approval or denial of the renewal request.\n\nThank you for your attention to this matter.\n\nSincerely,\n[Your Name]\n\nPlease note that this note is not a medical advice and is solely based on the provided policy passages and structured outcome."
       }
     }
   ],

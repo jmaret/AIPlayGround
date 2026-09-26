@@ -1,7 +1,7 @@
 {
   "id": "rag-embed",
   "question": "What is a vector embedding?",
-  "answer": "A vector embedding is a list of numbers that stands in for meaning, allowing for distance in a geometric space to represent \"how related\" between two sentences about the same idea [1].\n\nIt is a useful geometric trick, not a magic or understanding solution, and good chunks should keep one idea per vector to maintain the geometry [2].",
+  "answer": "I don't know.",
   "citations": [
     {
       "id": "embeddings.md-0",
