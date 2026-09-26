@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "approved",
-        "note": "When a refill request for warfarin is made by Patient A, the pharmacy follows the zero-touch auto-approve rule if the patient's chart is matched, the script is not expired, and required labs are current. [refill.md] If any of these conditions are not met, a human pharmacist will review the request and choose whether to approve or deny it."
+        "note": "For Patient A, a refill request for warfarin would be approved by a pharmacist if the last fill was not too recent (less than the specified time period in the policy) and required labs are current, as indicated by [refill.md]. The decision would be auto-approved due to the zero-touch auto-approve rule, which allows for automatic approval if the identity check passes and the script meets the specified conditions."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here are the patient-facing notes for the refill warfarin for Patient E:\n\nFor Patient E, DOB 1958-06-22, zip 50000:\n\n- Refill warfarin: Approved\n- Reason: Zero-touch auto-approve rule applied due to matching chart, current labs, and active script with refills remaining. [refill.md]\n\nFor any patient requesting a refill of warfarin, please note that the following conditions must be met for a zero-touch auto-approve:\n- Chart must be matched\n- Script is not expired\n- Required labs are current\n\nIf these conditions are not met, a human pharmacist will review the request and choose whether to approve or deny it."
+        "answer": "Here is a short patient-facing note for the teaching refill lab:\n\n\"Dear Patient E,\n\nWe have received your refill request for warfarin. Based on our policies, since your last fill was [insert time period] ago, a refill request has been approved. Additionally, we have confirmed that your lab results are current, as required by our policies.\n\nThe refill will be processed according to our zero-touch auto-approve rule, which allows us to automatically approve eligible scripts without further review.\n\nPlease note that if your script were to expire or have zero refills remaining, we would need to renew it. If you have any questions or concerns, please do not hesitate to reach out to us.\n\n[Acme Teaching Pharmacy]\n\n[Date]\""
       }
     }
   ],

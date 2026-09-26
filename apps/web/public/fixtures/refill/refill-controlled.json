@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "approved",
-        "note": "Here is a two-sentence explanation of the pharmacist's approval on a controlled path:\n\nPatient A's oxycodone refill request was approved due to a zero-touch auto-approve, as the patient's identity matched the chart, the last fill was not too recent, the drug is not a controlled substance, and required labs are current."
+        "note": "Patient A requests a refill for oxycodone. The pharmacist approves the refill because the patient has an active script with refills remaining and all required labs are current, as per the teaching pharmacy's refill rules in [refill.md]."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here is a short patient-facing note for Patient C's refill oxycodone request:\n\n\"Dear Patient C,\n\nThis refill of your oxycodone was approved based on our teaching pharmacy's policy. The approval was granted automatically, as your identity matched our system, it has been [insert timeframe] since your last fill, the medication is a controlled substance, and your required labs are up-to-date.\n\nFor your information, our policy allows for a zero-touch auto-approve on controlled substances with a recent fill, ensuring patient safety and minimizing errors. Please note that this policy is in place to teach and educate, not to replace the care provided by your healthcare team.\n\n[See (refill.md) for more information on our teaching pharmacy's policy]\n\nSincerely,\n[Pharmacist's Name]\""
+        "answer": "Patient C's Refill Request\n\nPatient C, with a date of birth (DOB) of 1990-11-04 and zip code 30000, has requested a refill for oxycodone. \n\nUpon review, it has been determined that the patient has an active script with refills remaining and all required labs are current, in accordance with the teaching pharmacy's refill rules as outlined in [refill.md]. \n\nTherefore, the refill has been approved.\n\n[End of note]"
       }
     }
   ],

@@ -1,6 +1,6 @@
 # Privacy and security
 
-Playground is a local learning tool. It is not a product that stores people.
+Playground is a local learning tool. It is not a product that stores people. The Privacy tab (`/privacy`) states the same points for visitors.
 
 ## What we never do
 

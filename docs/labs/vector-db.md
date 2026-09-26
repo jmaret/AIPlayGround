@@ -12,7 +12,7 @@ Short example cards (one idea each) become 64-dimension vectors from hashed cont
 
 This is a teaching stand-in for a model embedder such as `nomic-embed-text` or Bedrock Titan. The geometry is the lesson; the hash is transparent.
 
-Beside each live step is its AWS box (Ingress, Corpus, Embed, Store, Query embed, k-NN, Egress). The **AWS Architecture** title links to **Vector DB on AWS** (`/labs/vector-db/architecture`), the stacked physical twin. The map is teaching chrome. Ranking still happens in process memory. No AWS account or keys.
+Beside each live step is its AWS box (Ingress, Corpus, Embed, Store, Query embed, k-NN, Egress). The **AWS Architecture** title links to **Vector DB on AWS** (`/labs/vector-db/architecture`): a region picture plus stacked stage boxes. The map is teaching chrome. Ranking still happens in process memory. No AWS account or keys.
 
 ## What you see
 

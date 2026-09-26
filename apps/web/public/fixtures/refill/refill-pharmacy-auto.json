@@ -66,7 +66,7 @@
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here is a short patient-facing note for this teaching refill lab:\n\n\"Hello Patient B, \n\nThis message is to confirm that we have processed your refill request for metformin. \n\nPlease note that we have automatically approved your refill request as we have verified that your script is up to date and you have sufficient refills. \n\nIf you have any questions or concerns about your medication, we recommend discussing them with your prescriber. \n\nThank you for choosing our pharmacy.\n\nSincerely,\n[Your Pharmacy Name]\"\n\nPlease note that this is not a medical advice and this note is within the policy passages."
+        "answer": "Here is a short patient-facing note for the teaching refill lab:\n\n\"Dear Patient B, \n\nWe are processing your metformin refill. \n\nPlease note that our system has auto-approved your refill request because all required conditions have been met. \n\nYour prescription and treatment plan can be found at [insert link or provide a printout of your teaching chart]. \n\nA reminder, this refill lab only teaches the policies and does not contain any personal health information (PHI). \n\nWe will dispense your medication once it is renewed. \n\nIf you have any questions or concerns, please don't hesitate to reach out.\n\nBest regards, [Your Name]\"\n\nNote: Please replace [Your Name] with a fictional name if needed.\n\nAlso, note that this is a teaching lab and not a real pharmacy, so the content is fictional and for educational purposes only."
       }
     }
   ]

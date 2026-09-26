@@ -34,19 +34,19 @@
     {
       "node": "draft",
       "update": {
-        "draft": "Here is a short answer:\n\nKeeping prompts off disk is done to maintain privacy. This is because logging prompts to disk can lead to a cloud copy of the user's input, potentially compromising their privacy. By keeping the prompt local and not logging it, the app ensures that there is no cloud copy of the user's typed content. This approach also has the added benefit of reducing storage needs and zeroing out the cost of storing user data."
+        "draft": "The passage on privacy.md mentions that a local model such as one served by Ollama runs on the same machine as the app, and the prompt does not need to leave the computer. This is why keeping prompts off disk is important for privacy."
       }
     },
     {
       "node": "critique",
       "update": {
-        "critique": "The draft stays inside the passage, and what to tighten is the transition between the first and second sentences, as the second sentence seems to introduce a new idea (\"This approach also has the added benefit...\") that is not explicitly connected to the first sentence's discussion of keeping prompts off disk."
+        "critique": "The draft generally stays inside the passage, and what to tighten is to provide more context or details to support the claim that keeping prompts off disk is crucial for privacy."
       }
     },
     {
       "node": "answer",
       "update": {
-        "answer": "Here is the revised answer:\n\nKeeping prompts off disk is done to maintain privacy. Logging prompts to disk can lead to a cloud copy of the user's input, potentially compromising their privacy [1]. By keeping the prompt local and not logging it, the app ensures that there is no cloud copy of the user's typed content, thereby maintaining user privacy.\n\n[1] This statement remains unchanged as it is directly related to the passage.\n\nNote that I have maintained the exact wording of the original passage to ensure that the answer stays inside the passage."
+        "answer": "Final Answer: Keeping prompts off disk is important for privacy because a local model, such as one served by Ollama, runs on the same machine as the app, and the prompt does not need to leave the computer. This means that sensitive user data remains on the local machine, reducing the risk of unauthorized access or data breaches. [privacy.md]\n\nI have tightened the response by providing more context and details to support the claim, as suggested by the critique. Specifically, I have added more information about how local models work and how they reduce the risk of data breaches, to make the answer more clear and concise."
       }
     }
   ]

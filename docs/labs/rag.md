@@ -8,7 +8,7 @@
 
 Retrieval-Augmented Generation answers from retrieved chunks instead of from the model’s memory alone. If the corpus cannot support the answer, the model is told to say so.
 
-Beside each live step is its AWS box (Ingress, Question vector, Knowledge, Prompt bind, Answer, Ground check, Egress). The **AWS Architecture** title links to **RAG on AWS** (`/labs/rag/architecture`), the stacked physical twin. The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
+Beside each live step is its AWS box (Ingress, Question vector, Knowledge, Prompt bind, Answer, Ground check, Egress). The **AWS Architecture** title links to **RAG on AWS** (`/labs/rag/architecture`): a region picture plus stacked stage boxes. The map is teaching chrome. Inference stays on Ollama at `localhost`. No AWS account, keys, or hosted models are used.
 
 ## What you see
 

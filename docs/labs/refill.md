@@ -12,7 +12,7 @@ The model writes the patient-facing note. Local tools pick the path from a ficti
 
 This is a teaching workflow on fake policy text. It is not a clinic, does not call a real EHR or pharmacy, and does not keep what you type.
 
-Beside each live node is its AWS box (Ingress, Intake, Knowledge, Script, Safety, Choice, Human task, Final, Egress). The **AWS Architecture** title links to **Agentic AI on AWS** (`/labs/refill/architecture`), the stacked physical twin. The map is teaching chrome. Inference stays on Ollama at `localhost`.
+Beside each live node is its AWS box (Ingress, Intake, Knowledge, Script, Safety, Choice, Human task, Final, Egress). The **AWS Architecture** title links to **Agentic AI on AWS** (`/labs/refill/architecture`): a region picture plus stacked stage boxes. The map is teaching chrome. Inference stays on Ollama at `localhost`.
 
 ## What you see
 

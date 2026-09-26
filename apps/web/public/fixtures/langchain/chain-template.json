@@ -41,14 +41,14 @@
     {
       "node": "invoke",
       "update": {
-        "raw": "{\"answer\": \"fills a prompt with the output of the previous step\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langgraph.md\"]}"
+        "raw": "{\"answer\": \"it replaces the input prompt with a fixed structure\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langgraph.md\"]}"
       }
     },
     {
       "node": "parse",
       "update": {
         "parsed": {
-          "answer": "fills a prompt with the output of the previous step",
+          "answer": "it replaces the input prompt with a fixed structure",
           "grounded": true,
           "sources": [
             "langchain.md",

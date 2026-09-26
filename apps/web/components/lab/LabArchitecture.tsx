@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LabShell } from "@/components/LabShell";
 import type { AwsTwinMap } from "./aws";
 import { AwsBoxes } from "./AwsBoxes";
+import { AwsRegionPicture, type AwsRegionPictureSpec } from "./AwsRegionPicture";
 
 type LabArchitectureProps = {
   eyebrow: string;
@@ -12,6 +13,7 @@ type LabArchitectureProps = {
   why: string;
   seeing: string;
   blurb: string;
+  picture: AwsRegionPictureSpec;
   twins: Record<string, AwsTwinMap>;
   order: readonly string[];
 };
@@ -25,6 +27,7 @@ export function LabArchitecture({
   why,
   seeing,
   blurb,
+  picture,
   twins,
   order,
 }: LabArchitectureProps) {
@@ -36,7 +39,16 @@ export function LabArchitecture({
           Back to the lab
         </Link>
       </p>
-      <div className="mt-5 max-w-3xl">
+      <h2 className="mt-8 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">Region picture</h2>
+      <p className="mt-1 text-sm text-[var(--ink-muted)]">
+        Browser to edge, then named lab steps inside a region, then metrics and egress.
+      </p>
+      <div className="mt-4">
+        <AwsRegionPicture spec={picture} />
+      </div>
+      <h2 className="mt-10 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">Stage boxes</h2>
+      <p className="mt-1 text-sm text-[var(--ink-muted)]">The same twin, grouped the way the live Flow column lights.</p>
+      <div className="mt-4 max-w-3xl">
         <AwsBoxes twins={twins} order={order} />
       </div>
     </LabShell>

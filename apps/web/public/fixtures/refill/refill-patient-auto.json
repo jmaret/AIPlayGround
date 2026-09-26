@@ -66,7 +66,7 @@
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Refill Request Response for Patient A\n\nDear Patient A,\n\nA refill request for your lisinopril has been approved. According to our teaching pharmacy's policy, a refill was processed for you after verifying your identity.\n\n[No medical advice or information is provided]\n\nNote: Our teaching pharmacy follows specific guidelines to ensure the safe and responsible dispensing of medications. If you have any questions or concerns about your refill, please reach out to your prescribing physician.\n\nSincerely,\n[Acme Teaching Pharmacy]"
+        "answer": "Here is a short patient-facing note for the teaching refill lab:\n\n\"Hello Patient A (DOB: 1984-03-12, zip: 10000)\n\nWe are processing your refill request for lisinopril. Our system checked your chart and found that you have an active script with refills available. As per our policy, since your script is not expired and you have refills remaining, we are approving your refill request without a pharmacist review.\n\nPlease note that our system generated this approval, and it does not replace a pharmacist's professional judgment. If you have any questions or concerns about your medication, please reach out to your prescriber.\n\nThank you for choosing [Teaching Pharmacy] for your prescription needs.\n\n[Teaching Pharmacy]\"\n\nThis note adheres to the policy passages and structured outcome, while addressing the patient in a patient-facing manner. It also includes a clear statement about the system-generated approval and encourages patients to reach out to their prescriber if they have any questions or concerns."
       }
     }
   ]

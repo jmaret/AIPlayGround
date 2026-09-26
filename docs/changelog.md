@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-25 — Region architecture picture
+
+- Each lab’s AWS page now has a second picture: Browser → Edge → named lab steps inside a region → CloudWatch / session / egress
+- Stage boxes stay below as the Flow-aligned twin
+
+## 2026-09-25 — Privacy tab
+
+- Privacy page now matches the live labs: AWS maps are teaching-only, Pages replays canned questions, Vector DB has no model, refill reviews last 15 minutes
+
 ## 2026-09-25 — Home top questions
 
 - FAQ now covers the AWS maps (teaching only), Flow versus AWS Architecture, the Pages demo, and the 15-minute refill review

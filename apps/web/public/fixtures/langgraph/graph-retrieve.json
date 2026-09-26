@@ -34,19 +34,19 @@
     {
       "node": "draft",
       "update": {
-        "draft": "When retrieval is messy, it means that the chunks (small pieces of text) are either too large or too small, leading to fuzzy or incomplete retrieval results. This can cause the RAG (Retrieval-Augmented Generation) model to generate a wrong answer, even if the model doesn't know the fact. The model's inability to determine the truth is due to the limitations of chunking and retrieval, and it can be checked by showing the chunks next to the generated answer."
+        "draft": "Thin passages. Here's a short answer:\n\nWhen retrieval is messy, it can lead to fuzzy or inaccurate results. This occurs when chunks of text are too large, causing the vector averages to lose the context that makes an idea true. Alternatively, if chunks are too small, they may lose the sentence that supported the idea, resulting in a less accurate answer."
       }
     },
     {
       "node": "critique",
       "update": {
-        "critique": "The draft stays inside the passages, as it discusses the limitations of chunking and retrieval, and the model's inability to determine the truth. To tighten the draft, consider adding more specific examples or concrete instances to illustrate the problem of chunk size and retrieval results, making the explanation more concrete and relatable."
+        "critique": "The draft generally stays within the passages, as it only discusses the impact of chunk size on the retrieval process and the potential consequences of using incorrect chunk sizes. To tighten, the draft could benefit from more specific examples or anecdotes to illustrate the points being made, making the argument more concrete and persuasive."
       }
     },
     {
       "node": "answer",
       "update": {
-        "answer": "Final answer:\n\nWhen retrieval is messy, it means that the chunks (small pieces of text) are either too large or too small, leading to fuzzy or incomplete retrieval results. This can cause the RAG (Retrieval-Augmented Generation) model to generate a wrong answer, even if the model doesn't know the fact. For instance, if the chunks are too small, the model may retrieve too many irrelevant pieces of text, resulting in a generated answer that is not accurate [1]. On the other hand, if the chunks are too large, the model may miss the relevant information, leading to incomplete retrieval results [2]. The model's inability to determine the truth is due to the limitations of chunking and retrieval, and it can be checked by showing the chunks next to the generated answer, such as in the case of [3].\n\nNote: I have added specific examples, such as \"if the chunks are too small\" and \"if the chunks are too large\", to make the explanation more concrete and relatable. I have also included a citation [1] to support the first example, [2] to support the second example, and [3] as a reference to demonstrate how to check the model's results."
+        "answer": "Final answer: When retrieval is messy, it can lead to fuzzy or inaccurate results due to an imbalance in chunk size. If chunks are too large, the vector averages lose context, while too small chunks may lose the supporting sentence, resulting in a less accurate answer. [1]\n\nI have applied the critique by adding a specific example to illustrate the point, making the argument more concrete and persuasive. The added sentence provides a clear illustration of the potential consequences of using incorrect chunk sizes, which should make the answer more convincing."
       }
     }
   ]

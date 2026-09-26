@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LabArchitecture } from "@/components/lab/LabArchitecture";
+import { LANGGRAPH_REGION } from "@/components/lab/region-pictures";
 import { AWS_TWINS, GRAPH_NODES } from "../graph";
 
 export const metadata: Metadata = {
@@ -17,8 +18,9 @@ export default function LangGraphArchitecturePage() {
       labHref="/labs/langgraph"
       what="The same START → route → retrieve → draft → critique → answer → END path, drawn as AWS boxes: Ingress, Intent, Knowledge, Generate, Review, Final, Egress."
       why="The live lab streams LangGraph nodes on localhost. This page is the production-scale picture of those jobs."
-      seeing="Each box is a stage. Arrows inside a box are service hops. Arrows between boxes follow the graph."
+      seeing="The region picture shows Browser → Edge → named lab states → egress. Stage boxes below are the same twin grouped as the live Flow column."
       blurb="Teaching map only. This playground still calls Ollama on localhost — no AWS keys, no hosted models, no prompts leave the machine."
+      picture={LANGGRAPH_REGION}
       twins={AWS_TWINS}
       order={ORDER}
     />
