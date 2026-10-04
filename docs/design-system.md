@@ -1,6 +1,6 @@
 # Design system
 
-UX chrome is teal-ink: Source Serif 4 + Source Sans 3, a sticky frosted header, segmented tabs, and glass `WorkspacePanel`s at `max-w-3xl`.
+UX chrome matches AetherForge’s warm paper: Source Serif 4 + Source Sans 3, a sticky cream header, segmented tabs, and paper `WorkspacePanel`s at `max-w-3xl`. Teal stays the accent.
 
 Playground keeps its own name, mark, mural, and copy. No stock office photography, third-party wordmark, or sign-in.
 
@@ -8,16 +8,19 @@ Playground keeps its own name, mark, mural, and copy. No stock office photograph
 
 | Token | Hex | Role |
 | --- | --- | --- |
-| background | `#E8EEF1` | Page wash |
+| background / paper | `#F6EAD8` | Page wash and text panels |
 | ink | `#152028` | Type |
 | ink-muted | `#5A6B76` | Secondary type |
 | accent | `#0F4C5C` | Primary buttons, eyebrows |
 | accent-hover | `#0C3D4A` | Button hover |
-| line | `#C5D0D6` | Borders |
+| line | `#D8C4AA` | Borders |
+| mark fill | `#E6CA98` | Logo disc |
+| mark stroke | `#B89260` | Logo rim |
+| mark ink | `#2A2622` / `#5C3A22` | Logo drawing |
 | danger | `#9B2C2C` | Errors |
 | success | `#1F6B4A` | Grounded answers |
 
-Backdrop is a soft teal-gray CSS gradient only — no stock photo.
+Backdrop is a cream wash (`#F6EAD8` into `#ECDCC4`) — no stock photo.
 
 ## Type
 
@@ -28,7 +31,7 @@ Backdrop is a soft teal-gray CSS gradient only — no stock photo.
 
 ## Shell
 
-- Sticky header: `bg-[rgba(238,243,245,0.86)] backdrop-blur-md`, `border-[var(--line)]`
+- Sticky header: `bg-[rgba(246,234,216,0.9)] backdrop-blur-md`, `border-[var(--line)]`
 - Brand row: mark + serif “Playground” + muted tagline
 - Segmented nav: Home / Labs / Privacy
 - Action: teal “Open a lab”
@@ -37,12 +40,12 @@ Backdrop is a soft teal-gray CSS gradient only — no stock photo.
 
 ## Surfaces
 
-`WorkspacePanel`: `rounded-xl border border-[var(--line)] bg-white/85 shadow-[0_18px_50px_-36px_rgba(15,40,50,0.55)] backdrop-blur-sm`.
+`WorkspacePanel`: `rounded-xl border border-[var(--line)] bg-[rgba(246,234,216,0.92)] shadow-[0_18px_50px_-36px_rgba(15,40,50,0.55)] backdrop-blur-sm`.
 
 The humanist mural sits inside the hero panel (crop + fade), not as a full-bleed Roots band.
 
 ## Brand files (`apps/web/public/brand/`)
 
-- `logo.svg` — cream-teal circular badge, human profile + 3-node constellation in `#0F4C5C`
+- `logo.svg` — gold disc (`#E6CA98` / `#B89260`) with the profile and constellation in `#2A2622` and `#5C3A22`
 - `icon-512.png` / `apple-touch-icon.png` / favicons
 - `impact-mural.png` — AI-in-human-life illustration, used inside the hero panel

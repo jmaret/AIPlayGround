@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "denied",
-        "note": "Here is a two-sentence explanation of the pharmacist's deny on a renewal path for atorvastatin:\n\nPatient A's renewal request for atorvastastatin was denied because the script is expired, as indicated by the policy stating \"Expired script or zero refills If the teaching script is expired or zero refills remain, do not fill\" ([refill.md]). This decision was made under the \"zero-touch auto-approve\" rule, which would have automatically approved the renewal if the script were not expired or if there were sufficient refills remaining."
+        "note": "When a refill request for atorvastatin is submitted, the pharmacy will deny the renewal path if the script is expired or there are zero refills remaining, as per policy. A renewal request with the same medication and patient information should be sent to a prescriber for approval."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "denied",
-        "answer": "Here is a short patient-facing note:\n\nDear Prescriber,\n\nWe have received a renewal request for Patient D, DOB 1966-01-19, zip 40000, for atorvastatin. However, the script has expired and there are no refills remaining.\n\nPlease note that according to our policy, \"Expired script or zero refills If the teaching script is expired or zero refills remain, do not fill\" ([refill.md]). We kindly request your approval or denial of the renewal request.\n\nThank you for your attention to this matter.\n\nSincerely,\n[Your Name]\n\nPlease note that this note is not a medical advice and is solely based on the provided policy passages and structured outcome."
+        "answer": "To: Patient D\n\nRefill Request for Atorvastatin\n\nAs per our policy, we cannot fulfill your refill request for atorvastatin at this time. The script is expired, and there are zero refills remaining. Please note that our policy states that a renewal request should be sent to a prescriber for approval.\n\nWe have drafted a renewal request and will send it to your prescriber for review. You can expect to receive a notification once the prescriber has reviewed your request and made a decision.\n\nIf you have any questions or concerns, please do not hesitate to reach out to us.\n\nSincerely,\n[Your Pharmacy Name]\n\n[Note: This is a sample note and should not be used in a real-world scenario without proper review and adaptation to the specific pharmacy's policies and procedures.]"
       }
     }
   ],

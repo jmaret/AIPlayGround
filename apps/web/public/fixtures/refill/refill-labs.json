@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "approved",
-        "note": "For Patient A, a refill request for warfarin would be approved by a pharmacist if the last fill was not too recent (less than the specified time period in the policy) and required labs are current, as indicated by [refill.md]. The decision would be auto-approved due to the zero-touch auto-approve rule, which allows for automatic approval if the identity check passes and the script meets the specified conditions."
+        "note": "For a refill request for warfarin, if the patient's last lab results are not too recent, the script is not expired, and required labs are current, the agent may auto-approve. If the above conditions are met and the pharmacy-on-behalf request is made by a prescriber, the human must choose to approve or deny the refill, as electronic prescribing rules are out of scope for this teaching pharmacy."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here is a short patient-facing note for the teaching refill lab:\n\n\"Dear Patient E,\n\nWe have received your refill request for warfarin. Based on our policies, since your last fill was [insert time period] ago, a refill request has been approved. Additionally, we have confirmed that your lab results are current, as required by our policies.\n\nThe refill will be processed according to our zero-touch auto-approve rule, which allows us to automatically approve eligible scripts without further review.\n\nPlease note that if your script were to expire or have zero refills remaining, we would need to renew it. If you have any questions or concerns, please do not hesitate to reach out to us.\n\n[Acme Teaching Pharmacy]\n\n[Date]\""
+        "answer": "Here is a short patient-facing note for the teaching refill lab:\n\nDear Patient E,\n\nWe are processing your refill request for warfarin. Based on our clinical rules, we are checking the status of your recent lab results and script.\n\nAccording to our policy, we are required to [auto-approve or draft a renewal request] as the following conditions are met: [briefly mention the conditions met, e.g. \"your last lab results are not too recent\" and \"required labs are current\"].\n\nPlease note that a human pharmacist will review and approve or deny your refill request. If you have any questions or concerns, please reach out to us.\n\nThis message is not medical advice and is for informational purposes only. For more information, please visit [refill.md].\n\nOutcome: Approved\n\n(Note: I've kept it concise and within the policy guidelines, and avoided any medical advice or PHI. I've also added a polite tone and a link to the policy file for additional information.)"
       }
     }
   ],

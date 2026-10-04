@@ -41,18 +41,18 @@
     {
       "node": "invoke",
       "update": {
-        "raw": "{\"answer\": \"to ensure compatibility with the parser and to guarantee that the model output is in the expected format\", \"grounded\": true, \"sources\": [\"langchain.md\", \"privacy.md\"]}"
+        "raw": "{\"answer\": \"The model output needs to be in JSON for LangChain to parse it successfully.\", \"grounded\": true, \"sources\": [\"langchain.md\", \"langchain.md\"]}"
       }
     },
     {
       "node": "parse",
       "update": {
         "parsed": {
-          "answer": "to ensure compatibility with the parser and to guarantee that the model output is in the expected format",
+          "answer": "The model output needs to be in JSON for LangChain to parse it successfully.",
           "grounded": true,
           "sources": [
             "langchain.md",
-            "privacy.md"
+            "langchain.md"
           ]
         }
       }

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-03 — AetherForge paper palette
+
+- Logo and favicon use the AetherForge gold disc and brown line
+- Page wash and text panels use `#F6EAD8` with the tan border `#D8C4AA`
+
+## 2026-10-03 — Custom domain assets
+
+- Pages build no longer prefixes assets with `/AIPlayGround`
+- The custom domain serves the site at the root, so CSS, scripts, and images load from `/_next` and `/brand`
+
 ## 2026-09-25 — Region architecture picture
 
 - Each lab’s AWS page now has a second picture: Browser → Edge → named lab steps inside a region → CloudWatch / session / egress

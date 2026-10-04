@@ -34,19 +34,19 @@
     {
       "node": "draft",
       "update": {
-        "draft": "Thin passages. Here's a short answer:\n\nWhen retrieval is messy, it can lead to fuzzy or inaccurate results. This occurs when chunks of text are too large, causing the vector averages to lose the context that makes an idea true. Alternatively, if chunks are too small, they may lose the sentence that supported the idea, resulting in a less accurate answer."
+        "draft": "Passage is thin.\n\nThe retrieval is messy when the chunk size is too small, causing the sentence that made the idea true to be lost, leading to a fuzzy retrieval."
       }
     },
     {
       "node": "critique",
       "update": {
-        "critique": "The draft generally stays within the passages, as it only discusses the impact of chunk size on the retrieval process and the potential consequences of using incorrect chunk sizes. To tighten, the draft could benefit from more specific examples or anecdotes to illustrate the points being made, making the argument more concrete and persuasive."
+        "critique": "The draft should stay inside the passages and focus on tightening the language, making it more concise and clear, such as changing \"Passage is thin\" to \"Passage is skimpy\" or \"Passage is sparse\". Additionally, the sentence about the retrieval should be tightened to avoid unnecessary words and phrases, making it more focused and effective."
       }
     },
     {
       "node": "answer",
       "update": {
-        "answer": "Final answer: When retrieval is messy, it can lead to fuzzy or inaccurate results due to an imbalance in chunk size. If chunks are too large, the vector averages lose context, while too small chunks may lose the supporting sentence, resulting in a less accurate answer. [1]\n\nI have applied the critique by adding a specific example to illustrate the point, making the argument more concrete and persuasive. The added sentence provides a clear illustration of the potential consequences of using incorrect chunk sizes, which should make the answer more convincing."
+        "answer": "When retrieval is messy, the chunk size is too small, leading to a fuzzy retrieval. [filename]"
       }
     }
   ]

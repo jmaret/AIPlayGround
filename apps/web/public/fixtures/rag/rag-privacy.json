@@ -1,7 +1,7 @@
 {
   "id": "rag-privacy",
   "question": "Why keep prompts off disk?",
-  "answer": "Keeping prompts off disk is done to maintain privacy and avoid logging user inputs, as it reduces the risk of data exposure to cloud servers [1].",
+  "answer": "According to passages [1] and [2], keeping prompts off disk is related to privacy, as it prevents the text from being stored on a server, which is a cloud-based storage. This approach ensures that the data remains on the local machine and does not leave the computer.",
   "citations": [
     {
       "id": "privacy.md-0",

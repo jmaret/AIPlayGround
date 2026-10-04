@@ -99,7 +99,7 @@ export default function HomePage() {
             <Link
               key={lab.href}
               href={lab.href}
-              className="rounded-lg border border-[var(--line)] bg-white/70 px-4 py-3 transition hover:bg-white"
+              className="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3 transition hover:bg-[#efe0c8]"
             >
               <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">{lab.title}</h3>
               <p className="mt-1 text-sm text-[var(--ink-muted)]">{lab.copy}</p>
