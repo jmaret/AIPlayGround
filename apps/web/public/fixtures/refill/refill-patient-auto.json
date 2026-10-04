@@ -66,7 +66,7 @@
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here's a short patient-facing note for the teaching refill lab:\n\nDear [Patient A's Name],\n\nWe have received your request for a refill of your lisinopril medication. Our system has reviewed your chart and determined that we can fulfill your request.\n\nPlease note that we are a teaching pharmacy, which means we use a unique system to review and approve refill requests. This process is designed to ensure your safety and the accuracy of your medication.\n\nWe will now send a renewal request for your script to your prescriber. Your prescriber will review the request and make a decision. If approved, we will process your refill.\n\nIf you have any questions or concerns, please do not hesitate to reach out to us. Thank you for entrusting us with your care.\n\nSincerely,\n[Your Name]\n\nThis note does not provide medical advice and stays within the policy passages. It addresses Patient A by name, as per your request, and includes a general message that explains the teaching refill lab process without revealing any PHI."
+        "answer": "Dear Patient A,\n\nYour lisinopril refill is approved. The teaching chart shows an active script with refills remaining, the last fill was not too recent, the drug is not controlled, and required labs are current. The order was placed in the teaching pharmacy queue with no pharmacist click and no prescriber renewal.\n\nThis note stays inside the Acme Teaching Pharmacy policy (refill.md) and is not medical advice."
       }
     }
   ]

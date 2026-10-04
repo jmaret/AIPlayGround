@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "approved",
-        "note": "For a refill request for warfarin, if the patient's last lab results are not too recent, the script is not expired, and required labs are current, the agent may auto-approve. If the above conditions are met and the pharmacy-on-behalf request is made by a prescriber, the human must choose to approve or deny the refill, as electronic prescribing rules are out of scope for this teaching pharmacy."
+        "note": "Auto-approval is suspended. The last fill was too recent and required warfarin monitoring is overdue. A pharmacist approved the teaching request."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here is a short patient-facing note for the teaching refill lab:\n\nDear Patient E,\n\nWe are processing your refill request for warfarin. Based on our clinical rules, we are checking the status of your recent lab results and script.\n\nAccording to our policy, we are required to [auto-approve or draft a renewal request] as the following conditions are met: [briefly mention the conditions met, e.g. \"your last lab results are not too recent\" and \"required labs are current\"].\n\nPlease note that a human pharmacist will review and approve or deny your refill request. If you have any questions or concerns, please reach out to us.\n\nThis message is not medical advice and is for informational purposes only. For more information, please visit [refill.md].\n\nOutcome: Approved\n\n(Note: I've kept it concise and within the policy guidelines, and avoided any medical advice or PHI. I've also added a polite tone and a link to the policy file for additional information.)"
+        "answer": "Dear Patient E,\n\nYour warfarin refill did not qualify for zero-touch approval. The last fill was too recent, and required monitoring is overdue. A pharmacist reviewed the teaching request and approved it.\n\nThis note stays inside the Acme Teaching Pharmacy policy (refill.md) and is not medical advice."
       }
     }
   ],

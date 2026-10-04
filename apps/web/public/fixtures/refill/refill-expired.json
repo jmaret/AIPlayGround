@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "denied",
-        "note": "When a refill request for atorvastatin is submitted, the pharmacy will deny the renewal path if the script is expired or there are zero refills remaining, as per policy. A renewal request with the same medication and patient information should be sent to a prescriber for approval."
+        "note": "The script is expired and no refills remain, so the fill is refused. The pharmacist denied the renewal path, so no prescriber request was sent."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "denied",
-        "answer": "To: Patient D\n\nRefill Request for Atorvastatin\n\nAs per our policy, we cannot fulfill your refill request for atorvastatin at this time. The script is expired, and there are zero refills remaining. Please note that our policy states that a renewal request should be sent to a prescriber for approval.\n\nWe have drafted a renewal request and will send it to your prescriber for review. You can expect to receive a notification once the prescriber has reviewed your request and made a decision.\n\nIf you have any questions or concerns, please do not hesitate to reach out to us.\n\nSincerely,\n[Your Pharmacy Name]\n\n[Note: This is a sample note and should not be used in a real-world scenario without proper review and adaptation to the specific pharmacy's policies and procedures.]"
+        "answer": "Dear Patient D,\n\nWe cannot fill atorvastatin. The teaching script is expired and no refills remain. The pharmacist denied the renewal path, so no request was sent to a prescriber.\n\nThis note stays inside the Acme Teaching Pharmacy policy (refill.md) and is not medical advice."
       }
     }
   ],

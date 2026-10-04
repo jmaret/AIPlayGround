@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "approved",
-        "note": "Here are two short sentences explaining the pharmacist's approval on a controlled path:\n\nPatient A is approved for oxycodone refill, as the script is not expired and the patient has current required labs, meeting the zero-touch auto-approve criteria. If the script were expired or had zero refills, a renewal request would be sent to a prescriber inbox, awaiting approval or denial."
+        "note": "Oxycodone is a controlled substance on this teaching chart, so zero-touch auto-approve does not apply. A pharmacist approved the gate."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here are the patient-facing notes for the refill oxycodone for Patient C:\n\nRefill Oxycodone for Patient C\n\nPatient C, with a date of birth (DOB) of 1990-11-04 and zip code 30000, is approved for an oxycodone refill. According to our refill policy, [refill.md], the script is not expired, and the patient has current required labs, meeting the zero-touch auto-approve criteria.\n\n[No additional information is provided, as the patient's script meets the criteria for auto-approval.]\n\nOutcome: Approved\n\nPlease note that these notes are for educational purposes only and do not constitute medical advice. The approval of this refill is based solely on the patient's eligibility under our refill policy."
+        "answer": "Dear Patient C,\n\nYour oxycodone refill was not auto-approved. Controlled substances on this teaching chart always wait for a person to approve or deny. A pharmacist reviewed the request and approved it.\n\nThis note stays inside the Acme Teaching Pharmacy policy (refill.md) and is not medical advice."
       }
     }
   ],

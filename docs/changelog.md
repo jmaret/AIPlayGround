@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-03 — Canned refill and retrieval answers
+
+- Static demo notes now match the path the lab already chose: auto-approve, pharmacist gate, or refusal
+- Bracketed prompt leftovers such as `[filename]` are gone from the Pages answers
+
 ## 2026-10-03 — AetherForge paper palette
 
 - Logo and favicon use the AetherForge gold disc and brown line

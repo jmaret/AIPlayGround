@@ -66,7 +66,7 @@
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Here is a short patient-facing note for the teaching refill lab:\n\nDear Patient B,\n\nWe have received your refill request for metformin. Our system has checked the chart and verified that the medication is eligible for refill.\n\nSince our system has auto-approved your request, no further action is required from a pharmacist. Your prescription will be processed as usual.\n\nPlease note that we have not received any lab results for your medication, so we will need to wait for those results before filling your prescription. We will let you know when your prescription is ready for pickup.\n\nThank you for choosing our pharmacy. If you have any questions or concerns, please don't hesitate to reach out.\n\nSincerely,\n[Harbor Pharmacy]"
+        "answer": "Dear Patient B,\n\nYour metformin refill is approved. The teaching chart shows an active script with refills remaining, the last fill was not too recent, the drug is not controlled, and required labs are current. The order was placed in the teaching pharmacy queue with no pharmacist click.\n\nThis note stays inside the Acme Teaching Pharmacy policy (refill.md) and is not medical advice."
       }
     }
   ]
