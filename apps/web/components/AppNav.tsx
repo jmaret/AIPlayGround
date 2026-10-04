@@ -13,7 +13,7 @@ export function AppNav() {
   const pathname = usePathname();
 
   return (
-    <nav aria-label="Playground" className="flex min-w-max w-full rounded-lg border border-[var(--line)] bg-white/55 p-1">
+    <nav aria-label="Playground" className="flex min-w-max w-full rounded-lg border border-[var(--line)] bg-[var(--paper)]/80 p-1">
       {items.map((item) => {
         const active = item.match(pathname);
         return (
@@ -22,7 +22,7 @@ export function AppNav() {
             href={item.href}
             className={`flex-1 rounded-md px-3 py-1.5 text-center text-sm transition ${
               active
-                ? "bg-white font-medium text-[var(--ink)] shadow-sm"
+                ? "bg-[#fff6e8] font-medium text-[var(--ink)] shadow-sm"
                 : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
             }`}
           >

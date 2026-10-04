@@ -19,8 +19,8 @@ export function SampleChips({
           type="button"
           disabled={disabled}
           aria-pressed={active === sample}
-          className={`chip hover:bg-white hover:text-[var(--ink)] disabled:cursor-not-allowed disabled:opacity-60 ${
-            active === sample ? "border-[var(--accent)] bg-white text-[var(--ink)]" : ""
+          className={`chip hover:bg-[#efe0c8] hover:text-[var(--ink)] disabled:cursor-not-allowed disabled:opacity-60 ${
+            active === sample ? "border-[var(--accent)] bg-[#fff6e8] text-[var(--ink)]" : ""
           }`}
           onClick={() => onPick(sample)}
         >
@@ -33,7 +33,7 @@ export function SampleChips({
 
 export function StaticDemoNote() {
   return (
-    <p className="rounded-lg border border-[var(--line)] bg-white/70 px-3 py-2 text-sm text-[var(--ink-muted)]">
+    <p className="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink-muted)]">
       Static GitHub Pages demo — sample questions replay recorded runs with paced animations. Vector DB hashes in
       this tab and does not call localhost. Clone the repo and{" "}
       <span className="font-mono text-xs text-[var(--ink)]">make dev</span> for live labs.

@@ -41,4 +41,4 @@ make fixtures
 make pages
 ```
 
-`apps/web/out/` is the Pages artifact. Brand files and fixtures are served under the repo `basePath` (for example `/AIPlayGround/brand/…`). Sample chips replay recorded RAG / LangChain / LangGraph / refill runs with artificial step delays. Vector DB hashes in the browser. Enable GitHub Pages (Actions source) to publish on push to `main`. Live typed RAG / chain / graph / refill questions still require `make dev` on your machine.
+`apps/web/out/` is the Pages artifact. The published site is [https://ai-play-ground.aathira-services.com/](https://ai-play-ground.aathira-services.com/). GitHub redirects the `github.io` project URL there, so the build uses an empty `basePath` and assets load from `/_next` and `/brand`. Sample chips replay recorded RAG / LangChain / LangGraph / refill runs with artificial step delays. Vector DB hashes in the browser. Enable GitHub Pages (Actions source) to publish on push to `main`. Live typed RAG / chain / graph / refill questions still require `make dev` on your machine.

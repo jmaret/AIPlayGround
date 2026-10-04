@@ -110,7 +110,7 @@ export function InfoTip({ label, body, children, className = "" }: InfoTipProps)
               maxHeight: pos.maxHeight,
               zIndex: 80,
             }}
-            className={`overflow-y-auto rounded-lg border border-[var(--line)] bg-white p-3 shadow-[0_18px_50px_-28px_rgba(15,40,50,0.55)] ${
+            className={`overflow-y-auto rounded-lg border border-[var(--line)] bg-[var(--paper)] p-3 shadow-[0_18px_50px_-28px_rgba(15,40,50,0.55)] ${
               ready ? "opacity-100" : "opacity-0"
             }`}
             onMouseEnter={openHover}

@@ -6,7 +6,7 @@ import { Logo } from "./Logo";
 export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-full flex-1 flex-col">
-      <header className="sticky top-0 z-40 border-b border-[var(--line)]/80 bg-[rgba(238,243,245,0.86)] backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-[var(--line)]/80 bg-[rgba(246,234,216,0.9)] backdrop-blur-md">
         <div className="mx-auto w-full max-w-3xl px-4 py-3 sm:px-6">
           <div className="flex items-center justify-between gap-3">
             <Logo />

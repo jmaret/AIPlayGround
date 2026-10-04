@@ -66,7 +66,7 @@
       "node": "act",
       "update": {
         "outcome": "refused",
-        "answer": "Here's a short patient-facing note:\n\n\"Hello [Patient F's name],\n\nWe have received a refill request for your lisinopril medication. However, our system is unable to process this request at this time.\n\nThe identity of the patient and prescriber did not match the information on file. We are sending a renewal request to the prescriber for further review.\n\nPlease contact us if you have any questions or concerns about your medication.\n\nSincerely,\n[Your Name]\"\n\nThis note is brief and to the point, and it does not provide any medical advice. It also does not reveal any PHI."
+        "answer": "Dear Patient F,\n\nWe cannot refill lisinopril because the identifiers did not match the teaching chart. The request is a warm transfer to the front desk for identity mismatch. No renewal was drafted.\n\nThis note stays inside the Acme Teaching Pharmacy policy (refill.md) and is not medical advice."
       }
     }
   ]

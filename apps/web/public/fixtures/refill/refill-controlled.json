@@ -59,14 +59,14 @@
       "node": "review",
       "update": {
         "status": "approved",
-        "note": "Patient A requests a refill for oxycodone. The pharmacist approves the refill because the patient has an active script with refills remaining and all required labs are current, as per the teaching pharmacy's refill rules in [refill.md]."
+        "note": "Oxycodone is a controlled substance on this teaching chart, so zero-touch auto-approve does not apply. A pharmacist approved the gate."
       }
     },
     {
       "node": "act",
       "update": {
         "outcome": "approved",
-        "answer": "Patient C's Refill Request\n\nPatient C, with a date of birth (DOB) of 1990-11-04 and zip code 30000, has requested a refill for oxycodone. \n\nUpon review, it has been determined that the patient has an active script with refills remaining and all required labs are current, in accordance with the teaching pharmacy's refill rules as outlined in [refill.md]. \n\nTherefore, the refill has been approved.\n\n[End of note]"
+        "answer": "Dear Patient C,\n\nYour oxycodone refill was not auto-approved. Controlled substances on this teaching chart always wait for a person to approve or deny. A pharmacist reviewed the request and approved it.\n\nThis note stays inside the Acme Teaching Pharmacy policy (refill.md) and is not medical advice."
       }
     }
   ],

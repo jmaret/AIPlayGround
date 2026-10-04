@@ -169,7 +169,7 @@ export function RefillPanel() {
         }}
       />
       {guide ? (
-        <div className="rounded-lg border border-[var(--line)] bg-white/70 px-4 py-3">
+        <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">What this prompt does</p>
           <h3 className="mt-1 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">{guide.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-[var(--ink)]">{guide.story}</p>
@@ -196,7 +196,7 @@ export function RefillPanel() {
         </button>
       </form>
       {awaiting && !STATIC_DEMO ? (
-        <div className="rounded-lg border border-[var(--line)] bg-white/70 px-4 py-3">
+        <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">Pharmacist review</p>
           <p className="mt-1 text-sm leading-relaxed text-[var(--ink)]">
             {typeof awaiting.update?.proposed === "string"
